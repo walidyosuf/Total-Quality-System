@@ -1,0 +1,2882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>???? ?????? ??????</title> <!-- Changed title here -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for Inter font and general layout */
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            padding: 1rem;
+        }
+        /* Modal overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        /* Modal content */
+        .modal-content {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-xl */
+            max-width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        /* Hide forms by default */
+        .form-container {
+            display: none;
+        }
+        /* Specific style for text alignment in the forms */
+        .form-group label,
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            text-align: right; /* Right-align text for Arabic */
+        }
+        /* Ensure textarea for FAQ answer is left-aligned for English content */
+        #faqAnswerTextarea, #faqColumnsAnswerTextarea, #faqGalvanizationAnswerTextarea, #dinReportTextarea, #dimensionalQualityReportTextarea {
+            text-align: left;
+            direction: ltr;
+        }
+        /* Styles for dynamic labels/inputs */
+        .din-input-group, .dim-dynamic-input-group {
+            display: none; /* Hidden by default, shown by JS */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Application Container -->
+    <div id="app-container" class="bg-white p-6 md:p-8 rounded-xl shadow-lg w-full max-w-md mx-auto border border-gray-200">
+        <!-- Form1 (Main Form) -->
+        <div id="form1" class="form-container block">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">???? ?????? ??????</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Buttons reordered as requested -->
+                <button id="goToMechanicalTestForm" class="bg-blue-800 hover:bg-blue-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    ???????? ??????????
+                </button>
+                <button id="goToQuantitativeAnalysisForm" class="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    ??????? ?????????
+                </button>
+                <button id="goToDinSpecsForm" class="bg-orange-800 hover:bg-orange-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    ???? ??????? ????????
+                </button>
+                <!-- Renamed button -->
+                <button id="goToDimensionalQualityForm" class="bg-cyan-700 hover:bg-cyan-800 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    ?????? ????? ??????
+                </button>
+                <button id="goToFaqForm" class="bg-purple-800 hover:bg-purple-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    ??????? ??????? ?? ???????
+                </button>
+                <button id="goToFaqColumnsForm" class="bg-green-800 hover:bg-green-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    ??????? ??????? ?? ???????
+                </button>
+                <button id="goToFaqGalvanizationForm" class="bg-indigo-800 hover:bg-indigo-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    ??????? ??????? ?? ???????
+                </button>
+                <button id="button7" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    ????
+                </button>
+            </div>
+        </div>
+
+        <!-- Form 3 (Kept hidden as per previous request) -->
+        <div id="form3" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Form 3 Content</h2>
+            <p class="text-gray-600 mb-6 text-center">This is the content for Form 3.</p>
+            <button id="backToForm1From3" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                Back to Main Form
+            </button>
+        </div>
+
+        <!-- Form 4 (Kept hidden as per previous request) -->
+        <div id="form4" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Form 4 Content</h2>
+            <p class="text-gray-600 mb-6 text-center">This is the content for Form 4.</p>
+            <button id="backToForm1From4" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                Back to Main Form
+            </button>
+        </div>
+
+        <!-- Form 5 (Kept hidden as per previous request) -->
+        <div id="form5" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Form 5 Content</h2>
+            <p class="text-gray-600 mb-6 text-center">This is the content for Form 5.</p>
+            <button id="backToForm1From5" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                Back to Main Form
+            </button>
+        </div>
+
+        <!-- Form 6 (Kept hidden as per previous request) -->
+        <div id="form6" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Form 6 Content</h2>
+            <p class="text-gray-600 mb-6 text-center">This is the content for Form 6.</p>
+            <button id="backToForm1From6" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                Back to Main Form
+            </button>
+        </div>
+
+        <!-- Form 7 (Kept hidden as per previous request) -->
+        <div id="form7" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Form 7 Content</h2>
+            <p class="text-gray-600 mb-6 text-center">This is the content for Form 7.</p>
+            <button id="backToForm1From7" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                Back to Main Form
+            </button>
+        </div>
+
+        <!-- Form 8 (Kept hidden as per previous request) -->
+        <div id="form8" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">Form 8 Content</h2>
+            <p class="text-gray-600 mb-6 text-center">This is the content for Form 8.</p>
+            <button id="backToForm1From8" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                Back to Main Form
+            </button>
+        </div>
+
+        <!-- ???????? ?????????? (Mechanical Test Form) -->
+        <div id="mechanicalTestForm" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">???????? ??????????</h2>
+
+            <div class="space-y-4">
+                <div class="form-group">
+                    <label for="thickness" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">????? (??):</label>
+                    <input type="number" id="thickness" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ?????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="yield" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????? (MPa):</label>
+                    <input type="number" id="yield" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ??????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="tensile" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???? (MPa):</label>
+                    <input type="number" id="tensile" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="elongation" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">????????? (%):</label>
+                    <input type="number" id="elongation" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ?????????" dir="rtl">
+                </div>
+
+                <div class="form-group">
+                    <label for="standardSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <select id="standardSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="steelTypeSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ?????:</label>
+                    <select id="steelTypeSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="project_name" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ???????:</label>
+                    <input type="text" id="project_name" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ???????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="lab_name" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ??????:</label>
+                    <input type="text" id="lab_name" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ??????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="test_date" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <input type="date" id="test_date" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="prepared_by" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
+                    <input type="text" id="prepared_by" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ?????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="approved_by" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">????? ????????:</label>
+                    <input type="text" id="approved_by" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ????? ????????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="description" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
+                    <textarea id="description" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 resize-none" placeholder="???? ?????" dir="rtl"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    <button id="compareDataBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ?????? ????????
+                    </button>
+                    <button id="printReportBtn" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ????? ???????
+                    </button>
+                    <button id="exportExcelBtn" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ????? ??? Excel
+                    </button>
+                    <button id="clearAllBtn" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ??? ????
+                    </button>
+                    <button id="backToMainFromMechanicalTest" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
+                        ?????? ??? ??????? ????????
+                    </button>
+                    <button id="exitFromMechanicalTest" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
+                        ???? ?? ???????
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ??????? ????????? (Quantitative Analysis Form) -->
+        <div id="quantitativeAnalysisForm" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">??????? ?????????</h2>
+
+            <div class="space-y-4">
+                <div class="form-group">
+                    <label for="standardSelectChem" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">Standard*:</label>
+                    <select id="standardSelectChem" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="steelTypeSelectChem" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">Grade:</label>
+                    <select id="steelTypeSelectChem" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="carbonInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl"> (C)%*:</label>
+                    <input type="number" id="carbonInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ???????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="manganeseInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl"> (Mn)%*:</label>
+                    <input type="number" id="manganeseInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ????????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="siliconInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl"> (Si)%*:</label>
+                    <input type="number" id="siliconInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ????????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="phosphorusInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl"> (P)%*:</label>
+                    <input type="number" id="phosphorusInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ????????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="sulfurInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl"> (S)%*:</label>
+                    <input type="number" id="sulfurInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ???????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="chromiumInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">(Cr):</label>
+                    <input type="number" id="chromiumInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ?????? (???????)" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="nickelInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">(Ni):</label>
+                    <input type="number" id="nickelInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ?????? (???????)" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="molybdenumInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">(Mo):</label>
+                    <input type="number" id="molybdenumInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ???????????? (???????)" dir="rtl">
+                </div>
+
+                <!-- Additional Info for Chemical Analysis -->
+                <div class="form-group">
+                    <label for="chemProjectNameInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ???????:</label>
+                    <input type="text" id="chemProjectNameInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ???????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="chemLabNameInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ??????:</label>
+                    <input type="text" id="chemLabNameInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ??????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="chemTestDateInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <input type="date" id="chemTestDateInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="chemPreparedByInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
+                    <input type="text" id="chemPreparedByInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ?????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="chemApprovedByInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">????? ????????:</label>
+                    <input type="text" id="chemApprovedByInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ????? ????????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="chemDescriptionInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
+                    <textarea id="chemDescriptionInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 resize-none" placeholder="???? ?????" dir="rtl"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    <button id="compareChemDataBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ?????? ????????
+                    </button>
+                    <button id="printChemReportBtn" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ????? ???????
+                    </button>
+                    <button id="exportChemExcelBtn" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ????? ??? Excel
+                    </button>
+                    <button id="clearChemInputsBtn" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ??? ????
+                    </button>
+                    <button id="backToMainFromQuantitativeAnalysis" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
+                        ?????? ??? ??????? ????????
+                    </button>
+                    <button id="exitFromQuantitativeAnalysis" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
+                        ???? ?? ???????
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ??????? ??????? ?? ??????? (FAQ Form) - Form5 -->
+        <div id="faqForm" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">??????? ??????? ?? ??????? (BS EN 1090-2:2018)</h2>
+
+            <div class="space-y-4">
+                <div class="form-group">
+                    <label for="faqQuestionSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???? ??????:</label>
+                    <select id="faqQuestionSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="faqAnswerTextarea" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <textarea id="faqAnswerTextarea" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-48 resize-none" readonly dir="ltr"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    <button id="backToMainFromFaq" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ?????? ??? ??????? ????????
+                    </button>
+                    <button id="exitFromFaq" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ???? ?? ???????
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ??????? ??????? ?? ??????? (FAQ Columns Form) - Form6 -->
+        <div id="faqColumnsForm" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">??????? ??????? ?? ??????? (BS EN 1090-2:2018)</h2>
+
+            <div class="space-y-4">
+                <div class="form-group">
+                    <label for="faqColumnsQuestionSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???? ??????:</label>
+                    <select id="faqColumnsQuestionSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="faqColumnsAnswerTextarea" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <textarea id="faqColumnsAnswerTextarea" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-48 resize-none" readonly dir="ltr"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    <button id="backToMainFromFaqColumns" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ?????? ??? ??????? ????????
+                    </button>
+                    <button id="exitFromFaqColumns" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ???? ?? ???????
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ??????? ??????? ?? ??????? (FAQ Galvanization Form) - Form7 -->
+        <div id="faqGalvanizationForm" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">??????? ??????? ?? ??????? (ISO 1461:2009)</h2>
+
+            <div class="space-y-4">
+                <div class="form-group">
+                    <label for="faqGalvanizationQuestionSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???? ??????:</label>
+                    <select id="faqGalvanizationQuestionSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="faqGalvanizationAnswerTextarea" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <textarea id="faqGalvanizationAnswerTextarea" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-48 resize-none" readonly dir="ltr"></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    <button id="backToMainFromFaqGalvanization" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ?????? ??? ??????? ????????
+                    </button>
+                    <button id="exitFromFaqGalvanization" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ???? ?? ???????
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: ???? ?? ??????? DIN ???????? (DIN Specs Form) - Form8 -->
+        <div id="dinSpecsForm" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">???? ??????? ????????</h2>
+
+            <div class="space-y-4">
+                <div class="form-group">
+                    <label for="dinTypeSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
+                    <select id="dinTypeSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dinStandardSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <select id="dinStandardSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <!-- Dynamic Input Fields -->
+                <div id="dinInputFields">
+                    <div class="form-group din-input-group" id="dinInputGroup1">
+                        <label for="dinTextBox1" class="block text-gray-700 text-sm font-bold mb-2" id="dinLabel1" dir="rtl"></label>
+                        <input type="number" id="dinTextBox1" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group din-input-group" id="dinInputGroup2">
+                        <label for="dinTextBox2" class="block text-gray-700 text-sm font-bold mb-2" id="dinLabel2" dir="rtl"></label>
+                        <input type="number" id="dinTextBox2" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group din-input-group" id="dinInputGroup3">
+                        <label for="dinTextBox3" class="block text-gray-700 text-sm font-bold mb-2" id="dinLabel3" dir="rtl"></label>
+                        <input type="number" id="dinTextBox3" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group din-input-group" id="dinInputGroup4">
+                        <label for="dinTextBox4" class="block text-gray-700 text-sm font-bold mb-2" id="dinLabel4" dir="rtl"></label>
+                        <input type="number" id="dinTextBox4" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group din-input-group" id="dinInputGroup5">
+                        <label for="dinTextBox5" class="block text-gray-700 text-sm font-bold mb-2" id="dinLabel5" dir="rtl"></label>
+                        <input type="number" id="dinTextBox5" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group din-input-group" id="dinInputGroup6">
+                        <label for="dinTextBox6" class="block text-gray-700 text-sm font-bold mb-2" id="dinLabel6" dir="rtl"></label>
+                        <input type="number" id="dinTextBox6" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    <button id="dinCheckSpecsBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ???? ?? ?????????
+                    </button>
+                    <button id="dinClearAllBtn" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ??? ????
+                    </button>
+                    <button id="backToMainFromDinSpecs" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
+                        ?????? ??? ??????? ????????
+                    </button>
+                    <button id="exitFromDinSpecs" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
+                        ???? ?? ???????
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: ?????? ?? ???? ??????? (Dimensional Quality Form) -->
+        <div id="dimensionalQualityForm" class="form-container">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">?????? ????? ??????</h2> <!-- Changed title here -->
+
+            <div class="space-y-4">
+                <!-- Standard Display -->
+                <div class="form-group">
+                    <label for="dimStandardDisplay" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <input type="text" id="dimStandardDisplay" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100" readonly dir="ltr">
+                </div>
+
+                <!-- Section Type Selection -->
+                <div class="form-group">
+                    <label for="dimSectionTypeSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ??????:</label>
+                    <select id="dimSectionTypeSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
+                        <!-- Options populated by JS -->
+                    </select>
+                </div>
+
+                <!-- Dynamic Input Fields (dimInput1 to dimInput16) and Labels (dimLabel1 to dimLabel16) -->
+                <div id="dimDynamicInputFields">
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup1">
+                        <label for="dimInput1" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel1" dir="rtl"></label>
+                        <input type="number" id="dimInput1" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup2">
+                        <label for="dimInput2" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel2" dir="rtl"></label>
+                        <input type="number" id="dimInput2" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup3">
+                        <label for="dimInput3" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel3" dir="rtl"></label>
+                        <input type="number" id="dimInput3" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup4">
+                        <label for="dimInput4" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel4" dir="rtl"></label>
+                        <input type="number" id="dimInput4" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup5">
+                        <label for="dimInput5" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel5" dir="rtl"></label>
+                        <input type="number" id="dimInput5" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup6">
+                        <label for="dimInput6" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel6" dir="rtl"></label>
+                        <input type="number" id="dimInput6" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup7">
+                        <label for="dimInput7" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel7" dir="rtl"></label>
+                        <input type="number" id="dimInput7" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup8">
+                        <label for="dimInput8" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel8" dir="rtl"></label>
+                        <input type="number" id="dimInput8" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup9">
+                        <label for="dimInput9" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel9" dir="rtl"></label>
+                        <input type="number" id="dimInput9" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup10">
+                        <label for="dimInput10" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel10" dir="rtl"></label>
+                        <input type="number" id="dimInput10" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup11">
+                        <label for="dimInput11" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel11" dir="rtl"></label>
+                        <input type="number" id="dimInput11" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup12">
+                        <label for="dimInput12" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel12" dir="rtl"></label>
+                        <input type="number" id="dimInput12" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup13">
+                        <label for="dimInput13" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel13" dir="rtl"></label>
+                        <input type="number" id="dimInput13" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup14">
+                        <label for="dimInput14" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel14" dir="rtl"></label>
+                        <input type="number" id="dimInput14" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup15">
+                        <label for="dimInput15" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel15" dir="rtl"></label>
+                        <input type="number" id="dimInput15" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                    <div class="form-group dim-dynamic-input-group" id="dimInputGroup16">
+                        <label for="dimInput16" class="block text-gray-700 text-sm font-bold mb-2" id="dimLabel16" dir="rtl"></label>
+                        <input type="number" id="dimInput16" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="ltr">
+                    </div>
+                </div>
+
+                <!-- General Data Fields -->
+                <div class="form-group">
+                    <label for="dimProjectName" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ???????:</label>
+                    <input type="text" id="dimProjectName" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ???????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="dimLabName" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ??????:</label>
+                    <input type="text" id="dimLabName" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ??????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="dimTestDate" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <input type="date" id="dimTestDate" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="dimPreparedBy" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
+                    <input type="text" id="dimPreparedBy" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ?????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="dimApprovedBy" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">????? ????????:</label>
+                    <input type="text" id="dimApprovedBy" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ????? ????????" dir="rtl">
+                </div>
+                <div class="form-group">
+                    <label for="dimDescription" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
+                    <textarea id="dimDescription" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 resize-none" placeholder="???? ?????" dir="rtl"></textarea>
+                </div>
+
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                    <button id="dimCheckDimensionsBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ???? ?? ???????
+                    </button>
+                    <button id="dimClearAllBtn" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                        ??? ????
+                    </button>
+                    <button id="backToMainFromDimensionalQuality" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
+                        ?????? ??? ??????? ????????
+                    </button>
+                    <button id="exitFromDimensionalQuality" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
+                        ???? ?? ???????
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Exit Message Container (initially hidden) -->
+        <div id="exitMessage" class="form-container text-center">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Application Ended</h2>
+            <p class="text-gray-600 mb-6">Thank you for using the application.</p>
+            <p class="text-sm text-gray-500">You can close this tab now.</p>
+        </div>
+
+    </div>
+
+    <!-- Custom Message Box Modal -->
+    <div id="msgBoxModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h3 id="msgBoxTitle" class="text-xl font-bold text-gray-800 mb-4" dir="rtl"></h3>
+            <p id="msgBoxMessage" class="text-gray-700 text-lg mb-6" dir="rtl"></p>
+            <button id="msgBoxCloseButton" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                OK
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Get references to all form containers
+        const form1 = document.getElementById('form1');
+        const form3 = document.getElementById('form3');
+        const form4 = document.getElementById('form4');
+        const form5 = document.getElementById('form5');
+        const form6 = document.getElementById('form6');
+        const form7 = document.getElementById('form7');
+        const form8 = document.getElementById('form8');
+        const mechanicalTestForm = document.getElementById('mechanicalTestForm');
+        const quantitativeAnalysisForm = document.getElementById('quantitativeAnalysisForm');
+        const faqForm = document.getElementById('faqForm');
+        const faqColumnsForm = document.getElementById('faqColumnsForm');
+        const faqGalvanizationForm = document.getElementById('faqGalvanizationForm');
+        const dinSpecsForm = document.getElementById('dinSpecsForm');
+        const dimensionalQualityForm = document.getElementById('dimensionalQualityForm'); // NEW
+        const exitMessage = document.getElementById('exitMessage');
+
+        // Get references to the message box modal elements
+        const msgBoxModal = document.getElementById('msgBoxModal');
+        const msgBoxTitle = document.getElementById('msgBoxTitle');
+        const msgBoxMessage = document.getElementById('msgBoxMessage');
+        const msgBoxCloseButton = document.getElementById('msgBoxCloseButton');
+
+        // References for Mechanical Test form elements
+        const thicknessInput = document.getElementById('thickness');
+        const yieldInput = document.getElementById('yield');
+        const tensileInput = document.getElementById('tensile');
+        const elongationInput = document.getElementById('elongation');
+        const standardSelect = document.getElementById('standardSelect');
+        const steelTypeSelect = document.getElementById('steelTypeSelect');
+        const projectNameInput = document.getElementById('project_name');
+        const labNameInput = document.getElementById('lab_name');
+        const testDateInput = document.getElementById('test_date');
+        const preparedByInput = document.getElementById('prepared_by');
+        const approvedByInput = document.getElementById('approved_by');
+        const descriptionInput = document.getElementById('description');
+
+        const compareDataBtn = document.getElementById('compareDataBtn');
+        const printReportBtn = document.getElementById('printReportBtn');
+        const exportExcelBtn = document.getElementById('exportExcelBtn');
+        const clearAllBtn = document.getElementById('clearAllBtn');
+        const backToMainFromMechanicalTest = document.getElementById('backToMainFromMechanicalTest');
+        const exitFromMechanicalTest = document.getElementById('exitFromMechanicalTest');
+
+        // References for Quantitative Analysis form elements
+        const standardSelectChem = document.getElementById('standardSelectChem');
+        const steelTypeSelectChem = document.getElementById('steelTypeSelectChem');
+        const carbonInput = document.getElementById('carbonInput');
+        const manganeseInput = document.getElementById('manganeseInput');
+        const siliconInput = document.getElementById('siliconInput');
+        const phosphorusInput = document.getElementById('phosphorusInput');
+        const sulfurInput = document.getElementById('sulfurInput');
+        const chromiumInput = document.getElementById('chromiumInput');
+        const nickelInput = document.getElementById('nickelInput');
+        const molybdenumInput = document.getElementById('molybdenumInput');
+        const chemProjectNameInput = document.getElementById('chemProjectNameInput');
+        // FIX: Corrected IDs for chemical analysis form inputs
+        const chemLabNameInput = document.getElementById('chemLabNameInput');
+        const chemTestDateInput = document.getElementById('chemTestDateInput');
+        const chemPreparedByInput = document.getElementById('chemPreparedByInput');
+        const chemApprovedByInput = document.getElementById('chemApprovedByInput');
+        const chemDescriptionInput = document.getElementById('chemDescriptionInput');
+
+        const compareChemDataBtn = document.getElementById('compareChemDataBtn');
+        const printChemReportBtn = document.getElementById('printChemReportBtn');
+        const exportChemExcelBtn = document.getElementById('exportChemExcelBtn');
+        const clearChemInputsBtn = document.getElementById('clearChemInputsBtn');
+        const backToMainFromQuantitativeAnalysis = document.getElementById('backToMainFromQuantitativeAnalysis');
+        const exitFromQuantitativeAnalysis = document.getElementById('exitFromQuantitativeAnalysis');
+
+        // References for FAQ Form elements
+        const faqQuestionSelect = document.getElementById('faqQuestionSelect');
+        const faqAnswerTextarea = document.getElementById('faqAnswerTextarea');
+        const backToMainFromFaq = document.getElementById('backToMainFromFaq');
+        const exitFromFaq = document.getElementById('exitFromFaq');
+
+        // References for FAQ Columns Form elements
+        const faqColumnsQuestionSelect = document.getElementById('faqColumnsQuestionSelect');
+        const faqColumnsAnswerTextarea = document.getElementById('faqColumnsAnswerTextarea');
+        const backToMainFromFaqColumns = document.getElementById('backToMainFromFaqColumns');
+        const exitFromFaqColumns = document.getElementById('exitFromFaqColumns');
+
+        // References for FAQ Galvanization Form elements
+        const faqGalvanizationQuestionSelect = document.getElementById('faqGalvanizationQuestionSelect');
+        const faqGalvanizationAnswerTextarea = document.getElementById('faqGalvanizationAnswerTextarea');
+        const backToMainFromFaqGalvanization = document.getElementById('backToMainFromFaqGalvanization');
+        const exitFromFaqGalvanization = document.getElementById('exitFromFaqGalvanization'); // FIX: Corrected ID
+
+        // References for DIN Specs Form elements
+        const dinTypeSelect = document.getElementById('dinTypeSelect');
+        const dinStandardSelect = document.getElementById('dinStandardSelect');
+        const dinLabels = [];
+        const dinTextBoxes = [];
+        for (let i = 1; i <= 6; i++) {
+            dinLabels.push(document.getElementById(`dinLabel${i}`));
+            dinTextBoxes.push(document.getElementById(`dinTextBox${i}`));
+        }
+        const dinInputGroups = [];
+        for (let i = 1; i <= 6; i++) {
+            dinInputGroups.push(document.getElementById(`dinInputGroup${i}`));
+        }
+        const dinCheckSpecsBtn = document.getElementById('dinCheckSpecsBtn');
+        const dinClearAllBtn = document.getElementById('dinClearAllBtn');
+        const backToMainFromDinSpecs = document.getElementById('backToMainFromDinSpecs');
+        const exitFromDinSpecs = document.getElementById('exitFromDinSpecs');
+
+        // NEW: References for Dimensional Quality Form elements
+        const dimStandardDisplay = document.getElementById('dimStandardDisplay');
+        const dimSectionTypeSelect = document.getElementById('dimSectionTypeSelect');
+        const dimLabels = [];
+        const dimInputs = [];
+        const dimInputGroups = [];
+        for (let i = 1; i <= 16; i++) {
+            dimLabels.push(document.getElementById(`dimLabel${i}`));
+            dimInputs.push(document.getElementById(`dimInput${i}`));
+            dimInputGroups.push(document.getElementById(`dimInputGroup${i}`));
+        }
+        const dimProjectName = document.getElementById('dimProjectName');
+        const dimLabName = document.getElementById('dimLabName');
+        const dimTestDate = document.getElementById('dimTestDate');
+        const dimPreparedBy = document.getElementById('dimPreparedBy');
+        const dimApprovedBy = document.getElementById('dimApprovedBy');
+        const dimDescription = document.getElementById('dimDescription');
+
+        const dimCheckDimensionsBtn = document.getElementById('dimCheckDimensionsBtn');
+        const dimClearAllBtn = document.getElementById('dimClearAllBtn');
+        const backToMainFromDimensionalQuality = document.getElementById('backToMainFromDimensionalQuality');
+        const exitFromDimensionalQuality = document.getElementById('exitFromDimensionalQuality');
+
+
+        // Global variables for steel specifications (equivalent to VB.NET Dictionaries)
+        const SteelSpecs = {}; // For Mechanical Test
+        const SteelChemSpecs = {}; // For Quantitative Analysis
+
+        // Steel Grades are common to both forms
+        const SteelGrades = {
+            "EN": ["S235JR", "S275JR", "S355JR"],
+            "ASTM": ["A36", "A572 Gr50"],
+            "JIS": ["SS400", "SS540"],
+            "DIN": ["ST37", "ST44", "ST52"]
+        };
+
+        // FAQ Data (equivalent to faqData Dictionary in VB.NET Form5)
+        const faqData = {};
+
+        // FAQ Columns Data (equivalent to faqData Dictionary in VB.NET Form6)
+        const faqColumnsData = {};
+
+        // FAQ Galvanization Data (equivalent to faqData Dictionary in VB.NET Form7)
+        const faqGalvanizationData = {};
+
+        // DIN Fastener Data (equivalent to VB.NET Form8)
+        const DIN_Bolt_Standards = ["DIN 7990", "DIN 933"];
+        const DIN_Nut_Standards = ["DIN 555", "DIN 934"];
+        const DIN_Washer_Standards = ["DIN 125", "DIN 126", "DIN 127"];
+
+        // Data structures for DIN specifications (equivalent to VB.NET classes and dictionaries)
+        // Bolt Specs: Nested structure {diameter: {length: BoltSpec}}
+        const BoltSpecsData = {
+            "DIN 7990": {
+                12: {
+                    30: { ThreadPitch: 1.75, MinHead: 17.57, MaxHead: 18.0, ThreadedLength: 12.25 },
+                    35: { ThreadPitch: 1.75, MinHead: 17.57, MaxHead: 18.0, ThreadedLength: 17.25 },
+                    40: { ThreadPitch: 1.75, MinHead: 17.57, MaxHead: 18.0, ThreadedLength: 22.25 }
+                },
+                16: {
+                    40: { ThreadPitch: 2.0, MinHead: 23.16, MaxHead: 24.0, ThreadedLength: 16.0 },
+                    45: { ThreadPitch: 2.0, MinHead: 23.16, MaxHead: 24.0, ThreadedLength: 21.0 },
+                    50: { ThreadPitch: 2.0, MinHead: 23.16, MaxHead: 24.0, ThreadedLength: 26.0 }
+                },
+                20: {
+                    50: { ThreadPitch: 2.5, MinHead: 29.16, MaxHead: 30.0, ThreadedLength: 25.0 },
+                    60: { ThreadPitch: 2.5, MinHead: 29.16, MaxHead: 30.0, ThreadedLength: 35.0 }
+                },
+                22: {
+                    50: { ThreadPitch: 2.5, MinHead: 31.16, MaxHead: 32.0, ThreadedLength: 25.0 },
+                    60: { ThreadPitch: 2.5, MinHead: 31.16, MaxHead: 32.0, ThreadedLength: 35.0 }
+                },
+                24: {
+                    50: { ThreadPitch: 3.0, MinHead: 35.0, MaxHead: 36.0, ThreadedLength: 25.0 },
+                    60: { ThreadPitch: 3.0, MinHead: 35.0, MaxHead: 36.0, ThreadedLength: 35.0 }
+                },
+                27: {
+                    50: { ThreadPitch: 3.0, MinHead: 40.0, MaxHead: 41.0, ThreadedLength: 25.0 },
+                    60: { ThreadPitch: 3.0, MinHead: 40.0, MaxHead: 41.0, ThreadedLength: 35.0 }
+                },
+                30: {
+                    50: { ThreadPitch: 3.5, MinHead: 45.0, MaxHead: 46.0, ThreadedLength: 25.0 },
+                    60: { ThreadPitch: 3.5, MinHead: 45.0, MaxHead: 46.0, ThreadedLength: 35.0 }
+                }
+            },
+            "DIN 933": {
+                // For DIN 933, threaded length is expected to be close to ActualLength
+                // Specs are based on nominal diameter only for pitch and head size
+                12: { ThreadPitch: 1.75, MinHead: 18.0, MaxHead: 20.0 },
+                16: { ThreadPitch: 2.0, MinHead: 24.0, MaxHead: 26.0 }
+            }
+        };
+
+        // Nut Specs: {diameter: NutSpec}
+        const NutSpecsData = {
+            "DIN 555": {}, // Specs calculated dynamically based on diameter
+            "DIN 934": {}  // Specs calculated dynamically based on diameter
+        };
+
+        // Washer Specs: {diameter: WasherSpec}
+        const WasherSpecsData = {
+            "DIN 125": {}, // Specs calculated dynamically based on diameter
+            "DIN 126": {}, // Specs calculated dynamically based on diameter
+            "DIN 127": {}  // Specs calculated dynamically based on diameter
+        };
+
+        // NEW: Dimensional Quality Data
+        const DimensionalSpecs = {
+            "Angles": {
+                "standard": "EN 10025",
+                "labels": [
+                    "????? ?????? ???? ???????:", "??? ????? ??????? ???????:",
+                    "????? ?????? ???????:", "????? ??????? ???????:",
+                    "????? ?????? ???????:", "????? ??????? ???????:",
+                    "????? ???????? ??????? ???????:", "????? ??????? ??????? ???????:"
+                ],
+                "tolerances": {
+                    "legLength": { "percent": 0.01, "abs": 2 }, // ±1% or ±2mm
+                    "thickness": { "percent": 0.05, "abs": 0.5 }, // ±5% or ±0.5mm
+                    "length": { "percent": 0.002, "absPerMeter": 2 }, // ±0.2% total, or ±2mm/m
+                    "camber": { "percent": 0.002 }, // Max 0.2% of length
+                    "squareness": { "maxAngle": 1, "maxRatio": 0.05 } // Max 1 degree or 0.05t (for 0.05t, need thickness)
+                },
+                "numInputs": 8, // dimInput1 to dimInput8
+                "optionalInputs": [] // None are optional in this set
+            },
+            "Plates": {
+                "standard": "EN 10029",
+                "labels": [
+                    "????? ?????? ???? ?????:", "????? ??????? ???? ?????:",
+                    "????? ?????? ???? ?????:", "????? ??????? ???? ?????:",
+                    "????? ?????? ???? ?????:", "????? ??????? ???? ?????:",
+                    "????? ???????? ??????? camber ???? ?????:"
+                ],
+                "tolerances": {
+                    "lengthWidth": { "percent": 0.005, "abs": 10 }, // ±0.5% or ±10mm
+                    "thickness": { "percent": 0.05, "abs": 0.5 }, // ±5% or ±0.5mm
+                    "camber": { "percent": 0.002 } // Max 0.2% of length
+                },
+                "numInputs": 7, // dimInput1 to dimInput7
+                "optionalInputs": []
+            },
+            "Pipes": {
+                "standard": "EN 10210",
+                "labels": [
+                    "????? ?????? ????????:", "????? ??????? ????????:",
+                    "????? ?????? ????????:", "????? ??????? ????????:",
+                    "????? ?????? ????????:", "????? ??????? ????????:",
+                    "????? ???????? ??????? ????????:"
+                ],
+                "tolerances": {
+                    "diameter": { "percent": 0.005 }, // ±0.5% of nominal diameter
+                    "thickness": { "percent": 0.1, "abs": 0.5 }, // ±10% or ±0.5mm
+                    "length": { "percent": 0.002, "absPerMeter": 2 },
+                    "camber": { "percent": 0.002 } // Max 0.2% of length
+                },
+                "numInputs": 7, // dimInput1 to dimInput7
+                "optionalInputs": []
+            },
+            "Rods": {
+                "standard": "EN 10060",
+                "labels": [
+                    "????? ?????? rod:", "????? ??????? ??rod:",
+                    "????? ?????? ?? rod:", "????? ??????? ??rod:"
+                ],
+                "tolerances": {
+                    "diameter": { "percent": 0.01, "abs": 1 }, // ±1% or ±1mm
+                    "length": { "percent": 0.002, "absPerMeter": 2 }
+                },
+                "numInputs": 4, // dimInput1 to dimInput4
+                "optionalInputs": []
+            },
+            "Sections": { // Beams
+                "standard": "EN 10034",
+                "labels": [
+                    "???????? ?????? ??????:", "???????? ??????? ??????:",
+                    "????? ?????? ??????:", "????? ??????? ??????:",
+                    "????? ?????? ????????:", "????? ??????? ????????:",
+                    "????? ?????? ?????:", "????? ??????? ?????:",
+                    "???? ??? ???????:", "?????? ?? ??????:"
+                ],
+                "tolerances": {
+                    "heightWidth": { "percent": 0.003, "abs": 3 }, // ±0.3% or ±3mm
+                    "flangeWebThickness": { "percent": 0.05, "abs": 0.5 }, // ±5% or ±0.5mm
+                    "squareness": { "abs": 2 }, // ±2mm
+                    "eccentricity": { "abs": 2 } // ±2mm
+                },
+                "numInputs": 10, // dimInput1 to dimInput10
+                "optionalInputs": [8, 9] // dimInput9 (Squareness), dimInput10 (Eccentricity) are optional
+            }
+        };
+
+
+        /**
+         * Shows a specific form and hides all others.
+         * @param {HTMLElement} formToShow - The form element to display.
+         */
+        function showForm(formToShow) {
+            // Hide all form containers first
+            const allForms = [form1, form3, form4, form5, form6, form7, form8, mechanicalTestForm, quantitativeAnalysisForm, faqForm, faqColumnsForm, faqGalvanizationForm, dinSpecsForm, dimensionalQualityForm, exitMessage];
+            allForms.forEach(form => form.classList.add('hidden'));
+            // Show the requested form
+            formToShow.classList.remove('hidden');
+            formToShow.classList.add('block'); // Ensure it's displayed as a block
+        }
+
+        /**
+         * Displays the custom message box modal.
+         * @param {string} message - The message to display.
+         * @param {string} title - The title of the message box.
+         * @param {string} type - 'Information', 'Warning', 'Error' (for styling/icon if needed, though not fully implemented here).
+         * @param {string} buttonText - The text for the close button. Defaults to 'OK'.
+         */
+        function showMsgBox(message, title, type = 'Information', buttonText = 'OK') {
+            msgBoxTitle.textContent = title;
+            msgBoxMessage.textContent = message;
+            msgBoxCloseButton.textContent = buttonText; // Set button text dynamically
+            msgBoxModal.classList.remove('hidden');
+            msgBoxModal.classList.add('flex'); // Use flex to center the modal content
+        }
+
+        /**
+         * Hides the custom message box modal.
+         */
+        function hideMsgBox() {
+            msgBoxModal.classList.add('hidden');
+            msgBoxModal.classList.remove('flex');
+            msgBoxCloseButton.textContent = 'OK'; // Reset button text to 'OK' after closing
+        }
+
+        /**
+         * Initializes the Steel Specifications data for Mechanical Test.
+         */
+        function initializeSteelSpecifications() {
+            // S235JR
+            SteelSpecs["S235JR"] = {
+                "UpTo16mm": { "YieldMin": 235, "TensileMin": 360, "TensileMax": 510, "ElongationMin": 26 },
+                "UpTo40mm": { "YieldMin": 225, "TensileMin": 360, "TensileMax": 510, "ElongationMin": 24 }
+            };
+            // S275JR
+            SteelSpecs["S275JR"] = {
+                "UpTo16mm": { "YieldMin": 275, "TensileMin": 410, "TensileMax": 560, "ElongationMin": 23 },
+                "UpTo40mm": { "YieldMin": 265, "TensileMin": 410, "TensileMax": 560, "ElongationMin": 21 }
+            };
+            // S355JR
+            SteelSpecs["S355JR"] = {
+                "UpTo16mm": { "YieldMin": 355, "TensileMin": 470, "TensileMax": 630, "ElongationMin": 20 },
+                "UpTo40mm": { "YieldMin": 345, "TensileMin": 470, "TensileMax": 630, "ElongationMin": 19 }
+            };
+            // A36
+            SteelSpecs["A36"] = {
+                "UpTo200mm": { "YieldMin": 250, "TensileMin": 400, "TensileMax": 550, "ElongationMin": 20 }
+            };
+            // A572 Gr50
+            SteelSpecs["A572 Gr50"] = {
+                "UpTo50mm": { "YieldMin": 345, "TensileMin": 450, "TensileMax": 550, "ElongationMin": 18 }
+            };
+            // SS400
+            SteelSpecs["SS400"] = {
+                "UpTo40mm": { "YieldMin": 245, "TensileMin": 400, "TensileMax": 510, "ElongationMin": 21 }
+            };
+            // SS540
+            SteelSpecs["SS540"] = {
+                "UpTo16mm": { "YieldMin": 400, "TensileMin": 540, "TensileMax": 680, "ElongationMin": 17 }
+            };
+            // ST37
+            SteelSpecs["ST37"] = {
+                "AnyThickness": { "YieldMin": 235, "TensileMin": 370, "TensileMax": 490, "ElongationMin": 22 }
+            };
+            // ST44
+            SteelSpecs["ST44"] = {
+                "AnyThickness": { "YieldMin": 275, "TensileMin": 440, "TensileMax": 590, "ElongationMin": 20 }
+            };
+            // ST52
+            SteelSpecs["ST52"] = {
+                "AnyThickness": { "YieldMin": 355, "TensileMin": 520, "TensileMax": 680, "ElongationMin": 18 }
+            };
+        }
+
+        /**
+         * Populates the Steel Standard (ComboBox1) and Steel Type (ComboBox2) dropdowns for Mechanical Test.
+         */
+        function populateMechanicalSteelDropdowns() {
+            standardSelect.innerHTML = ''; // Clear existing options
+            Object.keys(SteelGrades).forEach(standard => {
+                const option = document.createElement('option');
+                option.value = standard;
+                option.textContent = standard;
+                standardSelect.appendChild(option);
+            });
+            if (standardSelect.options.length > 0) {
+                standardSelect.value = Object.keys(SteelGrades)[0];
+                updateMechanicalSteelTypeDropdown();
+            }
+        }
+
+        /**
+         * Updates the Steel Type (ComboBox2) dropdown based on the selected standard for Mechanical Test.
+         */
+        function updateMechanicalSteelTypeDropdown() {
+            steelTypeSelect.innerHTML = '';
+            const selectedStandard = standardSelect.value;
+            if (SteelGrades[selectedStandard]) {
+                SteelGrades[selectedStandard].forEach(steelType => {
+                    const option = document.createElement('option');
+                    option.value = steelType;
+                    option.textContent = steelType;
+                    steelTypeSelect.appendChild(option);
+                });
+                steelTypeSelect.selectedIndex = 0;
+            }
+        }
+
+        /**
+         * Clears all input text boxes and text areas in the mechanical test form.
+         */
+        function clearMechanicalTestTextBoxes() {
+            thicknessInput.value = '';
+            yieldInput.value = '';
+            tensileInput.value = '';
+            elongationInput.value = '';
+            projectNameInput.value = '';
+            labNameInput.value = '';
+            testDateInput.value = '';
+            preparedByInput.value = '';
+            approvedByInput.value = '';
+            descriptionInput.value = '';
+            populateMechanicalSteelDropdowns();
+        }
+
+        /**
+         * Helper function to get all input values from the mechanical test form.
+         * @returns {object|null} An object containing all input values, or null if validation fails.
+         */
+        function getMechanicalTestFormValues() {
+            const thickness = parseFloat(thicknessInput.value);
+            const yieldVal = parseFloat(yieldInput.value);
+            const tensile = parseFloat(tensileInput.value);
+            const elongation = parseFloat(elongationInput.value);
+            const steelType = steelTypeSelect.value;
+            const standard = standardSelect.value;
+
+            if (isNaN(thickness) || isNaN(yieldVal) || isNaN(tensile) || isNaN(elongation) ||
+                !steelType || !standard ||
+                !projectNameInput.value.trim() || !labNameInput.value.trim() ||
+                !testDateInput.value.trim() || !preparedByInput.value.trim() ||
+                !approvedByInput.value.trim() || !descriptionInput.value.trim()) {
+                showMsgBox("???? ????? ???? ????????!", "?????", "Warning");
+                return null;
+            }
+
+            return {
+                thickness,
+                yieldVal,
+                tensile,
+                elongation,
+                steelType,
+                standard,
+                projectName: projectNameInput.value.trim(),
+                labName: labNameInput.value.trim(),
+                testDate: testDateInput.value.trim(),
+                preparedBy: preparedByInput.value.trim(),
+                approvedBy: approvedByInput.value.trim(),
+                description: descriptionInput.value.trim()
+            };
+        }
+
+        /**
+         * Performs the steel property comparison and returns the result message for Mechanical Test.
+         * @param {object} data - The input data from the form.
+         * @returns {string|null} The formatted result message, or null if thickness range is not found.
+         */
+        function calculateComparisonResult(data) {
+            const { thickness, yieldVal, tensile, elongation, steelType, standard } = data;
+
+            let thicknessRange = "";
+            const steelTypeSpecs = SteelSpecs[steelType];
+
+            if (!steelTypeSpecs) {
+                showMsgBox("??? ????? ?????? ??? ????? ?? ?????????!", "???", "Error");
+                return null;
+            }
+
+            for (const key in steelTypeSpecs) {
+                if (key.includes("UpTo")) {
+                    const maxThickness = parseFloat(key.replace("UpTo", "").replace("mm", ""));
+                    if (thickness <= maxThickness) {
+                        thicknessRange = key;
+                        break;
+                    }
+                } else {
+                    thicknessRange = key;
+                    break;
+                }
+            }
+
+            if (thicknessRange === "") {
+                showMsgBox("????? ??? ????? ????????? ???????!", "???", "Error");
+                return null;
+            }
+
+            const specs = steelTypeSpecs[thicknessRange];
+
+            const isYieldOK = yieldVal >= specs.YieldMin;
+            const isTensileOK = tensile >= specs.TensileMin && tensile <= specs.TensileMax;
+            const isElongationOK = elongation >= specs.ElongationMin;
+
+            let resultMessage = `?????? ????????:\n`;
+            resultMessage += `???????: ${standard}\n`;
+            resultMessage += `??? ?????: ${steelType}\n`;
+            resultMessage += `?????: ${thickness} ??\n`;
+            resultMessage += `--------------------------------------------------\n`;
+            resultMessage += `??????? ?????????:\n\n`;
+
+            resultMessage += `??????: ${yieldVal} MPa - ${isYieldOK ? "????? ?" : "??? ????? ?"}\n`;
+            resultMessage += `??? ??? ?? ???? ???? ?????? ? ${specs.YieldMin} MPa\n\n`;
+
+            resultMessage += `????: ${tensile} MPa - ${isTensileOK ? "????? ?" : "??? ????? ?"}\n`;
+            resultMessage += `??? ?????? ???? ???? ?? ??????? ??? ${specs.TensileMin} ??? ${specs.TensileMax} MPa\n\n`;
+
+            resultMessage += `?????????: ${elongation}% - ${isElongationOK ? "?????? ?" : "??? ?????? ?"}\n`;
+            resultMessage += `??? ??? ?? ???? ????????? ? ${specs.ElongationMin}%\n\n`;
+
+            resultMessage += `--------------------------------------------------\n`;
+            resultMessage += `?? ????? ??????: ${isYieldOK && isTensileOK && isElongationOK ? "??? ?" : "?? ?"}\n`;
+            resultMessage += `--------------------------------------------------\n`;
+            resultMessage += `??????? ??????:\n`;
+            resultMessage += `??? ???????: ${data.projectName}\n`;
+            resultMessage += `??? ??????: ${data.labName}\n`;
+            resultMessage += `???????: ${data.testDate}\n`;
+            resultMessage += `?????: ${data.preparedBy}\n`;
+            resultMessage += `????? ????????: ${data.approvedBy}\n`;
+            resultMessage += `?????: ${data.description}`;
+
+            return resultMessage;
+        }
+
+        /**
+         * Initializes the Chemical Specifications data.
+         */
+        function initializeChemicalSpecifications() {
+            // S235JR
+            SteelChemSpecs["S235JR"] = {
+                "CMin": 0.17, "CMax": 0.22, "MnMin": 1.2, "MnMax": 1.5, "SiMin": 0.2, "SiMax": 0.55,
+                "PMin": 0.0, "PMax": 0.045, "SMin": 0.0, "SMax": 0.045, "CrMax": 0.1, "NiMax": 0.1, "MoMax": 0.08
+            };
+            // S275JR
+            SteelChemSpecs["S275JR"] = {
+                "CMin": 0.2, "CMax": 0.25, "MnMin": 1.2, "MnMax": 1.5, "SiMin": 0.2, "SiMax": 0.55,
+                "PMin": 0.0, "PMax": 0.045, "SMin": 0.0, "SMax": 0.045, "CrMax": 0.1, "NiMax": 0.1, "MoMax": 0.08
+            };
+            // S355JR
+            SteelChemSpecs["S355JR"] = {
+                "CMin": 0.2, "CMax": 0.24, "MnMin": 1.2, "MnMax": 1.6, "SiMin": 0.2, "SiMax": 0.55,
+                "PMin": 0.0, "PMax": 0.035, "SMin": 0.0, "SMax": 0.035, "CrMax": 0.1, "NiMax": 0.1, "MoMax": 0.08
+            };
+            // A36
+            SteelChemSpecs["A36"] = {
+                "CMin": 0.25, "CMax": 0.29, "MnMin": 0.85, "MnMax": 1.06, "SiMin": 0.2, "SiMax": 0.4,
+                "PMin": 0.0, "PMax": 0.04, "SMin": 0.0, "SMax": 0.05, "CrMax": 0.1, "NiMax": 0.1, "MoMax": 0.08
+            };
+            // A572 Gr50
+            SteelChemSpecs["A572 Gr50"] = {
+                "CMin": 0.15, "CMax": 0.23, "MnMin": 1.0, "MnMax": 1.35, "SiMin": 0.2, "SiMax": 0.4,
+                "PMin": 0.0, "PMax": 0.03, "SMin": 0.0, "SMax": 0.05, "CrMax": 0.1, "NiMax": 0.1, "MoMax": 0.08
+            };
+            // SS400
+            SteelChemSpecs["SS400"] = {
+                "CMin": 0.2, "CMax": 0.25, "MnMin": 0.3, "MnMax": 1.5, "SiMin": 0.2, "SiMax": 0.3,
+                "PMin": 0.0, "PMax": 0.05, "SMin": 0.0, "SMax": 0.05, "CrMax": 0.1, "NiMax": 0.1, "MoMax": 0.08
+            };
+            // ST37
+            SteelChemSpecs["ST37"] = {
+                "CMin": 0.17, "CMax": 0.22, "MnMin": 0.7, "MnMax": 1.4, "SiMin": 0.0, "SiMax": 0.35,
+                "PMin": 0.0, "PMax": 0.045, "SMin": 0.0, "SMax": 0.045, "CrMax": 0.1, "NiMax": 0.1, "MoMax": 0.08
+            };
+            // ST44
+            SteelChemSpecs["ST44"] = {
+                "CMin": 0.2, "CMax": 0.25, "MnMin": 0.7, "MnMax": 1.4, "SiMin": 0.0, "SiMax": 0.35,
+                "PMin": 0.0, "PMax": 0.045, "SMin": 0.0, "SMax": 0.045, "CrMax": 0.1, "NiMax": 0.1, "MoMax": 0.08
+            };
+            // ST52
+            SteelChemSpecs["ST52"] = {
+                "CMin": 0.18, "CMax": 0.24, "MnMin": 1.0, "MnMax": 1.6, "SiMin": 0.0, "SiMax": 0.55,
+                "PMin": 0.0, "PMax": 0.04, "SMin": 0.0, "SMax": 0.04, "CrMax": 0.1, "NiMax": 0.1, "MoMax": 0.08
+            };
+        }
+
+        /**
+         * Populates the Steel Standard (ComboBox1) and Steel Type (ComboBox2) dropdowns for Chemical Analysis.
+         */
+        function populateChemicalSteelDropdowns() {
+            standardSelectChem.innerHTML = '';
+            Object.keys(SteelGrades).forEach(standard => {
+                const option = document.createElement('option');
+                option.value = standard;
+                option.textContent = standard;
+                standardSelectChem.appendChild(option);
+            });
+            if (standardSelectChem.options.length > 0) {
+                standardSelectChem.value = Object.keys(SteelGrades)[0];
+                updateChemicalSteelTypeDropdown();
+            }
+        }
+
+        /**
+         * Updates the Steel Type (ComboBox2) dropdown based on the selected standard for Chemical Analysis.
+         */
+        function updateChemicalSteelTypeDropdown() {
+            steelTypeSelectChem.innerHTML = '';
+            const selectedStandard = standardSelectChem.value;
+            if (SteelGrades[selectedStandard]) {
+                SteelGrades[selectedStandard].forEach(steelType => {
+                    const option = document.createElement('option');
+                    option.value = steelType;
+                    option.textContent = steelType;
+                    steelTypeSelectChem.appendChild(option);
+                });
+                steelTypeSelectChem.selectedIndex = 0;
+            }
+        }
+
+        /**
+         * Clears all input text boxes in the quantitative analysis form.
+         */
+        function clearQuantitativeAnalysisInputs() {
+            carbonInput.value = '';
+            manganeseInput.value = '';
+            siliconInput.value = '';
+            phosphorusInput.value = '';
+            sulfurInput.value = '';
+            chromiumInput.value = '';
+            nickelInput.value = '';
+            molybdenumInput.value = '';
+            chemProjectNameInput.value = '';
+            chemLabNameInput.value = '';
+            chemTestDateInput.value = '';
+            chemPreparedByInput.value = '';
+            chemApprovedByInput.value = '';
+            chemDescriptionInput.value = '';
+            populateChemicalSteelDropdowns(); // Reset dropdowns
+        }
+
+        /**
+         * Helper function to get all input values from the quantitative analysis form.
+         * @returns {object|null} An object containing all input values, or null if validation fails.
+         */
+        function getQuantitativeAnalysisFormValues() {
+            const steelType = steelTypeSelectChem.value;
+            const standard = standardSelectChem.value;
+
+            const C = parseFloat(carbonInput.value);
+            const Mn = parseFloat(manganeseInput.value);
+            const Si = parseFloat(siliconInput.value);
+            const P = parseFloat(phosphorusInput.value);
+            const S = parseFloat(sulfurInput.value);
+            // Optional fields, default to 0 if empty
+            const Cr = parseFloat(chromiumInput.value || 0.0);
+            const Ni = parseFloat(nickelInput.value || 0.0);
+            const Mo = parseFloat(molybdenumInput.value || 0.0);
+
+            // Check if all required fields are filled
+            if (isNaN(C) || isNaN(Mn) || isNaN(Si) || isNaN(P) || isNaN(S) ||
+                !steelType || !standard ||
+                !chemProjectNameInput.value.trim() || !chemLabNameInput.value.trim() ||
+                !chemTestDateInput.value.trim() || !chemPreparedByInput.value.trim() ||
+                !chemApprovedByInput.value.trim() || !chemDescriptionInput.value.trim()) {
+                showMsgBox(
+                    "???? ????? ???????? ????????? ??? ????????!\n" +
+                    "- ??? ?????\n" +
+                    "- ???????\n" +
+                    "- ????????\n" +
+                    "- ????????\n" +
+                    "- ????????\n" +
+                    "- ???????",
+                    "?????", "Warning"
+                );
+                return null;
+            }
+
+            return {
+                C, Mn, Si, P, S, Cr, Ni, Mo,
+                steelType,
+                standard,
+                projectName: chemProjectNameInput.value.trim(),
+                labName: chemLabNameInput.value.trim(),
+                testDate: chemTestDateInput.value.trim(),
+                preparedBy: chemPreparedByInput.value.trim(),
+                approvedBy: chemApprovedByInput.value.trim(),
+                description: chemDescriptionInput.value.trim()
+            };
+        }
+
+        /**
+         * Performs the chemical analysis comparison and returns the result message.
+         * @param {object} data - The input data from the form.
+         * @returns {string|null} The formatted result message, or null if steel type specs are not found.
+         */
+        function calculateChemicalAnalysisResult(data) {
+            const { C, Mn, Si, P, S, Cr, Ni, Mo, steelType, standard } = data;
+
+            const specs = SteelChemSpecs[steelType];
+
+            if (!specs) {
+                showMsgBox("?? ???? ??????? ???????? ?????? ???? ????? ?? ?????.", "???", "Error");
+                return null;
+            }
+
+            // Get min/max values, default to 0 if not present in specs (for optional ranges)
+            const CMin = specs.CMin !== undefined ? specs.CMin : 0.0;
+            const CMax = specs.CMax !== undefined ? specs.CMax : Infinity;
+            const MnMin = specs.MnMin !== undefined ? specs.MnMin : 0.0;
+            const MnMax = specs.MnMax !== undefined ? specs.MnMax : Infinity;
+            const SiMin = specs.SiMin !== undefined ? specs.SiMin : 0.0;
+            const SiMax = specs.SiMax !== undefined ? specs.SiMax : Infinity;
+            const PMin = specs.PMin !== undefined ? specs.PMin : 0.0;
+            const PMax = specs.PMax !== undefined ? specs.PMax : Infinity;
+            const SMin = specs.SMin !== undefined ? specs.SMin : 0.0;
+            const SMax = specs.SMax !== undefined ? specs.SMax : Infinity;
+            const CrMax = specs.CrMax !== undefined ? specs.CrMax : Infinity;
+            const NiMax = specs.NiMax !== undefined ? specs.NiMax : Infinity;
+            const MoMax = specs.MoMax !== undefined ? specs.MoMax : Infinity;
+
+
+            const IsCOk = C >= CMin && C <= CMax;
+            const IsMnOk = Mn >= MnMin && Mn <= MnMax;
+            const IsSiOk = Si >= SiMin && Si <= SiMax;
+            const IsPOk = P >= PMin && P <= PMax;
+            const IsSOk = S >= SMin && S <= SMax;
+            const IsCrOk = Cr <= CrMax;
+            const IsNiOk = Ni <= NiMax;
+            const IsMoOk = Mo <= MoMax;
+
+            const IsAllRequiredOk = IsCOk && IsMnOk && IsSiOk && IsPOk && IsSOk;
+            const IsAllOptionalOk = IsCrOk && IsNiOk && IsMoOk; // Check optional elements too
+
+            let resultMessage = `????? ??????? ?????????:\n`;
+            resultMessage += `???????: ${standard}\n`;
+            resultMessage += `??? ?????: ${steelType}\n`;
+            resultMessage += `--------------------------------------------------\n`;
+            resultMessage += `??????? ?????????:\n\n`;
+
+            // Carbon
+            resultMessage += `??????? (C): ${C.toFixed(2)}% - ${IsCOk ? "????? ?" : "??? ????? ?"}\n`;
+            resultMessage += `????????: ??? ${CMin.toFixed(2)}% ??? ${CMax.toFixed(2)}%\n\n`;
+
+            // Manganese
+            resultMessage += `???????? (Mn): ${Mn.toFixed(2)}% - ${IsMnOk ? "????? ?" : "??? ????? ?"}\n`;
+            resultMessage += `????????: ??? ${MnMin.toFixed(2)}% ??? ${MnMax.toFixed(2)}%\n\n`;
+
+            // Silicon
+            resultMessage += `???????? (Si): ${Si.toFixed(2)}% - ${IsSiOk ? "????? ?" : "??? ????? ?"}\n`;
+            resultMessage += `????????: ??? ${SiMin.toFixed(2)}% ??? ${SiMax.toFixed(2)}%\n\n`;
+
+            // Phosphorus
+            resultMessage += `???????? (P): ${P.toFixed(2)}% - ${IsPOk ? "????? ?" : "??? ????? ?"}\n`;
+            resultMessage += `????????: ??? ${PMin.toFixed(2)}% ??? ${PMax.toFixed(2)}%\n\n`;
+
+            // Sulfur
+            resultMessage += `??????? (S): ${S.toFixed(2)}% - ${IsSOk ? "????? ?" : "??? ????? ?"}\n`;
+            resultMessage += `????????: ??? ${SMin.toFixed(2)}% ??? ${SMax.toFixed(2)}%\n\n`;
+
+            // Chromium (Optional)
+            resultMessage += `?????? (Cr): ${Cr.toFixed(2)}% - ${IsCrOk ? "????? ?" : "??? ????? ?"}\n`;
+            resultMessage += `???? ?????? ??????? ??: ? ${CrMax.toFixed(2)}%\n\n`;
+
+            // Nickel (Optional)
+            resultMessage += `?????? (Ni): ${Ni.toFixed(2)}% - ${IsNiOk ? "????? ?" : "??? ????? ?"}\n`;
+            resultMessage += `???? ?????? ??????? ??: ? ${NiMax.toFixed(2)}%\n\n`;
+
+            // Molybdenum (Optional)
+            resultMessage += `???????????? (Mo): ${Mo.toFixed(2)}% - ${IsMoOk ? "????? ?" : "??? ????? ?"}\n`;
+            resultMessage += `???? ?????? ??????? ??: ? ${MoMax.toFixed(2)}%\n\n`;
+
+            // Overall Result
+            resultMessage += `--------------------------------------------------\n`;
+            resultMessage += `?? ??????? ??????: ${IsAllRequiredOk && IsAllOptionalOk ? "??? ?" : "?? ?"}\n`;
+            resultMessage += `--------------------------------------------------\n`;
+            resultMessage += `??????? ??????:\n`;
+            resultMessage += `??? ???????: ${data.projectName}\n`;
+            resultMessage += `??? ??????: ${data.labName}\n`;
+            resultMessage += `???????: ${data.testDate}\n`;
+            resultMessage += `?????: ${data.preparedBy}\n`;
+            resultMessage += `????? ????????: ${data.approvedBy}\n`;
+            resultMessage += `?????: ${data.description}`;
+
+            return resultMessage;
+        }
+
+        /**
+         * Initializes the FAQ data for Towers.
+         */
+        function initializeFAQ() {
+            faqData[""] = ""; // Empty entry as per VB.NET
+            faqData["What are the dimensional tolerances for tower/mast sections?"] =
+                "Length deviations: ±2 mm/m (up to 10m), ±0.2% total length (>10m)\n" +
+                "Straightness: Max 3 mm deviation over entire length\n" +
+                "Circularity: ?0.5% nominal diameter (tubular sections)";
+            faqData["What are the requirements for bolt hole positions?"] =
+                "Hole spacing: ±1 mm\n" +
+                "Hole diameter: +0.5 mm / -0 mm (for bolts ?M24)\n" +
+                "Edge distance: ±2 mm (min 1.2 x bolt diameter)";
+            faqData["What are the EXC classifications?"] =
+                "EXC1: Basic requirements for non-critical structures\n" +
+                "EXC2: Standard requirements\n" +
+                "EXC3: Comprehensive requirements (e.g., bridges)\n" +
+                "EXC4: Highest requirements (special applications)";
+            faqData["1. Length of components"] =
+                "Parameter: Cut length measured on the centreline (or on the corner for an angle)\n" +
+                "Class 1: ? = ±1 mm\n" +
+                "Class 2: ? = ±2 mm";
+            faqData["2. Length or spacing"] =
+                "Parameter: If minimum dimensions are specified\n" +
+                "Class 1: -? = 0mm, +? = 1 mm\n" +
+                "Class 2: -? = 0mm, +? = 1 mm";
+            faqData["3. Back marks for angles"] =
+                "Parameter: Distance from heel of angle to centre of hole\n" +
+                "Class 1: ? = ±0,5 mm\n" +
+                "Class 2: ? = ±1 mm";
+            faqData["4. Squareness of cut edges"] =
+                "Parameter: Deviation A of a cut edge from 90°\n" +
+                "Class 1: ? = ±0,05t\n" +
+                "Class 2: ? = ±0,05t";
+            faqData["5. Squareness of ends"] =
+                "Parameters:\n" +
+                "- Squareness to longitudinal axis\n" +
+                "- Ends intended for full contact bearing: ? = ±D/300\n" +
+                "- Ends not intended for full contact bearing: ? = ±D/1000\n" +
+                "(Applies to both Class 1 and Class 2)";
+            faqData["6. Surfaces for full contact in bearing"] =
+                "Parameter: Flatness\n" +
+                "Class 1: 1 in 1500\n" +
+                "Class 2: 1 in 1500";
+            faqData["7. Position of holes for fasteners"] =
+                "Parameter: Deviation A of centreline of individual hole\n" +
+                "Class 1: ? = ±1 mm\n" +
+                "Class 2: ? = ±2 mm";
+            faqData["8. Position of hole group"] =
+                "Parameter: Deviation A of hole group from intended position\n" +
+                "Class 1: ? = ±1 mm\n" +
+                "Class 2: ? = ±2 mm";
+            faqData["9. Spacing of hole groups"] =
+                "Parameter: Deviation A in spacing c between centres\n" +
+                "Class 1: ? = ±0,5 mm\n" +
+                "Class 2: ? = ±1,5 mm";
+        }
+
+        /**
+         * Populates the FAQ question dropdown for Towers.
+         */
+        function populateFaqQuestions() {
+            faqQuestionSelect.innerHTML = ''; // Clear existing options
+            // Add a default empty option as per VB.NET behavior
+            const defaultOption = document.createElement('option');
+            defaultOption.value = "";
+            defaultOption.textContent = "???? ??????...";
+            faqQuestionSelect.appendChild(defaultOption);
+
+            for (const question in faqData) {
+                if (question !== "") { // Skip the initial empty entry
+                    const option = document.createElement('option');
+                    option.value = question;
+                    option.textContent = question;
+                    faqQuestionSelect.appendChild(option);
+                }
+            }
+            // Set initial answer if a default question is selected, or clear
+            if (faqQuestionSelect.value) {
+                faqAnswerTextarea.value = faqData[faqQuestionSelect.value];
+            } else {
+                faqAnswerTextarea.value = '';
+            }
+        }
+
+        /**
+         * Initializes the FAQ data for Columns.
+         */
+        function initializeFAQColumns() {
+            faqColumnsData[""] = "";
+            faqColumnsData["?? ?? ????????? ???????? ?????? ??????? ??????????"] =
+                "- ??? ?? ???? ??????? ??? ???????? ??????? ?? EN 1090-2\n" +
+                "- ?????????: ?????? ???? 3 ?? ??? 10 ????? ?? ????? ????????\n" +
+                "- ????? ??????? ??????? ?????????: ±0.5% ?? ????? ??????";
+            faqColumnsData["?? ?? ?????? ??? ??????? ??????????"] =
+                "- ????? ??? 10 ?????: ±2 ?? ??? ???\n" +
+                "- ????? ??? 10 ?????: ±0.2% ?? ????? ?????\n" +
+                "- ???????? ?????: ?? ???? ?? 1/1000 ?? ????? ????????";
+            faqColumnsData["?? ?? ??????? ????? ?????? ?? ????????"] =
+                "- ??????? ??? ??????: ±1 ??\n" +
+                "- ??? ?????: +0.5 ?? / -0 ?? (???????? ??? M24)\n" +
+                "- ??????? ?? ??????: ?? ??? ?? 1.2 × ??? ??????? ?? ???? ±2 ??";
+            faqColumnsData["?? ?? ??????? EXC ??????? ?????????"] =
+                "EXC1: ??????? ?????? ??????? ??? ??????\n" +
+                "EXC2: ??????? ?????? ??????? ???????\n" +
+                "EXC3: ??????? ????? ?????? ????????\n" +
+                "EXC4: ??????? ????? ?????? ???? (??? ???????)";
+            faqColumnsData["1. ??? ????????"] =
+                "?????: ???? ????? ??? ?? ????? (?? ??????? ?? ???? ???????)\n" +
+                "????? 1: ? = ±1 ??\n" +
+                "????? 2: ? = ±2 ??";
+            faqColumnsData["2. ??????? ?? ????? ??? ??????"] =
+                "?????: ??? ???? ??????? ?????? ?????\n" +
+                "????? 1: -? = 0 ??? +? = 1 ??\n" +
+                "????? 2: -? = 0 ??? +? = 1 ??";
+            faqColumnsData["3. ??????? ?? ????? ??????? ??? ???? ?????"] =
+                "?????: ??????? ?? ??????? ???????? ??? ???? ?????\n" +
+                "????? 1: ? = ±0.5 ??\n" +
+                "????? 2: ? = ±1 ??";
+            faqColumnsData["4. ??????? ?????? ????????"] =
+                "?????: ?????? ?????? ???????? ?? ??????? 90°\n" +
+                "????? 1: ? = ±0.05 × ?????\n" +
+                "????? 2: ? = ±0.05 × ?????";
+            faqColumnsData["5. ??????? ???????"] =
+                "?????:\n" +
+                "- ??????? ????? ??????? ??? ?????? ??????\n" +
+                "- ??????? ??????? ??????? ??????: ? = ±D/300\n" +
+                "- ??????? ??? ??????? ??????? ??????: ? = ±D/1000\n" +
+                "(????? ??? ??????? 1 ? 2)";
+            faqColumnsData["6. ?????? ??????? ??????? ??????"] =
+                "?????: ?????? ?????\n" +
+                "????? 1: 1 ?? 1500\n" +
+                "????? 2: 1 ?? 1500";
+            faqColumnsData["7. ???? ???? ???????"] =
+                "?????: ?????? ?? ????? ????? ??????\n" +
+                "????? 1: ? = ±1 ??\n" +
+                "????? 2: ? = ±2 ??";
+            faqColumnsData["8. ???? ?????? ??????"] =
+                "?????: ?????? ?????? ?????? ?? ?????? ??????\n" +
+                "????? 1: ? = ±1 ??\n" +
+                "????? 2: ? = ±2 ??";
+            faqColumnsData["9. ??????? ??? ??????? ??????"] =
+                "?????: ?????? ??????? c ??? ???????\n" +
+                "????? 1: ? = ±0.5 ??\n" +
+                "????? 2: ? = ±1.5 ??";
+        }
+
+        /**
+         * Populates the FAQ question dropdown for Columns.
+         */
+        function populateFaqColumnsQuestions() {
+            faqColumnsQuestionSelect.innerHTML = ''; // Clear existing options
+            const defaultOption = document.createElement('option');
+            defaultOption.value = "";
+            defaultOption.textContent = "???? ??????...";
+            faqColumnsQuestionSelect.appendChild(defaultOption);
+
+            for (const question in faqColumnsData) {
+                if (question !== "") {
+                    const option = document.createElement('option');
+                    option.value = question;
+                    option.textContent = question;
+                    faqColumnsQuestionSelect.appendChild(option);
+                }
+            }
+            if (faqColumnsQuestionSelect.value) {
+                faqColumnsAnswerTextarea.value = faqColumnsData[faqColumnsQuestionSelect.value];
+            } else {
+                faqColumnsAnswerTextarea.value = '';
+            }
+        }
+
+        /**
+         * Initializes the FAQ data for Galvanization.
+         */
+        function initializeFAQGalvanization() {
+            faqGalvanizationData[""] = "";
+            faqGalvanizationData["?? ?? ???????? ???????? ??????? ??? ?????? (Hot-Dip Galvanizing)?"] =
+                "? ISO 1461:2009\n" +
+                "??? ???????? ??????? ?????? ????????? ?????? ??????? ???? ????? ?????? ?????? ??? ?????? ?????? ??????.\n\n" +
+                "?? ?????? ????????:\n" +
+                "????? ??????: \"Hot dip galvanized coatings on iron and steel articles – Specifications and test methods\"\n" +
+                "?????: ????? ??????? ??? ?????? ????? ???? ????? ?????? ?? ????? ??????? ??? ??????? ???????? ??? ??? ????? ?????????.";
+            faqGalvanizationData["?? ?? ??????? ??? ???? ????? ?? ??????? ??? ???????"] =
+                "??? ?????? (Coating Thickness):\n" +
+                "- ????? ??? ??? ?????? ???????.\n" +
+                "- ?????:\n" +
+                "    • ??? ?? 3 ??: ???? ?????? 85 ??????\n" +
+                "    • 3–6 ??: 85–100 ??????\n" +
+                "    • ???? ?? 6 ??: ??? 120 ??????";
+            faqGalvanizationData["?? ?? ??????? ????? ???? ????? ?? ?????? ?????????"] =
+                "??????? (Adhesion):\n" +
+                "- ??? ?? ???? ?????? ???????? ?? ?????? ????????.\n" +
+                "- ??? ??????? ???????? ??? ?? ??? ???? ??? ?? ????? ?????.";
+            faqGalvanizationData["?? ?? ??????? ???? ??? ????? ??? ????????"] =
+                "?????? ?????? (Appearance):\n" +
+                "- ??? ?? ???? ??? ????? ??????.\n" +
+                "- ???? ?? ?????? ??? ???????? ?? ?????? ?? ????????.";
+            faqGalvanizationData["??? ??? ?????? ?????? ???? ????? ???????"] =
+                "?????? ??????:\n" +
+                "- ?????? ???????? ?????? ???? ?????? (Salt Spray Test) ?????? ?????? ?????? ?????.";
+            faqGalvanizationData["?? ?? ??? ????? ????????? ?? ISO 1461?"] =
+                "?? ??? ?????:\n" +
+                "- ???? ????? ???????? ????? ????????? ?? ?????????????\n" +
+                "- ?????? ??????? ???????? ????? ?????\n" +
+                "- ????? ?????? ????? ?? ??????\n" +
+                "- ?????? ?????? (Salt Spray Test)";
+            faqGalvanizationData["?? ???? ?????? ??????? ????? ????????"] =
+                "???? EN ISO 1461:2009\n" +
+                "- ?? ??? ????? ISO 1461 ???? ?? ???????? ?????? ?????? ????????? ??????? (CEN).";
+            faqGalvanizationData["?? ????? ISO 1461 ?? EN 1090?"] =
+                "?? ????? ISO 1461 ?? EN 1090:\n" +
+                "- ???? EN 1090-2 ??? ISO 1461 ?????? ????? ????? ??????? ??? ?????? ?? ??????? ???????? ???:\n" +
+                "    • ??????? ?????????\n" +
+                "    • ???????\n" +
+                "    • ??????? ???????";
+            faqGalvanizationData["????? ??????? ?????? ??????? ISO 1461?"] =
+                "?? ???????:\n" +
+                "- ???? ????? ????? ?? ?????? ?????? ?? ?????? ??????? ????????.\n" +
+                "- ?????? ???? ???? ??:\n" +
+                "    • ????? ????????\n" +
+                "    • ??????\n" +
+                "    • ??????? ?????????\n" +
+                "    • ?????? ?????? ??????";
+        }
+
+        /**
+         * Populates the FAQ question dropdown for Galvanization.
+         */
+        function populateFaqGalvanizationQuestions() {
+            faqGalvanizationQuestionSelect.innerHTML = ''; // Clear existing options
+            const defaultOption = document.createElement('option');
+            defaultOption.value = "";
+            defaultOption.textContent = "???? ??????...";
+            faqGalvanizationQuestionSelect.appendChild(defaultOption);
+
+            for (const question in faqGalvanizationData) {
+                if (question !== "") {
+                    const option = document.createElement('option');
+                    option.value = question;
+                    option.textContent = question;
+                    faqGalvanizationQuestionSelect.appendChild(option);
+                }
+            }
+            if (faqGalvanizationQuestionSelect.value) {
+                faqGalvanizationAnswerTextarea.value = faqGalvanizationData[faqGalvanizationQuestionSelect.value];
+            } else {
+                faqGalvanizationAnswerTextarea.value = '';
+            }
+        }
+
+        // Functions for DIN Specs Form (Form8)
+        /**
+         * Initializes the DIN type dropdown.
+         */
+        function initializeDinTypeDropdown() {
+            dinTypeSelect.innerHTML = '';
+            ['Bolt', 'Nut', 'Washer'].forEach(type => {
+                const option = document.createElement('option');
+                option.value = type;
+                option.textContent = type;
+                dinTypeSelect.appendChild(option);
+            });
+            if (dinTypeSelect.options.length > 0) {
+                dinTypeSelect.selectedIndex = 0;
+                updateDinStandardDropdown();
+            }
+        }
+
+        /**
+         * Updates the DIN standard dropdown based on the selected type.
+         */
+        function updateDinStandardDropdown() {
+            dinStandardSelect.innerHTML = '';
+            const selectedType = dinTypeSelect.value;
+            let standards = [];
+            switch (selectedType) {
+                case "Bolt":
+                    standards = DIN_Bolt_Standards;
+                    break;
+                case "Nut":
+                    standards = DIN_Nut_Standards;
+                    break;
+                case "Washer":
+                    standards = DIN_Washer_Standards;
+                    break;
+            }
+            standards.forEach(standard => {
+                const option = document.createElement('option');
+                option.value = standard;
+                option.textContent = standard;
+                dinStandardSelect.appendChild(option);
+            });
+            if (dinStandardSelect.options.length > 0) {
+                dinStandardSelect.selectedIndex = 0;
+            }
+            adjustDinUI();
+        }
+
+        /**
+         * Adjusts the visibility of labels and textboxes based on the selected DIN type.
+         */
+        function adjustDinUI() {
+            const selectedType = dinTypeSelect.value;
+
+            // Hide all input groups and clear textboxes first
+            dinInputGroups.forEach(group => group.style.display = 'none');
+            dinTextBoxes.forEach(input => input.value = '');
+
+            switch (selectedType) {
+                case "Bolt":
+                    dinLabels[0].textContent = "Nominal Diameter (M):";
+                    dinLabels[1].textContent = "Nominal Length:";
+                    dinLabels[2].textContent = "Actual Thread Pitch:";
+                    dinLabels[3].textContent = "Actual Head Size:";
+                    dinLabels[4].textContent = "Actual Length:";
+                    dinLabels[5].textContent = "Actual Threaded Length:";
+                    for (let i = 0; i < 6; i++) {
+                        dinInputGroups[i].style.display = 'block';
+                    }
+                    break;
+                case "Nut":
+                    dinLabels[0].textContent = "Nut Diameter:";
+                    dinLabels[1].textContent = "Actual Size:";
+                    dinLabels[2].textContent = "Actual Thickness:";
+                    dinInputGroups[0].style.display = 'block';
+                    dinInputGroups[1].style.display = 'block';
+                    dinInputGroups[2].style.display = 'block';
+                    break;
+                case "Washer":
+                    dinLabels[0].textContent = "Nominal Diameter:";
+                    dinLabels[1].textContent = "Outer Diameter:";
+                    dinLabels[2].textContent = "Inner Diameter:";
+                    dinLabels[3].textContent = "Thickness:";
+                    for (let i = 0; i < 4; i++) {
+                        dinInputGroups[i].style.display = 'block';
+                    }
+                    break;
+            }
+        }
+
+        /**
+         * Clears all input text boxes in the DIN specs form.
+         */
+        function clearDinInputs() {
+            dinTextBoxes.forEach(input => input.value = '');
+            initializeDinTypeDropdown(); // Reset dropdowns and UI
+        }
+
+        /**
+         * Retrieves the specification for a bolt.
+         * @param {string} din - The DIN standard (e.g., "DIN 7990", "DIN 933").
+         * @param {number} diameter - Nominal diameter.
+         * @param {number} length - Nominal length (for DIN 7990).
+         * @returns {object} The bolt specification.
+         * @throws {Error} If specs are not found.
+         */
+        function getBoltSpec(din, diameter, length) {
+            if (din === "DIN 7990") {
+                if (BoltSpecsData["DIN 7990"][diameter] && BoltSpecsData["DIN 7990"][diameter][length]) {
+                    return BoltSpecsData["DIN 7990"][diameter][length];
+                } else {
+                    throw new Error(`No specs for M${diameter}x${length} in ${din}`);
+                }
+            } else if (din === "DIN 933") {
+                if (BoltSpecsData["DIN 933"][diameter]) {
+                    // For DIN 933, threaded length is actual length
+                    // Create a copy of the base spec and add ThreadedLength
+                    const baseSpec = BoltSpecsData["DIN 933"][diameter];
+                    return { ...baseSpec, ThreadedLength: length };
+                } else {
+                    throw new Error(`No specs for M${diameter} in ${din}`);
+                }
+            } else {
+                throw new Error(`Unsupported standard: ${din}`);
+            }
+        }
+
+        /**
+         * Retrieves the specification for a nut.
+         * @param {string} din - The DIN standard (e.g., "DIN 555", "DIN 934").
+         * @param {number} diameter - Nominal diameter.
+         * @returns {object} The nut specification.
+         * @throws {Error} If standard is unsupported.
+         */
+        function getNutSpec(din, diameter) {
+            switch (din) {
+                case "DIN 555":
+                    return {
+                        MinSize: diameter * 1.5,
+                        MaxSize: diameter * 1.7,
+                        Thickness: diameter * 0.8
+                    };
+                case "DIN 934":
+                    return {
+                        MinSize: diameter * 1.8,
+                        MaxSize: diameter * 2.1,
+                        Thickness: diameter * 0.9
+                    };
+                default:
+                    throw new Error(`Unsupported standard: ${din}`);
+            }
+        }
+
+        /**
+         * Retrieves the specification for a washer.
+         * @param {string} din - The DIN standard (e.g., "DIN 125", "DIN 126", "DIN 127").
+         * @param {number} diameter - Nominal diameter.
+         * @returns {object} The washer specification.
+         * @throws {Error} If standard is unsupported.
+         */
+        function getWasherSpec(din, diameter) {
+            switch (din) {
+                case "DIN 125":
+                    return {
+                        MinOuter: diameter * 2.0,
+                        MaxOuter: diameter * 2.4,
+                        InnerDiameter: diameter + 0.5,
+                        Thickness: diameter * 0.2
+                    };
+                case "DIN 126":
+                    return {
+                        MinOuter: diameter * 2.2,
+                        MaxOuter: diameter * 2.6,
+                        InnerDiameter: diameter + 0.6,
+                        Thickness: diameter * 0.25
+                    };
+                case "DIN 127":
+                    return {
+                        MinOuter: diameter * 1.8,
+                        MaxOuter: diameter * 2.2,
+                        InnerDiameter: diameter + 0.4,
+                        Thickness: diameter * 0.18
+                    };
+                default:
+                    throw new Error(`Unsupported standard: ${din}`);
+            }
+        }
+
+        /**
+         * Checks bolt specifications against actual values.
+         * @param {number[]} values - Array of input values.
+         * @param {object} spec - The bolt specification.
+         * @param {string[]} errors - Array to collect error messages.
+         * @param {string} selectedDIN - The selected DIN standard.
+         */
+        function checkBolt(values, spec, errors, selectedDIN) {
+            if (values[2] !== spec.ThreadPitch) {
+                errors.push(`? Thread Pitch: ${values[2]} (Expected: ${spec.ThreadPitch})`);
+            }
+            if (values[3] < spec.MinHead || values[3] > spec.MaxHead) {
+                errors.push(`? Head Size: ${values[3]} (Range: ${spec.MinHead}-${spec.MaxHead})`);
+            }
+            const lengthTolerance = 1.25;
+            if (Math.abs(values[4] - values[1]) > lengthTolerance) {
+                errors.push(`? Actual Length: ${values[4]} (Nominal: ${values[1]}, Tolerance: ±${lengthTolerance})`);
+            }
+            if (selectedDIN === "DIN 7990") {
+                const threadedTolerance = 1.5;
+                if (Math.abs(values[5] - spec.ThreadedLength) > threadedTolerance) {
+                    errors.push(`? Threaded Length: ${values[5]} (Expected: ${spec.ThreadedLength} ±${threadedTolerance})`);
+                }
+            } else if (selectedDIN === "DIN 933") {
+                const threadedTolerance = 1.5; // Tolerance for threaded length being close to actual length
+                if (Math.abs(values[5] - values[4]) > threadedTolerance) {
+                    errors.push(`? Threaded Length: ${values[5]} (Should equal actual length ${values[4]} ±${threadedTolerance})`);
+                }
+            }
+        }
+
+        /**
+         * Checks nut specifications against actual values.
+         * @param {number[]} values - Array of input values.
+         * @param {object} spec - The nut specification.
+         * @param {string[]} errors - Array to collect error messages.
+         */
+        function checkNut(values, spec, errors) {
+            if (values[1] < spec.MinSize || values[1] > spec.MaxSize) {
+                errors.push(`? Actual Size: ${values[1]} (Range: ${spec.MinSize.toFixed(2)}-${spec.MaxSize.toFixed(2)})`);
+            }
+            const thicknessTolerance = 0.2;
+            if (Math.abs(values[2] - spec.Thickness) > thicknessTolerance) {
+                errors.push(`? Actual Thickness: ${values[2]} (Expected: ${spec.Thickness.toFixed(2)} ±${thicknessTolerance})`);
+            }
+        }
+
+        /**
+         * Checks washer specifications against actual values.
+         * @param {number[]} values - Array of input values.
+         * @param {object} spec - The washer specification.
+         * @param {string[]} errors - Array to collect error messages.
+         */
+        function checkWasher(values, spec, errors) {
+            if (values[1] < spec.MinOuter || values[1] > spec.MaxOuter) {
+                errors.push(`? Outer Diameter: ${values[1]} (Range: ${spec.MinOuter.toFixed(2)}-${spec.MaxOuter.toFixed(2)})`);
+            }
+            if (values[2] !== spec.InnerDiameter) {
+                errors.push(`? Inner Diameter: ${values[2]} (Expected: ${spec.InnerDiameter})`);
+            }
+            if (values[3] !== spec.Thickness) {
+                errors.push(`? Thickness: ${values[3]} (Expected: ${spec.Thickness})`);
+            }
+        }
+
+        /**
+         * Generates a report for a bolt.
+         * @param {string} din - The DIN standard.
+         * @param {number[]} values - Input values.
+         * @param {object} spec - Bolt specification.
+         * @param {string[]} errors - Collected errors.
+         * @returns {string} The formatted report.
+         */
+        function generateBoltReport(din, values, spec, errors) {
+            let report = `Type: Bolt (${din})\n`;
+            report += `Nominal Description: M${values[0]}x${values[1]}\n`;
+            report += `Entered Measurements:\n`;
+            report += `- Thread Pitch: ${values[2]} mm\n`;
+            report += `- Head Size: ${values[3]} mm\n`;
+            report += `- Actual Length: ${values[4]} mm\n`;
+            report += `- Threaded Length: ${values[5]} mm\n`;
+            report += errors.length === 0 ? "? Conforms to specifications" : `? Does not conform:\n${errors.join('\n')}`;
+            return report;
+        }
+
+        /**
+         * Generates a report for a nut.
+         * @param {string} din - The DIN standard.
+         * @param {number[]} values - Input values.
+         * @param {object} spec - Nut specification.
+         * @param {string[]} errors - Collected errors.
+         * @returns {string} The formatted report.
+         */
+        function generateNutReport(din, values, spec, errors) {
+            let report = `Type: Nut (${din})\n`;
+            report += `Entered Measurements:\n`;
+            report += `- Diameter: ${values[0]} mm\n`;
+            report += `- Actual Size: ${values[1]} mm\n`;
+            report += `- Actual Thickness: ${values[2]} mm\n`;
+            report += errors.length === 0 ? "? Conforms to specifications" : `? Does not conform:\n${errors.join('\n')}`;
+            return report;
+        }
+
+        /**
+         * Generates a report for a washer.
+         * @param {string} din - The DIN standard.
+         * @param {number[]} values - Input values.
+         * @param {object} spec - Washer specification.
+         * @param {string[]} errors - Collected errors.
+         * @returns {string} The formatted report.
+         */
+        function generateWasherReport(din, values, spec, errors) {
+            let report = `Type: Washer (${din})\n`;
+            report += `Entered Measurements:\n`;
+            report += `- Nominal Diameter: ${values[0]} mm\n`;
+            report += `- Outer Diameter: ${values[1]} mm\n`;
+            report += `- Inner Diameter: ${values[2]} mm\n`;
+            report += `- Thickness: ${values[3]} mm\n`;
+            report += errors.length === 0 ? "? Conforms to specifications" : `? Does not conform:\n${errors.join('\n')}`;
+            return report;
+        }
+
+
+        // NEW: Functions for Dimensional Quality Form
+        /**
+         * Initializes the section type dropdown for Dimensional Quality.
+         */
+        function initializeDimSectionTypeDropdown() {
+            dimSectionTypeSelect.innerHTML = '';
+            const sectionTypes = Object.keys(DimensionalSpecs);
+            sectionTypes.forEach(type => {
+                const option = document.createElement('option');
+                option.value = type;
+                option.textContent = type;
+                dimSectionTypeSelect.appendChild(option);
+            });
+            if (dimSectionTypeSelect.options.length > 0) {
+                dimSectionTypeSelect.selectedIndex = 0; // Default to 'Angles'
+                updateDimUI();
+            }
+        }
+
+        /**
+         * Updates the UI (labels, input visibility, standard display) based on selected section type.
+         */
+        function updateDimUI() {
+            const selectedType = dimSectionTypeSelect.value;
+            const spec = DimensionalSpecs[selectedType];
+
+            // Hide all input groups and clear textboxes first
+            dimInputGroups.forEach(group => group.style.display = 'none');
+            dimInputs.forEach(input => input.value = '');
+
+            if (spec) {
+                dimStandardDisplay.value = spec.standard;
+                for (let i = 0; i < spec.labels.length; i++) {
+                    if (dimLabels[i]) {
+                        dimLabels[i].textContent = spec.labels[i];
+                        dimInputGroups[i].style.display = 'block';
+                    }
+                }
+            } else {
+                dimStandardDisplay.value = '';
+            }
+        }
+
+        /**
+         * Clears all input fields in the Dimensional Quality form.
+         */
+        function clearDimensionalQualityInputs() {
+            dimInputs.forEach(input => input.value = '');
+            dimProjectName.value = '';
+            dimLabName.value = '';
+            dimTestDate.value = '';
+            dimPreparedBy.value = '';
+            dimApprovedBy.value = '';
+            dimDescription.value = '';
+            initializeDimSectionTypeDropdown(); // Reset dropdown and UI
+        }
+
+        /**
+         * Performs dimension checking based on the selected section type and inputs.
+         */
+        function checkDimensions() {
+            const selectedType = dimSectionTypeSelect.value;
+            const spec = DimensionalSpecs[selectedType];
+
+            if (!spec) {
+                showMsgBox("?????? ?????? ??? ???? ????.", "??? ?? ???????", "Warning");
+                return;
+            }
+
+            const values = [];
+            let isValid = true;
+            const errorMessages = [];
+
+            // Collect values from visible textboxes
+            for (let i = 0; i < spec.numInputs; i++) {
+                const inputElement = dimInputs[i];
+                const labelText = dimLabels[i].textContent.replace(':', '');
+                const val = parseFloat(inputElement.value);
+
+                // Check if input is required and empty/invalid
+                if (!spec.optionalInputs.includes(i) && (isNaN(val) || inputElement.value.trim() === '')) {
+                    errorMessages.push(`????? "${labelText}" ?????? ?????? ??? ???? ??? ?????.`);
+                    isValid = false;
+                } else if (spec.optionalInputs.includes(i) && inputElement.value.trim() === '') {
+                    values.push(0); // If optional and empty, treat as 0
+                } else {
+                    values.push(val);
+                }
+            }
+
+            // Check general data fields
+            if (!dimProjectName.value.trim() || !dimLabName.value.trim() ||
+                !dimTestDate.value.trim() || !dimPreparedBy.value.trim() ||
+                !dimApprovedBy.value.trim() || !dimDescription.value.trim()) {
+                errorMessages.push("???? ????? ???? ???????? ???????? (??? ???????? ??? ??????? ???????? ?????? ????? ????????? ?????).");
+                isValid = false;
+            }
+
+
+            if (!isValid) {
+                showMsgBox(errorMessages.join('\n'), "??? ?? ???????", "Warning");
+                return;
+            }
+
+            let report = `????? ???? ??????? - ${selectedType} (${spec.standard})\n\n`;
+            report += `???????? ???????:\n`;
+            for (let i = 0; i < spec.numInputs; i++) {
+                if (dimInputGroups[i].style.display === 'block' || dimInputGroups[i].style.display === '') {
+                    report += `- ${dimLabels[i].textContent} ${dimInputs[i].value} ??\n`;
+                }
+            }
+            report += `\n??????? ??????:\n`;
+            report += `- ??? ???????: ${dimProjectName.value}\n`;
+            report += `- ??? ??????: ${dimLabName.value}\n`;
+            report += `- ???????: ${dimTestDate.value}\n`;
+            report += `- ?????: ${dimPreparedBy.value}\n`;
+            report += `- ????? ????????: ${dimApprovedBy.value}\n`;
+            report += `- ?????: ${dimDescription.value}\n\n`;
+
+            report += `????? ?????? ?? ?????????:\n`;
+            const dimensionErrors = [];
+
+            // Apply specific checks based on section type
+            switch (selectedType) {
+                case "Angles":
+                    const nominalLegLength = values[0];
+                    const actualLegLength = values[1];
+                    const nominalThickness = values[2];
+                    const actualThickness = values[3];
+                    const nominalLength = values[4];
+                    const actualLength = values[5];
+                    const actualCamber = values[6];
+                    const actualSquareness = values[7];
+
+                    // Leg Length
+                    let legTolerance = Math.max(nominalLegLength * spec.tolerances.legLength.percent, spec.tolerances.legLength.abs);
+                    if (Math.abs(actualLegLength - nominalLegLength) > legTolerance) {
+                        dimensionErrors.push(`? ??? ?????: ${actualLegLength} (??????: ${nominalLegLength}? ??????? ???????: ±${legTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ??? ?????: ${actualLegLength} (?????)\n`;
+                    }
+
+                    // Thickness
+                    let thicknessTolerance = Math.max(nominalThickness * spec.tolerances.thickness.percent, spec.tolerances.thickness.abs);
+                    if (Math.abs(actualThickness - nominalThickness) > thicknessTolerance) {
+                        dimensionErrors.push(`? ?????: ${actualThickness} (??????: ${nominalThickness}? ??????? ???????: ±${thicknessTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ?????: ${actualThickness} (?????)\n`;
+                    }
+
+                    // Length
+                    let lengthTolerance = nominalLength * spec.tolerances.length.percent; // Percentage of total length
+                    let lengthTolerancePerMeter = (nominalLength / 1000) * spec.tolerances.length.absPerMeter; // mm per meter
+                    let finalLengthTolerance = Math.max(lengthTolerance, lengthTolerancePerMeter);
+
+                    if (Math.abs(actualLength - nominalLength) > finalLengthTolerance) {
+                        dimensionErrors.push(`? ?????: ${actualLength} (??????: ${nominalLength}? ??????? ???????: ±${finalLengthTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ?????: ${actualLength} (?????)\n`;
+                    }
+
+                    // Camber (Straightness)
+                    let maxCamber = nominalLength * spec.tolerances.camber.percent;
+                    if (actualCamber > maxCamber) {
+                        dimensionErrors.push(`? ????????: ${actualCamber} (???? ?????? ???????: ${maxCamber.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ????????: ${actualCamber} (?????)\n`;
+                    }
+
+                    // Squareness (assuming 0.05t as ratio, where t is nominal thickness)
+                    let maxSquareness = nominalThickness * spec.tolerances.squareness.maxRatio;
+                    if (actualSquareness > maxSquareness) { // Assuming actualSquareness is a linear deviation
+                        dimensionErrors.push(`? ???????: ${actualSquareness} (???? ?????? ???????: ${maxSquareness.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ???????: ${actualSquareness} (?????)\n`;
+                    }
+                    break;
+
+                case "Plates":
+                    const nominalPlateLength = values[0];
+                    const actualPlateLength = values[1];
+                    const nominalPlateThickness = values[2];
+                    const actualPlateThickness = values[3];
+                    const nominalPlateWidth = values[4];
+                    const actualPlateWidth = values[5];
+                    const actualPlateCamber = values[6];
+
+                    // Length
+                    let plateLengthTolerance = Math.max(nominalPlateLength * spec.tolerances.lengthWidth.percent, spec.tolerances.lengthWidth.abs);
+                    if (Math.abs(actualPlateLength - nominalPlateLength) > plateLengthTolerance) {
+                        dimensionErrors.push(`? ??? ?????: ${actualPlateLength} (??????: ${nominalPlateLength}? ??????? ???????: ±${plateLengthTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ??? ?????: ${actualPlateLength} (?????)\n`;
+                    }
+
+                    // Width
+                    let plateWidthTolerance = Math.max(nominalPlateWidth * spec.tolerances.lengthWidth.percent, spec.tolerances.lengthWidth.abs);
+                    if (Math.abs(actualPlateWidth - nominalPlateWidth) > plateWidthTolerance) {
+                        dimensionErrors.push(`? ??? ?????: ${actualPlateWidth} (??????: ${nominalPlateWidth}? ??????? ???????: ±${plateWidthTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ??? ?????: ${actualPlateWidth} (?????)\n`;
+                    }
+
+                    // Thickness
+                    let plateThicknessTolerance = Math.max(nominalPlateThickness * spec.tolerances.thickness.percent, spec.tolerances.thickness.abs);
+                    if (Math.abs(actualPlateThickness - nominalPlateThickness) > plateThicknessTolerance) {
+                        dimensionErrors.push(`? ??? ?????: ${actualPlateThickness} (??????: ${nominalPlateThickness}? ??????? ???????: ±${plateThicknessTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ??? ?????: ${actualPlateThickness} (?????)\n`;
+                    }
+
+                    // Camber
+                    let maxPlateCamber = nominalPlateLength * spec.tolerances.camber.percent;
+                    if (actualPlateCamber > maxPlateCamber) {
+                        dimensionErrors.push(`? ?????? ?????: ${actualPlateCamber} (???? ?????? ???????: ${maxPlateCamber.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ?????? ?????: ${actualPlateCamber} (?????)\n`;
+                    }
+                    break;
+
+                case "Pipes":
+                    const nominalPipeDiameter = values[0];
+                    const actualPipeDiameter = values[1];
+                    const nominalPipeThickness = values[2];
+                    const actualPipeThickness = values[3];
+                    const nominalPipeLength = values[4];
+                    const actualPipeLength = values[5];
+                    const actualPipeCamber = values[6];
+
+                    // Diameter
+                    let pipeDiameterTolerance = nominalPipeDiameter * spec.tolerances.diameter.percent;
+                    if (Math.abs(actualPipeDiameter - nominalPipeDiameter) > pipeDiameterTolerance) {
+                        dimensionErrors.push(`? ??? ????????: ${actualPipeDiameter} (??????: ${nominalPipeDiameter}? ??????? ???????: ±${pipeDiameterTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ??? ????????: ${actualPipeDiameter} (?????)\n`;
+                    }
+
+                    // Thickness
+                    let pipeThicknessTolerance = Math.max(nominalPipeThickness * spec.tolerances.thickness.percent, spec.tolerances.thickness.abs);
+                    if (Math.abs(actualPipeThickness - nominalPipeThickness) > pipeThicknessTolerance) {
+                        dimensionErrors.push(`? ??? ????????: ${actualPipeThickness} (??????: ${nominalPipeThickness}? ??????? ???????: ±${pipeThicknessTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ??? ????????: ${actualPipeThickness} (?????)\n`;
+                    }
+
+                    // Length
+                    let pipeLengthTolerance = nominalPipeLength * spec.tolerances.length.percent;
+                    let pipeLengthTolerancePerMeter = (nominalPipeLength / 1000) * spec.tolerances.length.absPerMeter;
+                    let finalPipeLengthTolerance = Math.max(pipeLengthTolerance, pipeLengthTolerancePerMeter);
+
+                    if (Math.abs(actualPipeLength - nominalPipeLength) > finalPipeLengthTolerance) {
+                        dimensionErrors.push(`? ??? ????????: ${actualPipeLength} (??????: ${nominalPipeLength}? ??????? ???????: ±${finalPipeLengthTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ??? ????????: ${actualPipeLength} (?????)\n`;
+                    }
+
+                    // Camber
+                    let maxPipeCamber = nominalPipeLength * spec.tolerances.camber.percent;
+                    if (actualPipeCamber > maxPipeCamber) {
+                        dimensionErrors.push(`? ?????? ????????: ${actualPipeCamber} (???? ?????? ???????: ${maxPipeCamber.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ?????? ????????: ${actualPipeCamber} (?????)\n`;
+                    }
+                    break;
+
+                case "Rods":
+                    const nominalRodDiameter = values[0];
+                    const actualRodDiameter = values[1];
+                    const nominalRodLength = values[2];
+                    const actualRodLength = values[3];
+
+                    // Diameter
+                    let rodDiameterTolerance = Math.max(nominalRodDiameter * spec.tolerances.diameter.percent, spec.tolerances.diameter.abs);
+                    if (Math.abs(actualRodDiameter - nominalRodDiameter) > rodDiameterTolerance) {
+                        dimensionErrors.push(`? ??? ??????: ${actualRodDiameter} (??????: ${nominalRodDiameter}? ??????? ???????: ±${rodDiameterTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ??? ??????: ${actualRodDiameter} (?????)\n`;
+                    }
+
+                    // Length
+                    let rodLengthTolerance = nominalRodLength * spec.tolerances.length.percent;
+                    let rodLengthTolerancePerMeter = (nominalRodLength / 1000) * spec.tolerances.length.absPerMeter;
+                    let finalRodLengthTolerance = Math.max(rodLengthTolerance, rodLengthTolerancePerMeter);
+
+                    if (Math.abs(actualRodLength - nominalRodLength) > finalRodLengthTolerance) {
+                        dimensionErrors.push(`? ??? ??????: ${actualRodLength} (??????: ${nominalRodLength}? ??????? ???????: ±${finalRodLengthTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ??? ??????: ${actualRodLength} (?????)\n`;
+                    }
+                    break;
+
+                case "Sections": // Beams
+                    const nominalBeamHeight = values[0];
+                    const actualBeamHeight = values[1];
+                    const nominalBeamWidth = values[2];
+                    const actualBeamWidth = values[3];
+                    const nominalFlangeThickness = values[4];
+                    const actualFlangeThickness = values[5];
+                    const nominalWebThickness = values[6];
+                    const actualWebThickness = values[7];
+                    const actualSquarenessDeviation = values[8]; // Optional
+                    const actualEccentricity = values[9];       // Optional
+
+                    // Height
+                    let beamHeightTolerance = Math.max(nominalBeamHeight * spec.tolerances.heightWidth.percent, spec.tolerances.heightWidth.abs);
+                    if (Math.abs(actualBeamHeight - nominalBeamHeight) > beamHeightTolerance) {
+                        dimensionErrors.push(`? ?????? ??????: ${actualBeamHeight} (??????: ${nominalBeamHeight}? ??????? ???????: ±${beamHeightTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ?????? ??????: ${actualBeamHeight} (?????)\n`;
+                    }
+
+                    // Width
+                    let beamWidthTolerance = Math.max(nominalBeamWidth * spec.tolerances.heightWidth.percent, spec.tolerances.heightWidth.abs);
+                    if (Math.abs(actualBeamWidth - nominalBeamWidth) > beamWidthTolerance) {
+                        dimensionErrors.push(`? ??? ??????: ${actualBeamWidth} (??????: ${nominalBeamWidth}? ??????? ???????: ±${beamWidthTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ??? ??????: ${actualBeamWidth} (?????)\n`;
+                    }
+
+                    // Flange Thickness
+                    let flangeThicknessTolerance = Math.max(nominalFlangeThickness * spec.tolerances.flangeWebThickness.percent, spec.tolerances.flangeWebThickness.abs);
+                    if (Math.abs(actualFlangeThickness - nominalFlangeThickness) > flangeThicknessTolerance) {
+                        dimensionErrors.push(`? ??? ????????: ${actualFlangeThickness} (??????: ${nominalFlangeThickness}? ??????? ???????: ±${flangeThicknessTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ??? ????????: ${actualFlangeThickness} (?????)\n`;
+                    }
+
+                    // Web Thickness
+                    let webThicknessTolerance = Math.max(nominalWebThickness * spec.tolerances.flangeWebThickness.percent, spec.tolerances.flangeWebThickness.abs);
+                    if (Math.abs(actualWebThickness - nominalWebThickness) > webThicknessTolerance) {
+                        dimensionErrors.push(`? ??? ?????: ${actualWebThickness} (??????: ${nominalWebThickness}? ??????? ???????: ±${webThicknessTolerance.toFixed(2)} ??)`);
+                    } else {
+                        report += `? ??? ?????: ${actualWebThickness} (?????)\n`;
+                    }
+
+                    // Squareness Deviation (Optional)
+                    if (actualSquarenessDeviation !== 0) { // Only check if value is provided
+                        let squarenessTolerance = spec.tolerances.squareness.abs;
+                        if (actualSquarenessDeviation > squarenessTolerance) {
+                            dimensionErrors.push(`? ??? ???????: ${actualSquarenessDeviation} (???? ?????? ???????: ${squarenessTolerance} ??)`);
+                        } else {
+                            report += `? ??? ???????: ${actualSquarenessDeviation} (?????)\n`;
+                        }
+                    } else {
+                        report += `? ??? ???????: ?? ??? ????? ???? (??? ??????)\n`;
+                    }
+
+                    // Eccentricity (Optional)
+                    if (actualEccentricity !== 0) { // Only check if value is provided
+                        let eccentricityTolerance = spec.tolerances.eccentricity.abs;
+                        if (actualEccentricity > eccentricityTolerance) {
+                            dimensionErrors.push(`? ?????? ?? ??????: ${actualEccentricity} (???? ?????? ???????: ${eccentricityTolerance} ??)`);
+                        } else {
+                            report += `? ?????? ?? ??????: ${actualEccentricity} (?????)\n`;
+                        }
+                    } else {
+                        report += `? ?????? ?? ??????: ?? ??? ????? ???? (??? ??????)\n`;
+                    }
+                    break;
+            }
+
+            if (dimensionErrors.length > 0) {
+                report += `\n? ?? ?????? ?? ?????????:\n${dimensionErrors.join('\n')}\n`;
+                showMsgBox(report, "????? ??????", "Error");
+            } else {
+                report += `\n? ?????? ?????? ?? ?????????.\n`;
+                showMsgBox(report, "????? ??????", "Information");
+            }
+
+            // Save report to file (client-side download)
+            const blob = new Blob([report], { type: 'text/plain;charset=utf-8;' });
+            const link = document.createElement('a');
+            if (link.download !== undefined) {
+                const url = URL.createObjectURL(blob);
+                link.setAttribute('href', url);
+                link.setAttribute('download', `Dimensional_Report_${selectedType}_${dimTestDate.value}.txt`);
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } else {
+                showMsgBox("?????? ?? ???? ????? ??????? ??????. ???? ??? ??????? ??????.", "?????", "Warning");
+            }
+        }
+
+
+        // --- Event Listeners for Main Application Structure ---
+
+        // Form1_Load equivalent: Show message box when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            showMsgBox("????? ???? ?? ??? ???? ????? ??????? ????? ?? ??????", "??? ???? ??????? ??????? ??? ???? ???? ", 'Information', '????');
+
+            // Close message box when OK button is clicked
+            msgBoxCloseButton.addEventListener('click', hideMsgBox);
+
+            // Button7_Click equivalent (Main Form): Exit Application
+            document.getElementById('button7').addEventListener('click', () => {
+                showForm(exitMessage);
+                document.getElementById('app-container').classList.add('pointer-events-none', 'opacity-50'); // Visually disable
+            });
+
+            // New button to go to Mechanical Test Form
+            document.getElementById('goToMechanicalTestForm').addEventListener('click', () => {
+                showForm(mechanicalTestForm);
+                initializeSteelSpecifications();
+                populateMechanicalSteelDropdowns();
+                testDateInput.valueAsDate = new Date();
+            });
+
+            // New button to go to Quantitative Analysis Form
+            document.getElementById('goToQuantitativeAnalysisForm').addEventListener('click', () => {
+                showForm(quantitativeAnalysisForm);
+                initializeChemicalSpecifications(); // Initialize chemical specs
+                populateChemicalSteelDropdowns(); // Populate dropdowns for chemical form
+                chemTestDateInput.valueAsDate = new Date(); // Set today's date for chem form
+            });
+
+            // New button to go to FAQ Form (Form5)
+            document.getElementById('goToFaqForm').addEventListener('click', () => {
+                showForm(faqForm);
+                initializeFAQ(); // Initialize FAQ data
+                populateFaqQuestions(); // Populate FAQ questions dropdown
+            });
+
+            // Button to go to FAQ Columns Form (Form6)
+            document.getElementById('goToFaqColumnsForm').addEventListener('click', () => {
+                showForm(faqColumnsForm);
+                initializeFAQColumns(); // Initialize FAQ Columns data
+                populateFaqColumnsQuestions(); // Populate FAQ Columns questions dropdown
+            });
+
+            // Button to go to FAQ Galvanization Form (Form7)
+            document.getElementById('goToFaqGalvanizationForm').addEventListener('click', () => {
+                showForm(faqGalvanizationForm);
+                initializeFAQGalvanization(); // Initialize FAQ Galvanization data
+                populateFaqGalvanizationQuestions(); // Populate FAQ Galvanization questions dropdown
+            });
+
+            // NEW: Button to go to DIN Specs Form (Form8)
+            document.getElementById('goToDinSpecsForm').addEventListener('click', () => {
+                showForm(dinSpecsForm);
+                initializeDinTypeDropdown(); // Initialize DIN type dropdown and trigger UI adjustment
+            });
+
+            // NEW: Button to go to Dimensional Quality Form
+            document.getElementById('goToDimensionalQualityForm').addEventListener('click', () => {
+                showForm(dimensionalQualityForm);
+                initializeDimSectionTypeDropdown();
+                dimTestDate.valueAsDate = new Date();
+            });
+
+
+            // --- Event Listeners for Mechanical Test Form ---
+            standardSelect.addEventListener('change', updateMechanicalSteelTypeDropdown);
+            compareDataBtn.addEventListener('click', () => {
+                const formData = getMechanicalTestFormValues();
+                if (!formData) return;
+                const result = calculateComparisonResult(formData);
+                if (result) {
+                    showMsgBox(result, "????? ???????", "Information");
+                }
+            });
+            printReportBtn.addEventListener('click', () => {
+                const formData = getMechanicalTestFormValues();
+                if (!formData) return;
+                const resultMessage = calculateComparisonResult(formData);
+                if (!resultMessage) {
+                    showMsgBox("???? ????? ??????? ??????? ???? ????? ?? ????????.", "??? ?? ???????", "Error");
+                    return;
+                }
+                const printableContent = `
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>????? ???????? ??????????</title>
+                        <style>
+                            body { font-family: 'Arial', sans-serif; margin: 20mm; direction: rtl; text-align: right; }
+                            h1, h2 { text-align: center; margin-bottom: 15px; }
+                            h1 { font-size: 24px; }
+                            h2 { font-size: 18px; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 25px; }
+                            p { margin-bottom: 8px; line-height: 1.5; }
+                            strong { font-weight: bold; }
+                            .section-divider { border-top: 1px dashed #ccc; margin-top: 20px; padding-top: 10px; }
+                            .result-box {
+                                border: 1px solid #000;
+                                padding: 15px;
+                                margin-top: 20px;
+                                background-color: #f9f9f9;
+                            }
+                            .result-box p { margin: 5px 0; }
+                            .pass { color: green; font-weight: bold; }
+                            .fail { color: red; font-weight: bold; }
+                            @media print {
+                                body { margin: 0; }
+                                .print-button { display: none; }
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>????? ???????? ?????????? ?????</h1>
+
+                        <h2>??????? ????????</h2>
+                        <p><strong>???????:</strong> ${formData.testDate}</p>
+                        <p><strong>??? ??????:</strong> ${formData.labName}</p>
+                        <p><strong>??? ???????:</strong> ${formData.projectName}</p>
+                        <p><strong>?????:</strong> ${formData.preparedBy}</p>
+                        <p><strong>????? ????????:</strong> ${formData.approvedBy}</p>
+                        <p><strong>?????:</strong> ${formData.description}</p>
+
+                        <h2>?????? ?????</h2>
+                        <p><strong>???????:</strong> ${formData.standard}</p>
+                        <p><strong>??? ?????:</strong> ${formData.steelType}</p>
+                        <p><strong>?????:</strong> ${formData.thickness} ??</p>
+                        <p><strong>??????:</strong> ${formData.yieldVal} MPa</p>
+                        <p><strong>????:</strong> ${formData.tensile} MPa</p>
+                        <p><strong>?????????:</strong> ${formData.elongation} %</p>
+
+                        <h2>????? ????????</h2>
+                        <div class="result-box">
+                            <pre>${resultMessage}</pre>
+                        </div>
+
+                        <p class="section-divider">?????? ????? - ??? ???? ???? ?? ??????? ????</p>
+
+                        <button onclick="window.print()" class="print-button" style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                            ?????
+                        </button>
+                    </body>
+                    </html>
+                `;
+                const printWindow = window.open('', '_blank');
+                printWindow.document.write(printableContent);
+                printWindow.document.close();
+                printWindow.focus();
+            });
+            exportExcelBtn.addEventListener('click', () => {
+                const formData = getMechanicalTestFormValues();
+                if (!formData) return;
+                const resultMessage = calculateComparisonResult(formData);
+                if (!resultMessage) {
+                    showMsgBox("???? ????? ?????? ??????? ???? ????? ?? ????????.", "??? ?? ???????", "Error");
+                    return;
+                }
+                let csvContent = "??????,??????\n";
+                csvContent += `???????,${formData.testDate}\n`;
+                csvContent += `??? ??????,${formData.labName}\n`;
+                csvContent += `??? ???????,${formData.projectName}\n`;
+                csvContent += `?????,${formData.preparedBy}\n`;
+                csvContent += `????? ????????,${formData.approvedBy}\n`;
+                csvContent += `?????,${formData.description.replace(/\n/g, ' ')}\n`;
+                csvContent += `???????,${formData.standard}\n`;
+                csvContent += `??? ?????,${formData.steelType}\n`;
+                csvContent += `?????,${formData.thickness} ??\n`;
+                csvContent += `??????,${formData.yieldVal} MPa\n`;
+                csvContent += `????,${formData.tensile} MPa\n`;
+                csvContent += `?????????,${formData.elongation} %\n`;
+                const overallResultMatch = resultMessage.match(/?? ????? ??????: (??? ?|?? ?)/);
+                if (overallResultMatch) {
+                    csvContent += `?? ????? ??????,${overallResultMatch[1]}\n`;
+                }
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                if (link.download !== undefined) {
+                    const url = URL.createObjectURL(blob);
+                    link.setAttribute('href', url);
+                    link.setAttribute('download', `?????_????????_??????????_${formData.testDate}.csv`);
+                    link.style.visibility = 'hidden';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    showMsgBox("?? ????? ???????? ????? ??? ??? CSV.", "?????", "Information");
+                } else {
+                    showMsgBox("?????? ?? ???? ????? ??????? ??????. ???? ??? ???????? ??????.", "?????", "Warning");
+                }
+            });
+            clearAllBtn.addEventListener('click', clearMechanicalTestTextBoxes);
+            backToMainFromMechanicalTest.addEventListener('click', () => {
+                showForm(form1);
+            });
+            exitFromMechanicalTest.addEventListener('click', () => {
+                showForm(exitMessage);
+                document.getElementById('app-container').classList.add('pointer-events-none', 'opacity-50');
+            });
+
+            // --- Event Listeners for Quantitative Analysis Form ---
+            standardSelectChem.addEventListener('change', updateChemicalSteelTypeDropdown);
+            compareChemDataBtn.addEventListener('click', () => {
+                const formData = getQuantitativeAnalysisFormValues();
+                if (!formData) return;
+                const result = calculateChemicalAnalysisResult(formData);
+                if (result) {
+                    showMsgBox(result, "????? ??????? ?????????", "Information");
+                }
+            });
+            printChemReportBtn.addEventListener('click', () => {
+                const formData = getQuantitativeAnalysisFormValues();
+                if (!formData) return;
+                const resultMessage = calculateChemicalAnalysisResult(formData);
+                if (!resultMessage) {
+                    showMsgBox("???? ????? ??????? ??????? ???? ????? ?? ????????.", "??? ?? ???????", "Error");
+                    return;
+                }
+
+                const printableContent = `
+                    <!DOCTYPE html>
+                    <html lang="en">
+                    <head>
+                        <meta charset="UTF-8">
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        <title>????? ????? ??????? ????????? ?????</title>
+                        <style>
+                            body { font-family: 'Arial', sans-serif; margin: 20mm; direction: rtl; text-align: right; }
+                            h1, h2 { text-align: center; margin-bottom: 15px; }
+                            h1 { font-size: 24px; }
+                            h2 { font-size: 18px; border-bottom: 1px solid #ccc; padding-bottom: 5px; margin-top: 25px; }
+                            p { margin-bottom: 8px; line-height: 1.5; }
+                            strong { font-weight: bold; }
+                            .section-divider { border-top: 1px dashed #ccc; margin-top: 20px; padding-top: 10px; }
+                            .result-box {
+                                border: 1px solid #000;
+                                padding: 15px;
+                                margin-top: 20px;
+                                background-color: #f9f9f9;
+                            }
+                            .result-box p { margin: 5px 0; }
+                            .pass { color: green; font-weight: bold; }
+                            .fail { color: red; font-weight: bold; }
+                            @media print {
+                                body { margin: 0; }
+                                .print-button { display: none; }
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <h1>????? ????? ??????? ????????? ?????</h1>
+
+                        <h2>??????? ????????</h2>
+                        <p><strong>???????:</strong> ${formData.testDate}</p>
+                        <p><strong>??? ??????:</strong> ${formData.labName}</p>
+                        <p><strong>??? ???????:</strong> ${formData.projectName}</p>
+                        <p><strong>?????:</strong> ${formData.preparedBy}</p>
+                        <p><strong>????? ????????:</strong> ${formData.approvedBy}</p>
+                        <p><strong>?????:</strong> ${formData.description}</p>
+
+                        <h2>?????? ??????? ?????????</h2>
+                        <p><strong>???????:</strong> ${formData.standard}</p>
+                        <p><strong>??? ?????:</strong> ${formData.steelType}</p>
+                        <p><strong>??????? (C):</strong> ${formData.C.toFixed(2)} %</p>
+                        <p><strong>???????? (Mn):</strong> ${formData.Mn.toFixed(2)} %</p>
+                        <p><strong>???????? (Si):</strong> ${formData.Si.toFixed(2)} %</p>
+                        <p><strong>???????? (P):</strong> ${formData.P.toFixed(2)} %</p>
+                        <p><strong>??????? (S):</strong> ${formData.S.toFixed(2)} %</p>
+                        <p><strong>?????? (Cr):</strong> ${formData.Cr.toFixed(2)} %</p>
+                        <p><strong>?????? (Ni):</strong> ${formData.Ni.toFixed(2)} %</p>
+                        <p><strong>???????????? (Mo):</strong> ${formData.Mo.toFixed(2)} %</p>
+
+                        <h2>????? ???????</h2>
+                        <div class="result-box">
+                            <pre>${resultMessage}</pre>
+                        </div>
+
+                        <p class="section-divider">?????? ????? - ??? ???? ???? ?? ??????? ????</p>
+
+                        <button onclick="window.print()" class="print-button" style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                            ?????
+                        </button>
+                    </body>
+                    </html>
+                `;
+                const printWindow = window.open('', '_blank');
+                printWindow.document.write(printableContent);
+                printWindow.document.close();
+                printWindow.focus();
+            });
+            exportChemExcelBtn.addEventListener('click', () => {
+                const formData = getQuantitativeAnalysisFormValues();
+                if (!formData) return;
+                const resultMessage = calculateChemicalAnalysisResult(formData);
+                if (!resultMessage) {
+                    showMsgBox("???? ????? ?????? ??????? ???? ????? ?? ????????.", "??? ?? ???????", "Error");
+                    return;
+                }
+
+                let csvContent = "??????,??????\n";
+                csvContent += `???????,${formData.testDate}\n`;
+                csvContent += `??? ??????,${formData.labName}\n`;
+                csvContent += `??? ???????,${formData.projectName}\n`;
+                csvContent += `?????,${formData.preparedBy}\n`;
+                csvContent += `????? ????????,${formData.approvedBy}\n`;
+                csvContent += `?????,${formData.description.replace(/\n/g, ' ')}\n`;
+                csvContent += `???????,${formData.standard}\n`;
+                csvContent += `??? ?????,${formData.steelType}\n`;
+                csvContent += `??????? (C),${formData.C.toFixed(2)} %\n`;
+                csvContent += `???????? (Mn),${formData.Mn.toFixed(2)} %\n`;
+                csvContent += `???????? (Si),${formData.Si.toFixed(2)} %\n`;
+                        csvContent += `???????? (P),${formData.P.toFixed(2)} %\n`;
+                csvContent += `??????? (S),${formData.S.toFixed(2)} %\n`;
+                csvContent += `?????? (Cr),${formData.Cr.toFixed(2)} %\n`;
+                csvContent += `?????? (Ni),${formData.Ni.toFixed(2)} %\n`;
+                csvContent += `???????????? (Mo),${formData.Mo.toFixed(2)} %\n`;
+
+                const overallResultMatch = resultMessage.match(/?? ??????? ??????: (??? ?|?? ?)/);
+                if (overallResultMatch) {
+                    csvContent += `?? ??????? ??????,${overallResultMatch[1]}\n`;
+                }
+
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                if (link.download !== undefined) {
+                    const url = URL.createObjectURL(blob);
+                    link.setAttribute('href', url);
+                    link.setAttribute('download', `?????_???????_?????????_${formData.testDate}.csv`);
+                    link.style.visibility = 'hidden';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    showMsgBox("?? ????? ???????? ????? ??? ??? CSV.", "?????", "Information");
+                } else {
+                    showMsgBox("?????? ?? ???? ????? ??????? ??????. ???? ??? ???????? ??????.", "?????", "Warning");
+                }
+            });
+            clearChemInputsBtn.addEventListener('click', clearQuantitativeAnalysisInputs);
+            backToMainFromQuantitativeAnalysis.addEventListener('click', () => {
+                showForm(form1);
+            });
+            exitFromQuantitativeAnalysis.addEventListener('click', () => {
+                showForm(exitMessage);
+                document.getElementById('app-container').classList.add('pointer-events-none', 'opacity-50');
+            });
+
+            // --- Event Listeners for FAQ Form (Towers) ---
+            faqQuestionSelect.addEventListener('change', () => {
+                const selectedQuestion = faqQuestionSelect.value;
+                faqAnswerTextarea.value = faqData[selectedQuestion] || ''; // Display answer or clear if no question selected
+            });
+
+            backToMainFromFaq.addEventListener('click', () => {
+                showForm(form1);
+            });
+
+            exitFromFaq.addEventListener('click', () => {
+                showForm(exitMessage);
+                document.getElementById('app-container').classList.add('pointer-events-none', 'opacity-50');
+            });
+
+            // Event Listeners for FAQ Columns Form (Form6)
+            faqColumnsQuestionSelect.addEventListener('change', () => {
+                const selectedQuestion = faqColumnsQuestionSelect.value;
+                faqColumnsAnswerTextarea.value = faqColumnsData[selectedQuestion] || '';
+            });
+
+            backToMainFromFaqColumns.addEventListener('click', () => {
+                showForm(form1);
+            });
+
+            exitFromFaqColumns.addEventListener('click', () => {
+                showForm(exitMessage);
+                document.getElementById('app-container').classList.add('pointer-events-none', 'opacity-50');
+            });
+
+            // Event Listeners for FAQ Galvanization Form (Form7)
+            faqGalvanizationQuestionSelect.addEventListener('change', () => {
+                const selectedQuestion = faqGalvanizationQuestionSelect.value;
+                faqGalvanizationAnswerTextarea.value = faqGalvanizationData[selectedQuestion] || '';
+            });
+
+            backToMainFromFaqGalvanization.addEventListener('click', () => {
+                showForm(form1);
+            });
+
+            exitFromFaqGalvanization.addEventListener('click', () => {
+                showForm(exitMessage);
+                document.getElementById('app-container').classList.add('pointer-events-none', 'opacity-50');
+            });
+
+            // Event Listeners for DIN Specs Form (Form8)
+            dinTypeSelect.addEventListener('change', updateDinStandardDropdown);
+            dinStandardSelect.addEventListener('change', adjustDinUI); // Re-adjust UI if standard changes (e.g., DIN 7990 vs DIN 933 for bolts)
+
+            dinCheckSpecsBtn.addEventListener('click', () => {
+                const selectedType = dinTypeSelect.value;
+                const selectedDIN = dinStandardSelect.value;
+
+                if (!selectedType || !selectedDIN) {
+                    showMsgBox("?????? ?????? ????? ???????? ?????.", "??? ?? ???????", "Warning");
+                    return;
+                }
+
+                const values = [];
+                let isValid = true;
+                const errorMessages = [];
+
+                // Collect values from visible textboxes
+                for (let i = 0; i < dinTextBoxes.length; i++) {
+                    if (dinInputGroups[i].style.display === 'block' || dinInputGroups[i].style.display === '') { // Check if visible
+                        const val = parseFloat(dinTextBoxes[i].value);
+                        if (isNaN(val)) {
+                            errorMessages.push(`????? ${dinLabels[i].textContent.replace(':', '')} ????? ??? ???? ??? ?????.`);
+                            isValid = false;
+                        }
+                        values.push(val);
+                    } else {
+                        values.push(0); // Push a default value for hidden fields
+                    }
+                }
+
+                if (!isValid) {
+                    showMsgBox(errorMessages.join('\n'), "??? ?? ???????", "Warning");
+                    return;
+                }
+
+                let report = "";
+                const errors = []; // Use an array for errors to join them later
+
+                try {
+                    switch (selectedType) {
+                        case "Bolt":
+                            const boltDiameter = values[0];
+                            const boltLength = values[1];
+                            const boltSpec = getBoltSpec(selectedDIN, boltDiameter, boltLength);
+                            checkBolt(values, boltSpec, errors, selectedDIN);
+                            report = generateBoltReport(selectedDIN, values, boltSpec, errors);
+                            break;
+                        case "Nut":
+                            const nutDiameter = values[0];
+                            const nutSpec = getNutSpec(selectedDIN, nutDiameter);
+                            checkNut(values, nutSpec, errors);
+                            report = generateNutReport(selectedDIN, values, nutSpec, errors);
+                            break;
+                        case "Washer":
+                            const washerDiameter = values[0];
+                            const washerSpec = getWasherSpec(selectedDIN, washerDiameter);
+                            checkWasher(values, washerSpec, errors);
+                            report = generateWasherReport(selectedDIN, values, washerSpec, errors);
+                            break;
+                    }
+                    showMsgBox(report, "???????", errors.length === 0 ? "Information" : "Error");
+
+                    // Save report to file (client-client download)
+                    const blob = new Blob([report], { type: 'text/plain;charset=utf-8;' });
+                    const link = document.createElement('a');
+                    if (link.download !== undefined) {
+                        const url = URL.createObjectURL(blob);
+                        link.setAttribute('href', url);
+                        link.setAttribute('download', `DIN_Report_${selectedType}_${selectedDIN}_M${values[0]}.txt`);
+                        link.style.visibility = 'hidden';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        // showMsgBox("?? ??? ??????? ?????.", "??? ???????", "Information"); // Optional: if you want a second message
+                    } else {
+                        showMsgBox("?????? ?? ???? ????? ??????? ??????. ???? ??? ??????? ??????.", "?????", "Warning");
+                    }
+
+                } catch (ex) {
+                    showMsgBox(`???: ${ex.message}`, "???", "Error");
+                }
+            });
+
+            dinClearAllBtn.addEventListener('click', clearDinInputs);
+
+            backToMainFromDinSpecs.addEventListener('click', () => {
+                showForm(form1);
+            });
+
+            exitFromDinSpecs.addEventListener('click', () => {
+                showForm(exitMessage);
+                document.getElementById('app-container').classList.add('pointer-events-none', 'opacity-50');
+            });
+
+            // NEW: Event Listeners for Dimensional Quality Form
+            dimSectionTypeSelect.addEventListener('change', updateDimUI);
+            dimCheckDimensionsBtn.addEventListener('click', checkDimensions);
+            dimClearAllBtn.addEventListener('click', clearDimensionalQualityInputs);
+            backToMainFromDimensionalQuality.addEventListener('click', () => {
+                showForm(form1);
+            });
+            exitFromDimensionalQuality.addEventListener('click', () => {
+                showForm(exitMessage);
+                document.getElementById('app-container').classList.add('pointer-events-none', 'opacity-50');
+            });
+        }); // End of DOMContentLoaded
+    </script>
+</body>
+</html>
