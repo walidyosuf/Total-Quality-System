@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام الجودة الشامل</title> <!-- Changed title here -->
+    <title>VB.NET Form Simulation</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -52,7 +52,7 @@
             text-align: right; /* Right-align text for Arabic */
         }
         /* Ensure textarea for FAQ answer is left-aligned for English content */
-        #faqAnswerTextarea, #faqColumnsAnswerTextarea, #faqGalvanizationAnswerTextarea, #dinReportTextarea, #dimensionalQualityReportTextarea {
+        #faqColumnsAnswerTextarea, #faqGalvanizationAnswerTextarea, #dinReportTextarea, #dimensionalQualityReportTextarea {
             text-align: left;
             direction: ltr;
         }
@@ -70,28 +70,33 @@
         <div id="form1" class="form-container block">
             <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">نظام الجودة الشامل</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <!-- Buttons reordered as requested -->
+                <!-- New button for Mechanical Test Form -->
                 <button id="goToMechanicalTestForm" class="bg-blue-800 hover:bg-blue-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
                     الاختبار الميكانيكي
                 </button>
+                <!-- New button for Quantitative Analysis Form -->
                 <button id="goToQuantitativeAnalysisForm" class="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
                     التحليل الكيميائي
                 </button>
-                <button id="goToDinSpecsForm" class="bg-orange-800 hover:bg-orange-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                    مدقق مواصفات المسامير
-                </button>
-                <!-- Renamed button -->
-                <button id="goToDimensionalQualityForm" class="bg-cyan-700 hover:bg-cyan-800 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                    مراجعة أبعاد القطاع
-                </button>
+                <!-- Updated button for FAQ Form (Form5) -->
                 <button id="goToFaqForm" class="bg-purple-800 hover:bg-purple-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
                     الأسئلة الشائعة في الأبراج
                 </button>
+                <!-- Button for FAQ Columns Form (Form6) -->
                 <button id="goToFaqColumnsForm" class="bg-green-800 hover:bg-green-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
                     الأسئلة الشائعة في الأعمدة
                 </button>
+                <!-- Button for FAQ Galvanization Form (Form7) -->
                 <button id="goToFaqGalvanizationForm" class="bg-indigo-800 hover:bg-indigo-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
                     الأسئلة الشائعة في الجلفنة
+                </button>
+                <!-- NEW: Button for DIN Specs Form (Form8) -->
+                <button id="goToDinSpecsForm" class="bg-orange-800 hover:bg-orange-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    مدقق مواصفات المسامير
+                </button>
+                <!-- NEW: Button for Dimensional Quality Form -->
+                <button id="goToDimensionalQualityForm" class="bg-cyan-700 hover:bg-cyan-800 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+                    التحكم في جودة الأبعاد
                 </button>
                 <button id="button7" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
                     خروج
@@ -350,7 +355,7 @@
 
                 <div class="form-group">
                     <label for="faqAnswerTextarea" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">الإجابة:</label>
-                    <textarea id="faqAnswerTextarea" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-48 resize-none" readonly dir="ltr"></textarea>
+                    <textarea id="faqAnswerTextarea" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-48 resize-none" readonly dir="rtl"></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
@@ -485,7 +490,7 @@
 
         <!-- NEW: التحكم في جودة الأبعاد (Dimensional Quality Form) -->
         <div id="dimensionalQualityForm" class="form-container">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">مراجعة أبعاد القطاع</h2> <!-- Changed title here -->
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">التحكم في جودة الأبعاد</h2>
 
             <div class="space-y-4">
                 <!-- Standard Display -->
@@ -1435,59 +1440,60 @@
          * Initializes the FAQ data for Towers.
          */
         function initializeFAQ() {
-            faqData[""] = ""; // Empty entry as per VB.NET
-            faqData["What are the dimensional tolerances for tower/mast sections?"] =
-                "Length deviations: ±2 mm/m (up to 10m), ±0.2% total length (>10m)\n" +
-                "Straightness: Max 3 mm deviation over entire length\n" +
-                "Circularity: ≤0.5% nominal diameter (tubular sections)";
-            faqData["What are the requirements for bolt hole positions?"] =
-                "Hole spacing: ±1 mm\n" +
-                "Hole diameter: +0.5 mm / -0 mm (for bolts ≤M24)\n" +
-                "Edge distance: ±2 mm (min 1.2 x bolt diameter)";
-            faqData["What are the EXC classifications?"] =
-                "EXC1: Basic requirements for non-critical structures\n" +
-                "EXC2: Standard requirements\n" +
-                "EXC3: Comprehensive requirements (e.g., bridges)\n" +
-                "EXC4: Highest requirements (special applications)";
-            faqData["1. Length of components"] =
-                "Parameter: Cut length measured on the centreline (or on the corner for an angle)\n" +
-                "Class 1: Δ = ±1 mm\n" +
-                "Class 2: Δ = ±2 mm";
-            faqData["2. Length or spacing"] =
-                "Parameter: If minimum dimensions are specified\n" +
-                "Class 1: -Δ = 0mm, +Δ = 1 mm\n" +
-                "Class 2: -Δ = 0mm, +Δ = 1 mm";
-            faqData["3. Back marks for angles"] =
-                "Parameter: Distance from heel of angle to centre of hole\n" +
-                "Class 1: Δ = ±0,5 mm\n" +
-                "Class 2: Δ = ±1 mm";
-            faqData["4. Squareness of cut edges"] =
-                "Parameter: Deviation A of a cut edge from 90°\n" +
-                "Class 1: Δ = ±0,05t\n" +
-                "Class 2: Δ = ±0,05t";
-            faqData["5. Squareness of ends"] =
-                "Parameters:\n" +
-                "- Squareness to longitudinal axis\n" +
-                "- Ends intended for full contact bearing: Δ = ±D/300\n" +
-                "- Ends not intended for full contact bearing: Δ = ±D/1000\n" +
-                "(Applies to both Class 1 and Class 2)";
-            faqData["6. Surfaces for full contact in bearing"] =
-                "Parameter: Flatness\n" +
-                "Class 1: 1 in 1500\n" +
-                "Class 2: 1 in 1500";
-            faqData["7. Position of holes for fasteners"] =
-                "Parameter: Deviation A of centreline of individual hole\n" +
-                "Class 1: Δ = ±1 mm\n" +
-                "Class 2: Δ = ±2 mm";
-            faqData["8. Position of hole group"] =
-                "Parameter: Deviation A of hole group from intended position\n" +
-                "Class 1: Δ = ±1 mm\n" +
-                "Class 2: Δ = ±2 mm";
-            faqData["9. Spacing of hole groups"] =
-                "Parameter: Deviation A in spacing c between centres\n" +
-                "Class 1: Δ = ±0,5 mm\n" +
-                "Class 2: Δ = ±1,5 mm";
+            faqData[""] = ""; // Empty entry
+            faqData["ما هي التفاوتات المسموح بها في أبعاد مقاطع الأبراج/الصواري؟"] =
+                "انحرافات الطول: ±2 مم/م (حتى 10م)، ±0.2% من الطول الإجمالي (>10م)\n" +
+                "الاستقامة: أقصى انحراف 3 مم على كامل الطول\n" +
+                "الاستدارة: ≤0.5% من القطر الاسمي (للمقاطع الأنبوبية)";
+            faqData["ما هي متطلبات مواضع ثقوب المسامير؟"] =
+                "المسافات بين الثقوب: ±1 مم\n" +
+                "قطر الثقب: +0.5 مم / -0 مم (للمسامير ≤M24)\n" +
+                "مسافة الحافة: ±2 مم (الحد الأدنى 1.2 × قطر المسمار)";
+            faqData["ما هي تصنيفات فئات التنفيذ (EXC)؟"] =
+                "EXC1: متطلبات أساسية للمنشآت غير الحرجة\n" +
+                "EXC2: متطلبات قياسية\n" +
+                "EXC3: متطلبات شاملة (مثل الجسور)\n" +
+                "EXC4: أعلى المتطلبات (للتطبيقات الخاصة)";
+            faqData["1. طول المكونات"] =
+                "المعلمة: طول القطع المقاس على خط المركز (أو على الزاوية بالنسبة للزوايا)\n" +
+                "الفئة 1: Δ = ±1 مم\n" +
+                "الفئة 2: Δ = ±2 مم";
+            faqData["2. الطول أو التباعد"] =
+                "المعلمة: إذا تم تحديد أبعاد دنيا\n" +
+                "الفئة 1: -Δ = 0 مم، +Δ = 1 مم\n" +
+                "الفئة 2: -Δ = 0 مم، +Δ = 1 مم";
+            faqData["3. علامات الظهر للزوايا"] =
+                "المعلمة: المسافة من كعب الزاوية إلى مركز الثقب\n" +
+                "الفئة 1: Δ = ±0.5 مم\n" +
+                "الفئة 2: Δ = ±1 مم";
+            faqData["4. تعامد حواف القطع"] =
+                "المعلمة: انحراف A لحافة القطع عن 90 درجة\n" +
+                "الفئة 1: Δ = ±0.05t\n" +
+                "الفئة 2: Δ = ±0.05t";
+            faqData["5. تعامد النهايات"] =
+                "المعلمات:\n" +
+                "- التعامد مع المحور الطولي\n" +
+                "- النهايات المخصصة للتحميل التلامسي الكامل: Δ = ±D/300\n" +
+                "- النهايات غير المخصصة للتحميل التلامسي الكامل: Δ = ±D/1000\n" +
+                "(ينطبق على كل من الفئة 1 والفئة 2)";
+            faqData["6. الأسطح المخصصة للتحميل التلامسي الكامل"] =
+                "المعلمة: الاستواء\n" +
+                "الفئة 1: 1 في 1500\n" +
+                "الفئة 2: 1 في 1500";
+            faqData["7. موضع ثقوب المثبتات"] =
+                "المعلمة: انحراف A لخط مركز الثقب الفردي\n" +
+                "الفئة 1: Δ = ±1 مم\n" +
+                "الفئة 2: Δ = ±2 مم";
+            faqData["8. موضع مجموعة الثقوب"] =
+                "المعلمة: انحراف A لمجموعة الثقوب عن موضعها المقصود\n" +
+                "الفئة 1: Δ = ±1 مم\n" +
+                "الفئة 2: Δ = ±2 مم";
+            faqData["9. التباعد بين مجموعات الثقوب"] =
+                "المعلمة: انحراف A في التباعد c بين المراكز\n" +
+                "الفئة 1: Δ = ±0.5 مم\n" +
+                "الفئة 2: Δ = ±1.5 مم";
         }
+
 
         /**
          * Populates the FAQ question dropdown for Towers.
