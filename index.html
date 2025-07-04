@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>???? ?????? ??????</title> <!-- Changed title here -->
+    <title>نظام الجودة الشامل</title> <!-- Changed title here -->
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -68,33 +68,33 @@
     <div id="app-container" class="bg-white p-6 md:p-8 rounded-xl shadow-lg w-full max-w-md mx-auto border border-gray-200">
         <!-- Form1 (Main Form) -->
         <div id="form1" class="form-container block">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">???? ?????? ??????</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">نظام الجودة الشامل</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <!-- Buttons reordered as requested -->
                 <button id="goToMechanicalTestForm" class="bg-blue-800 hover:bg-blue-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                    ???????? ??????????
+                    الاختبار الميكانيكي
                 </button>
                 <button id="goToQuantitativeAnalysisForm" class="bg-yellow-600 hover:bg-yellow-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                    ??????? ?????????
+                    التحليل الكيميائي
                 </button>
                 <button id="goToDinSpecsForm" class="bg-orange-800 hover:bg-orange-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                    ???? ??????? ????????
+                    مدقق مواصفات المسامير
                 </button>
                 <!-- Renamed button -->
                 <button id="goToDimensionalQualityForm" class="bg-cyan-700 hover:bg-cyan-800 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                    ?????? ????? ??????
+                    مراجعة أبعاد القطاع
                 </button>
                 <button id="goToFaqForm" class="bg-purple-800 hover:bg-purple-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                    ??????? ??????? ?? ???????
+                    الأسئلة الشائعة في الأبراج
                 </button>
                 <button id="goToFaqColumnsForm" class="bg-green-800 hover:bg-green-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                    ??????? ??????? ?? ???????
+                    الأسئلة الشائعة في الأعمدة
                 </button>
                 <button id="goToFaqGalvanizationForm" class="bg-indigo-800 hover:bg-indigo-900 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                    ??????? ??????? ?? ???????
+                    الأسئلة الشائعة في الجلفنة
                 </button>
                 <button id="button7" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                    ????
+                    خروج
                 </button>
             </div>
         </div>
@@ -153,92 +153,92 @@
             </button>
         </div>
 
-        <!-- ???????? ?????????? (Mechanical Test Form) -->
+        <!-- الاختبار الميكانيكي (Mechanical Test Form) -->
         <div id="mechanicalTestForm" class="form-container">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">???????? ??????????</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">الاختبار الميكانيكي</h2>
 
             <div class="space-y-4">
                 <div class="form-group">
-                    <label for="thickness" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">????? (??):</label>
-                    <input type="number" id="thickness" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ?????" dir="rtl">
+                    <label for="thickness" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">السمك (مم):</label>
+                    <input type="number" id="thickness" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل السمك" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="yield" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????? (MPa):</label>
-                    <input type="number" id="yield" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ??????" dir="rtl">
+                    <label for="yield" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">الخضوع (MPa):</label>
+                    <input type="number" id="yield" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل قيمة الخضوع" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="tensile" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???? (MPa):</label>
-                    <input type="number" id="tensile" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ????" dir="rtl">
+                    <label for="tensile" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">الشد (MPa):</label>
+                    <input type="number" id="tensile" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل قيمة الشد" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="elongation" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">????????? (%):</label>
-                    <input type="number" id="elongation" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ?????????" dir="rtl">
+                    <label for="elongation" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">الاستطالة (%):</label>
+                    <input type="number" id="elongation" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل قيمة الاستطالة" dir="rtl">
                 </div>
 
                 <div class="form-group">
-                    <label for="standardSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <label for="standardSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">المعيار:</label>
                     <select id="standardSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
                         <!-- Options will be populated by JavaScript -->
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="steelTypeSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ?????:</label>
+                    <label for="steelTypeSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">نوع الصلب:</label>
                     <select id="steelTypeSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
                         <!-- Options will be populated by JavaScript -->
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="project_name" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ???????:</label>
-                    <input type="text" id="project_name" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ???????" dir="rtl">
+                    <label for="project_name" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">اسم المشروع:</label>
+                    <input type="text" id="project_name" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل اسم المشروع" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="lab_name" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ??????:</label>
-                    <input type="text" id="lab_name" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ??????" dir="rtl">
+                    <label for="lab_name" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">اسم المعمل:</label>
+                    <input type="text" id="lab_name" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل اسم المعمل" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="test_date" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <label for="test_date" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">التاريخ:</label>
                     <input type="date" id="test_date" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="prepared_by" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
-                    <input type="text" id="prepared_by" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ?????" dir="rtl">
+                    <label for="prepared_by" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">المعد:</label>
+                    <input type="text" id="prepared_by" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل اسم المعد" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="approved_by" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">????? ????????:</label>
-                    <input type="text" id="approved_by" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ????? ????????" dir="rtl">
+                    <label for="approved_by" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">معتمد الاختبار:</label>
+                    <input type="text" id="approved_by" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل اسم معتمد الاختبار" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="description" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
-                    <textarea id="description" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 resize-none" placeholder="???? ?????" dir="rtl"></textarea>
+                    <label for="description" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">الوصف:</label>
+                    <textarea id="description" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 resize-none" placeholder="أدخل الوصف" dir="rtl"></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                     <button id="compareDataBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ?????? ????????
+                        مقارنة البيانات
                     </button>
                     <button id="printReportBtn" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ????? ???????
+                        طباعة التقرير
                     </button>
                     <button id="exportExcelBtn" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ????? ??? Excel
+                        تصدير إلى Excel
                     </button>
                     <button id="clearAllBtn" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ??? ????
+                        مسح الكل
                     </button>
                     <button id="backToMainFromMechanicalTest" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
-                        ?????? ??? ??????? ????????
+                        العودة إلى القائمة الرئيسية
                     </button>
                     <button id="exitFromMechanicalTest" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
-                        ???? ?? ???????
+                        خروج من التطبيق
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- ??????? ????????? (Quantitative Analysis Form) -->
+        <!-- التحليل الكيميائي (Quantitative Analysis Form) -->
         <div id="quantitativeAnalysisForm" class="form-container">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">??????? ?????????</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">التحليل الكيميائي</h2>
 
             <div class="space-y-4">
                 <div class="form-group">
@@ -256,183 +256,183 @@
 
                 <div class="form-group">
                     <label for="carbonInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl"> (C)%*:</label>
-                    <input type="number" id="carbonInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ???????" dir="rtl">
+                    <input type="number" id="carbonInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل نسبة الكربون" dir="rtl">
                 </div>
                 <div class="form-group">
                     <label for="manganeseInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl"> (Mn)%*:</label>
-                    <input type="number" id="manganeseInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ????????" dir="rtl">
+                    <input type="number" id="manganeseInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل نسبة المنغنيز" dir="rtl">
                 </div>
                 <div class="form-group">
                     <label for="siliconInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl"> (Si)%*:</label>
-                    <input type="number" id="siliconInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ????????" dir="rtl">
+                    <input type="number" id="siliconInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل نسبة السيلكون" dir="rtl">
                 </div>
                 <div class="form-group">
                     <label for="phosphorusInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl"> (P)%*:</label>
-                    <input type="number" id="phosphorusInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ????????" dir="rtl">
+                    <input type="number" id="phosphorusInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل نسبة الفوسفور" dir="rtl">
                 </div>
                 <div class="form-group">
                     <label for="sulfurInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl"> (S)%*:</label>
-                    <input type="number" id="sulfurInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ???????" dir="rtl">
+                    <input type="number" id="sulfurInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل نسبة الكبريت" dir="rtl">
                 </div>
                 <div class="form-group">
                     <label for="chromiumInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">(Cr):</label>
-                    <input type="number" id="chromiumInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ?????? (???????)" dir="rtl">
+                    <input type="number" id="chromiumInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل نسبة الكروم (اختياري)" dir="rtl">
                 </div>
                 <div class="form-group">
                     <label for="nickelInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">(Ni):</label>
-                    <input type="number" id="nickelInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ?????? (???????)" dir="rtl">
+                    <input type="number" id="nickelInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل نسبة النيكل (اختياري)" dir="rtl">
                 </div>
                 <div class="form-group">
                     <label for="molybdenumInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">(Mo):</label>
-                    <input type="number" id="molybdenumInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ???? ???????????? (???????)" dir="rtl">
+                    <input type="number" id="molybdenumInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل نسبة الموليبدينوم (اختياري)" dir="rtl">
                 </div>
 
                 <!-- Additional Info for Chemical Analysis -->
                 <div class="form-group">
-                    <label for="chemProjectNameInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ???????:</label>
-                    <input type="text" id="chemProjectNameInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ???????" dir="rtl">
+                    <label for="chemProjectNameInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">اسم المشروع:</label>
+                    <input type="text" id="chemProjectNameInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل اسم المشروع" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="chemLabNameInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ??????:</label>
-                    <input type="text" id="chemLabNameInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ??????" dir="rtl">
+                    <label for="chemLabNameInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">اسم المعمل:</label>
+                    <input type="text" id="chemLabNameInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل اسم المعمل" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="chemTestDateInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <label for="chemTestDateInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">التاريخ:</label>
                     <input type="date" id="chemTestDateInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="chemPreparedByInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
-                    <input type="text" id="chemPreparedByInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ?????" dir="rtl">
+                    <label for="chemPreparedByInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">المعد:</label>
+                    <input type="text" id="chemPreparedByInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل اسم المعد" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="chemApprovedByInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">????? ????????:</label>
-                    <input type="text" id="chemApprovedByInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ????? ????????" dir="rtl">
+                    <label for="chemApprovedByInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">معتمد الاختبار:</label>
+                    <input type="text" id="chemApprovedByInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل اسم معتمد الاختبار" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="chemDescriptionInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
-                    <textarea id="chemDescriptionInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 resize-none" placeholder="???? ?????" dir="rtl"></textarea>
+                    <label for="chemDescriptionInput" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">الوصف:</label>
+                    <textarea id="chemDescriptionInput" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 resize-none" placeholder="أدخل الوصف" dir="rtl"></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                     <button id="compareChemDataBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ?????? ????????
+                        مقارنة البيانات
                     </button>
                     <button id="printChemReportBtn" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ????? ???????
+                        طباعة التقرير
                     </button>
                     <button id="exportChemExcelBtn" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ????? ??? Excel
+                        تصدير إلى Excel
                     </button>
                     <button id="clearChemInputsBtn" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ??? ????
+                        مسح الكل
                     </button>
                     <button id="backToMainFromQuantitativeAnalysis" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
-                        ?????? ??? ??????? ????????
+                        العودة إلى القائمة الرئيسية
                     </button>
                     <button id="exitFromQuantitativeAnalysis" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
-                        ???? ?? ???????
+                        خروج من التطبيق
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- ??????? ??????? ?? ??????? (FAQ Form) - Form5 -->
+        <!-- الأسئلة الشائعة في الأبراج (FAQ Form) - Form5 -->
         <div id="faqForm" class="form-container">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">??????? ??????? ?? ??????? (BS EN 1090-2:2018)</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">الأسئلة الشائعة في الأبراج (BS EN 1090-2:2018)</h2>
 
             <div class="space-y-4">
                 <div class="form-group">
-                    <label for="faqQuestionSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???? ??????:</label>
+                    <label for="faqQuestionSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">اختر سؤالاً:</label>
                     <select id="faqQuestionSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
                         <!-- Options will be populated by JavaScript -->
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="faqAnswerTextarea" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <label for="faqAnswerTextarea" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">الإجابة:</label>
                     <textarea id="faqAnswerTextarea" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-48 resize-none" readonly dir="ltr"></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                     <button id="backToMainFromFaq" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ?????? ??? ??????? ????????
+                        العودة إلى القائمة الرئيسية
                     </button>
                     <button id="exitFromFaq" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ???? ?? ???????
+                        خروج من التطبيق
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- ??????? ??????? ?? ??????? (FAQ Columns Form) - Form6 -->
+        <!-- الأسئلة الشائعة في الأعمدة (FAQ Columns Form) - Form6 -->
         <div id="faqColumnsForm" class="form-container">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">??????? ??????? ?? ??????? (BS EN 1090-2:2018)</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">الأسئلة الشائعة في الأعمدة (BS EN 1090-2:2018)</h2>
 
             <div class="space-y-4">
                 <div class="form-group">
-                    <label for="faqColumnsQuestionSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???? ??????:</label>
+                    <label for="faqColumnsQuestionSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">اختر سؤالاً:</label>
                     <select id="faqColumnsQuestionSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
                         <!-- Options will be populated by JavaScript -->
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="faqColumnsAnswerTextarea" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <label for="faqColumnsAnswerTextarea" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">الإجابة:</label>
                     <textarea id="faqColumnsAnswerTextarea" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-48 resize-none" readonly dir="ltr"></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                     <button id="backToMainFromFaqColumns" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ?????? ??? ??????? ????????
+                        العودة إلى القائمة الرئيسية
                     </button>
                     <button id="exitFromFaqColumns" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ???? ?? ???????
+                        خروج من التطبيق
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- ??????? ??????? ?? ??????? (FAQ Galvanization Form) - Form7 -->
+        <!-- الأسئلة الشائعة في الجلفنة (FAQ Galvanization Form) - Form7 -->
         <div id="faqGalvanizationForm" class="form-container">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">??????? ??????? ?? ??????? (ISO 1461:2009)</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">الأسئلة الشائعة في الجلفنة (ISO 1461:2009)</h2>
 
             <div class="space-y-4">
                 <div class="form-group">
-                    <label for="faqGalvanizationQuestionSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???? ??????:</label>
+                    <label for="faqGalvanizationQuestionSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">اختر سؤالاً:</label>
                     <select id="faqGalvanizationQuestionSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
                         <!-- Options will be populated by JavaScript -->
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="faqGalvanizationAnswerTextarea" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <label for="faqGalvanizationAnswerTextarea" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">الإجابة:</label>
                     <textarea id="faqGalvanizationAnswerTextarea" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-48 resize-none" readonly dir="ltr"></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                     <button id="backToMainFromFaqGalvanization" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ?????? ??? ??????? ????????
+                        العودة إلى القائمة الرئيسية
                     </button>
                     <button id="exitFromFaqGalvanization" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ???? ?? ???????
+                        خروج من التطبيق
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- NEW: ???? ?? ??????? DIN ???????? (DIN Specs Form) - Form8 -->
+        <!-- NEW: تحقق من مواصفات DIN للمثبتات (DIN Specs Form) - Form8 -->
         <div id="dinSpecsForm" class="form-container">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">???? ??????? ????????</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">مدقق مواصفات المسامير</h2>
 
             <div class="space-y-4">
                 <div class="form-group">
-                    <label for="dinTypeSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
+                    <label for="dinTypeSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">النوع:</label>
                     <select id="dinTypeSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
                         <!-- Options will be populated by JavaScript -->
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="dinStandardSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <label for="dinStandardSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">المعيار:</label>
                     <select id="dinStandardSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
                         <!-- Options will be populated by JavaScript -->
                     </select>
@@ -468,35 +468,35 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                     <button id="dinCheckSpecsBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ???? ?? ?????????
+                        تحقق من المواصفات
                     </button>
                     <button id="dinClearAllBtn" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ??? ????
+                        مسح الكل
                     </button>
                     <button id="backToMainFromDinSpecs" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
-                        ?????? ??? ??????? ????????
+                        العودة إلى القائمة الرئيسية
                     </button>
                     <button id="exitFromDinSpecs" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
-                        ???? ?? ???????
+                        خروج من التطبيق
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- NEW: ?????? ?? ???? ??????? (Dimensional Quality Form) -->
+        <!-- NEW: التحكم في جودة الأبعاد (Dimensional Quality Form) -->
         <div id="dimensionalQualityForm" class="form-container">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">?????? ????? ??????</h2> <!-- Changed title here -->
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center" dir="rtl">مراجعة أبعاد القطاع</h2> <!-- Changed title here -->
 
             <div class="space-y-4">
                 <!-- Standard Display -->
                 <div class="form-group">
-                    <label for="dimStandardDisplay" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <label for="dimStandardDisplay" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">المعيار:</label>
                     <input type="text" id="dimStandardDisplay" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline bg-gray-100" readonly dir="ltr">
                 </div>
 
                 <!-- Section Type Selection -->
                 <div class="form-group">
-                    <label for="dimSectionTypeSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ??????:</label>
+                    <label for="dimSectionTypeSelect" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">نوع القطاع:</label>
                     <select id="dimSectionTypeSelect" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500" dir="rtl">
                         <!-- Options populated by JS -->
                     </select>
@@ -572,43 +572,43 @@
 
                 <!-- General Data Fields -->
                 <div class="form-group">
-                    <label for="dimProjectName" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ???????:</label>
-                    <input type="text" id="dimProjectName" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ???????" dir="rtl">
+                    <label for="dimProjectName" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">اسم المشروع:</label>
+                    <input type="text" id="dimProjectName" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل اسم المشروع" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="dimLabName" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">??? ??????:</label>
-                    <input type="text" id="dimLabName" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ??????" dir="rtl">
+                    <label for="dimLabName" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">اسم المعمل:</label>
+                    <input type="text" id="dimLabName" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل اسم المعمل" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="dimTestDate" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">???????:</label>
+                    <label for="dimTestDate" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">التاريخ:</label>
                     <input type="date" id="dimTestDate" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="dimPreparedBy" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
-                    <input type="text" id="dimPreparedBy" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ?????" dir="rtl">
+                    <label for="dimPreparedBy" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">المعد:</label>
+                    <input type="text" id="dimPreparedBy" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل اسم المعد" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="dimApprovedBy" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">????? ????????:</label>
-                    <input type="text" id="dimApprovedBy" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="???? ??? ????? ????????" dir="rtl">
+                    <label for="dimApprovedBy" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">معتمد الاختبار:</label>
+                    <input type="text" id="dimApprovedBy" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="أدخل اسم معتمد الاختبار" dir="rtl">
                 </div>
                 <div class="form-group">
-                    <label for="dimDescription" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">?????:</label>
-                    <textarea id="dimDescription" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 resize-none" placeholder="???? ?????" dir="rtl"></textarea>
+                    <label for="dimDescription" class="block text-gray-700 text-sm font-bold mb-2" dir="rtl">الوصف:</label>
+                    <textarea id="dimDescription" class="shadow appearance-none border rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-24 resize-none" placeholder="أدخل الوصف" dir="rtl"></textarea>
                 </div>
 
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                     <button id="dimCheckDimensionsBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ???? ?? ???????
+                        تحقق من الأبعاد
                     </button>
                     <button id="dimClearAllBtn" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-                        ??? ????
+                        مسح الكل
                     </button>
                     <button id="backToMainFromDimensionalQuality" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
-                        ?????? ??? ??????? ????????
+                        العودة إلى القائمة الرئيسية
                     </button>
                     <button id="exitFromDimensionalQuality" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-4 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 col-span-full">
-                        ???? ?? ???????
+                        خروج من التطبيق
                     </button>
                 </div>
             </div>
@@ -853,15 +853,15 @@
             "Angles": {
                 "standard": "EN 10025",
                 "labels": [
-                    "????? ?????? ???? ???????:", "??? ????? ??????? ???????:",
-                    "????? ?????? ???????:", "????? ??????? ???????:",
-                    "????? ?????? ???????:", "????? ??????? ???????:",
-                    "????? ???????? ??????? ???????:", "????? ??????? ??????? ???????:"
+                    "الطول الاسمي لرجل الزاوية:", "طول الرجل الحقيقي للزاوية:",
+                    "السمك الاسمي للزاوية:", "السمك الحقيقي للزاوية:",
+                    "الطول الاسمي للزاوية:", "الطول الحقيقي للزاوية:",
+                    "مقدار الانحناء الحقيقي للزاوية:", "مقدار التعامد الحقيقي للزاوية:"
                 ],
                 "tolerances": {
-                    "legLength": { "percent": 0.01, "abs": 2 }, // �1% or �2mm
-                    "thickness": { "percent": 0.05, "abs": 0.5 }, // �5% or �0.5mm
-                    "length": { "percent": 0.002, "absPerMeter": 2 }, // �0.2% total, or �2mm/m
+                    "legLength": { "percent": 0.01, "abs": 2 }, // ±1% or ±2mm
+                    "thickness": { "percent": 0.05, "abs": 0.5 }, // ±5% or ±0.5mm
+                    "length": { "percent": 0.002, "absPerMeter": 2 }, // ±0.2% total, or ±2mm/m
                     "camber": { "percent": 0.002 }, // Max 0.2% of length
                     "squareness": { "maxAngle": 1, "maxRatio": 0.05 } // Max 1 degree or 0.05t (for 0.05t, need thickness)
                 },
@@ -871,14 +871,14 @@
             "Plates": {
                 "standard": "EN 10029",
                 "labels": [
-                    "????? ?????? ???? ?????:", "????? ??????? ???? ?????:",
-                    "????? ?????? ???? ?????:", "????? ??????? ???? ?????:",
-                    "????? ?????? ???? ?????:", "????? ??????? ???? ?????:",
-                    "????? ???????? ??????? camber ???? ?????:"
+                    "الطول الاسمي للوح الصاج:", "الطول الحقيقي للوح الصاج:",
+                    "السمك الاسمي للوح الصاج:", "السمك الحقيقي للوح الصاج:",
+                    "العرض الاسمي للوح الصاج:", "العرض الحقيقي للوح الصاج:",
+                    "مقدار الانحناء الحقيقي camber للوح الصاج:"
                 ],
                 "tolerances": {
-                    "lengthWidth": { "percent": 0.005, "abs": 10 }, // �0.5% or �10mm
-                    "thickness": { "percent": 0.05, "abs": 0.5 }, // �5% or �0.5mm
+                    "lengthWidth": { "percent": 0.005, "abs": 10 }, // ±0.5% or ±10mm
+                    "thickness": { "percent": 0.05, "abs": 0.5 }, // ±5% or ±0.5mm
                     "camber": { "percent": 0.002 } // Max 0.2% of length
                 },
                 "numInputs": 7, // dimInput1 to dimInput7
@@ -887,14 +887,14 @@
             "Pipes": {
                 "standard": "EN 10210",
                 "labels": [
-                    "????? ?????? ????????:", "????? ??????? ????????:",
-                    "????? ?????? ????????:", "????? ??????? ????????:",
-                    "????? ?????? ????????:", "????? ??????? ????????:",
-                    "????? ???????? ??????? ????????:"
+                    "القطر الاسمي للماسورة:", "القطر الحقيقي للماسورة:",
+                    "السمك الاسمي للماسورة:", "السمك الحقيقي للماسورة:",
+                    "الطول الاسمي للماسورة:", "الطول الحقيقي للماسورة:",
+                    "مقدار الانحناء الحقيقي للماسورة:"
                 ],
                 "tolerances": {
-                    "diameter": { "percent": 0.005 }, // �0.5% of nominal diameter
-                    "thickness": { "percent": 0.1, "abs": 0.5 }, // �10% or �0.5mm
+                    "diameter": { "percent": 0.005 }, // ±0.5% of nominal diameter
+                    "thickness": { "percent": 0.1, "abs": 0.5 }, // ±10% or ±0.5mm
                     "length": { "percent": 0.002, "absPerMeter": 2 },
                     "camber": { "percent": 0.002 } // Max 0.2% of length
                 },
@@ -904,11 +904,11 @@
             "Rods": {
                 "standard": "EN 10060",
                 "labels": [
-                    "????? ?????? rod:", "????? ??????? ??rod:",
-                    "????? ?????? ?? rod:", "????? ??????? ??rod:"
+                    "القطر الاسمي rod:", "القطر الحقيقي للrod:",
+                    "الطول الاسمي لل rod:", "الطول الحقيقي للrod:"
                 ],
                 "tolerances": {
-                    "diameter": { "percent": 0.01, "abs": 1 }, // �1% or �1mm
+                    "diameter": { "percent": 0.01, "abs": 1 }, // ±1% or ±1mm
                     "length": { "percent": 0.002, "absPerMeter": 2 }
                 },
                 "numInputs": 4, // dimInput1 to dimInput4
@@ -917,17 +917,17 @@
             "Sections": { // Beams
                 "standard": "EN 10034",
                 "labels": [
-                    "???????? ?????? ??????:", "???????? ??????? ??????:",
-                    "????? ?????? ??????:", "????? ??????? ??????:",
-                    "????? ?????? ????????:", "????? ??????? ????????:",
-                    "????? ?????? ?????:", "????? ??????? ?????:",
-                    "???? ??? ???????:", "?????? ?? ??????:"
+                    "الارتفاع الاسمي للكمرة:", "الارتفاع الحقيقي للكمرة:",
+                    "العرض الاسمي للكمرة:", "العرض الحقيقي للكمرة:",
+                    "السمك الاسمي للفلانشة:", "السمك الحقيقي للفلانشة:",
+                    "السمك الاسمي للويب:", "السمك الحقيقي للويب:",
+                    "قيمة عدم التعامد:", "الحيود عن المركز:"
                 ],
                 "tolerances": {
-                    "heightWidth": { "percent": 0.003, "abs": 3 }, // �0.3% or �3mm
-                    "flangeWebThickness": { "percent": 0.05, "abs": 0.5 }, // �5% or �0.5mm
-                    "squareness": { "abs": 2 }, // �2mm
-                    "eccentricity": { "abs": 2 } // �2mm
+                    "heightWidth": { "percent": 0.003, "abs": 3 }, // ±0.3% or ±3mm
+                    "flangeWebThickness": { "percent": 0.05, "abs": 0.5 }, // ±5% or ±0.5mm
+                    "squareness": { "abs": 2 }, // ±2mm
+                    "eccentricity": { "abs": 2 } // ±2mm
                 },
                 "numInputs": 10, // dimInput1 to dimInput10
                 "optionalInputs": [8, 9] // dimInput9 (Squareness), dimInput10 (Eccentricity) are optional
@@ -1089,7 +1089,7 @@
                 !projectNameInput.value.trim() || !labNameInput.value.trim() ||
                 !testDateInput.value.trim() || !preparedByInput.value.trim() ||
                 !approvedByInput.value.trim() || !descriptionInput.value.trim()) {
-                showMsgBox("???? ????? ???? ????????!", "?????", "Warning");
+                showMsgBox("يرجى إدخال جميع البيانات!", "تحذير", "Warning");
                 return null;
             }
 
@@ -1121,7 +1121,7 @@
             const steelTypeSpecs = SteelSpecs[steelType];
 
             if (!steelTypeSpecs) {
-                showMsgBox("??? ????? ?????? ??? ????? ?? ?????????!", "???", "Error");
+                showMsgBox("نوع الصلب المحدد غير موجود في المواصفات!", "خطأ", "Error");
                 return null;
             }
 
@@ -1139,7 +1139,7 @@
             }
 
             if (thicknessRange === "") {
-                showMsgBox("????? ??? ????? ????????? ???????!", "???", "Error");
+                showMsgBox("السمك غير مدعوم للمواصفات المحددة!", "خطأ", "Error");
                 return null;
             }
 
@@ -1149,32 +1149,32 @@
             const isTensileOK = tensile >= specs.TensileMin && tensile <= specs.TensileMax;
             const isElongationOK = elongation >= specs.ElongationMin;
 
-            let resultMessage = `?????? ????????:\n`;
-            resultMessage += `???????: ${standard}\n`;
-            resultMessage += `??? ?????: ${steelType}\n`;
-            resultMessage += `?????: ${thickness} ??\n`;
+            let resultMessage = `بيانات الاختبار:\n`;
+            resultMessage += `المعيار: ${standard}\n`;
+            resultMessage += `نوع الصلب: ${steelType}\n`;
+            resultMessage += `السمك: ${thickness} مم\n`;
             resultMessage += `--------------------------------------------------\n`;
-            resultMessage += `??????? ?????????:\n\n`;
+            resultMessage += `النتيجة التفصيلية:\n\n`;
 
-            resultMessage += `??????: ${yieldVal} MPa - ${isYieldOK ? "????? ?" : "??? ????? ?"}\n`;
-            resultMessage += `??? ??? ?? ???? ???? ?????? ? ${specs.YieldMin} MPa\n\n`;
+            resultMessage += `الخضوع: ${yieldVal} MPa - ${isYieldOK ? "مطابق ✓" : "غير مطابق ✗"}\n`;
+            resultMessage += `حيث يجب أن تكون قيمة الخضوع ≥ ${specs.YieldMin} MPa\n\n`;
 
-            resultMessage += `????: ${tensile} MPa - ${isTensileOK ? "????? ?" : "??? ????? ?"}\n`;
-            resultMessage += `??? ?????? ???? ???? ?? ??????? ??? ${specs.TensileMin} ??? ${specs.TensileMax} MPa\n\n`;
+            resultMessage += `الشد: ${tensile} MPa - ${isTensileOK ? "مطابق ✓" : "غير مطابق ✗"}\n`;
+            resultMessage += `حيث تتراوح قيمة الشد في القياسي بين ${specs.TensileMin} إلى ${specs.TensileMax} MPa\n\n`;
 
-            resultMessage += `?????????: ${elongation}% - ${isElongationOK ? "?????? ?" : "??? ?????? ?"}\n`;
-            resultMessage += `??? ??? ?? ???? ????????? ? ${specs.ElongationMin}%\n\n`;
+            resultMessage += `الاستطالة: ${elongation}% - ${isElongationOK ? "مطابقة ✓" : "غير مطابقة ✗"}\n`;
+            resultMessage += `حيث يجب أن تكون الاستطالة ≥ ${specs.ElongationMin}%\n\n`;
 
             resultMessage += `--------------------------------------------------\n`;
-            resultMessage += `?? ????? ??????: ${isYieldOK && isTensileOK && isElongationOK ? "??? ?" : "?? ?"}\n`;
+            resultMessage += `هل الصلب مطابق؟: ${isYieldOK && isTensileOK && isElongationOK ? "نعم ✅" : "لا ❌"}\n`;
             resultMessage += `--------------------------------------------------\n`;
-            resultMessage += `??????? ??????:\n`;
-            resultMessage += `??? ???????: ${data.projectName}\n`;
-            resultMessage += `??? ??????: ${data.labName}\n`;
-            resultMessage += `???????: ${data.testDate}\n`;
-            resultMessage += `?????: ${data.preparedBy}\n`;
-            resultMessage += `????? ????????: ${data.approvedBy}\n`;
-            resultMessage += `?????: ${data.description}`;
+            resultMessage += `معلومات إضافية:\n`;
+            resultMessage += `اسم المشروع: ${data.projectName}\n`;
+            resultMessage += `اسم المعمل: ${data.labName}\n`;
+            resultMessage += `التاريخ: ${data.testDate}\n`;
+            resultMessage += `المعد: ${data.preparedBy}\n`;
+            resultMessage += `معتمد الاختبار: ${data.approvedBy}\n`;
+            resultMessage += `الوصف: ${data.description}`;
 
             return resultMessage;
         }
@@ -1310,14 +1310,14 @@
                 !chemTestDateInput.value.trim() || !chemPreparedByInput.value.trim() ||
                 !chemApprovedByInput.value.trim() || !chemDescriptionInput.value.trim()) {
                 showMsgBox(
-                    "???? ????? ???????? ????????? ??? ????????!\n" +
-                    "- ??? ?????\n" +
-                    "- ???????\n" +
-                    "- ????????\n" +
-                    "- ????????\n" +
-                    "- ????????\n" +
-                    "- ???????",
-                    "?????", "Warning"
+                    "يرجى إدخال البيانات الإلزامية قبل المقارنة!\n" +
+                    "- نوع الصلب\n" +
+                    "- الكربون\n" +
+                    "- المنغنيز\n" +
+                    "- السيلكون\n" +
+                    "- الفوسفور\n" +
+                    "- الكبريت",
+                    "تحذير", "Warning"
                 );
                 return null;
             }
@@ -1346,7 +1346,7 @@
             const specs = SteelChemSpecs[steelType];
 
             if (!specs) {
-                showMsgBox("?? ???? ??????? ???????? ?????? ???? ????? ?? ?????.", "???", "Error");
+                showMsgBox("لا توجد مواصفات كيميائية متوفرة لهذا النوع من الصلب.", "خطأ", "Error");
                 return null;
             }
 
@@ -1378,55 +1378,55 @@
             const IsAllRequiredOk = IsCOk && IsMnOk && IsSiOk && IsPOk && IsSOk;
             const IsAllOptionalOk = IsCrOk && IsNiOk && IsMoOk; // Check optional elements too
 
-            let resultMessage = `????? ??????? ?????????:\n`;
-            resultMessage += `???????: ${standard}\n`;
-            resultMessage += `??? ?????: ${steelType}\n`;
+            let resultMessage = `تحليل التركيب الكيميائي:\n`;
+            resultMessage += `المعيار: ${standard}\n`;
+            resultMessage += `نوع الصلب: ${steelType}\n`;
             resultMessage += `--------------------------------------------------\n`;
-            resultMessage += `??????? ?????????:\n\n`;
+            resultMessage += `النتيجة التفصيلية:\n\n`;
 
             // Carbon
-            resultMessage += `??????? (C): ${C.toFixed(2)}% - ${IsCOk ? "????? ?" : "??? ????? ?"}\n`;
-            resultMessage += `????????: ??? ${CMin.toFixed(2)}% ??? ${CMax.toFixed(2)}%\n\n`;
+            resultMessage += `الكربون (C): ${C.toFixed(2)}% - ${IsCOk ? "مطابق ✓" : "غير مطابق ✗"}\n`;
+            resultMessage += `المواصفة: بين ${CMin.toFixed(2)}% إلى ${CMax.toFixed(2)}%\n\n`;
 
             // Manganese
-            resultMessage += `???????? (Mn): ${Mn.toFixed(2)}% - ${IsMnOk ? "????? ?" : "??? ????? ?"}\n`;
-            resultMessage += `????????: ??? ${MnMin.toFixed(2)}% ??? ${MnMax.toFixed(2)}%\n\n`;
+            resultMessage += `المنغنيز (Mn): ${Mn.toFixed(2)}% - ${IsMnOk ? "مطابق ✓" : "غير مطابق ✗"}\n`;
+            resultMessage += `المواصفة: بين ${MnMin.toFixed(2)}% إلى ${MnMax.toFixed(2)}%\n\n`;
 
             // Silicon
-            resultMessage += `???????? (Si): ${Si.toFixed(2)}% - ${IsSiOk ? "????? ?" : "??? ????? ?"}\n`;
-            resultMessage += `????????: ??? ${SiMin.toFixed(2)}% ??? ${SiMax.toFixed(2)}%\n\n`;
+            resultMessage += `السيلكون (Si): ${Si.toFixed(2)}% - ${IsSiOk ? "مطابق ✓" : "غير مطابق ✗"}\n`;
+            resultMessage += `المواصفة: بين ${SiMin.toFixed(2)}% إلى ${SiMax.toFixed(2)}%\n\n`;
 
             // Phosphorus
-            resultMessage += `???????? (P): ${P.toFixed(2)}% - ${IsPOk ? "????? ?" : "??? ????? ?"}\n`;
-            resultMessage += `????????: ??? ${PMin.toFixed(2)}% ??? ${PMax.toFixed(2)}%\n\n`;
+            resultMessage += `الفوسفور (P): ${P.toFixed(2)}% - ${IsPOk ? "مطابق ✓" : "غير مطابق ✗"}\n`;
+            resultMessage += `المواصفة: بين ${PMin.toFixed(2)}% إلى ${PMax.toFixed(2)}%\n\n`;
 
             // Sulfur
-            resultMessage += `??????? (S): ${S.toFixed(2)}% - ${IsSOk ? "????? ?" : "??? ????? ?"}\n`;
-            resultMessage += `????????: ??? ${SMin.toFixed(2)}% ??? ${SMax.toFixed(2)}%\n\n`;
+            resultMessage += `الكبريت (S): ${S.toFixed(2)}% - ${IsSOk ? "مطابق ✓" : "غير مطابق ✗"}\n`;
+            resultMessage += `المواصفة: بين ${SMin.toFixed(2)}% إلى ${SMax.toFixed(2)}%\n\n`;
 
             // Chromium (Optional)
-            resultMessage += `?????? (Cr): ${Cr.toFixed(2)}% - ${IsCrOk ? "????? ?" : "??? ????? ?"}\n`;
-            resultMessage += `???? ?????? ??????? ??: ? ${CrMax.toFixed(2)}%\n\n`;
+            resultMessage += `الكروم (Cr): ${Cr.toFixed(2)}% - ${IsCrOk ? "مطابق ✓" : "غير مطابق ✗"}\n`;
+            resultMessage += `الحد الأقصى المسموح به: ≤ ${CrMax.toFixed(2)}%\n\n`;
 
             // Nickel (Optional)
-            resultMessage += `?????? (Ni): ${Ni.toFixed(2)}% - ${IsNiOk ? "????? ?" : "??? ????? ?"}\n`;
-            resultMessage += `???? ?????? ??????? ??: ? ${NiMax.toFixed(2)}%\n\n`;
+            resultMessage += `النيكل (Ni): ${Ni.toFixed(2)}% - ${IsNiOk ? "مطابق ✓" : "غير مطابق ✗"}\n`;
+            resultMessage += `الحد الأقصى المسموح به: ≤ ${NiMax.toFixed(2)}%\n\n`;
 
             // Molybdenum (Optional)
-            resultMessage += `???????????? (Mo): ${Mo.toFixed(2)}% - ${IsMoOk ? "????? ?" : "??? ????? ?"}\n`;
-            resultMessage += `???? ?????? ??????? ??: ? ${MoMax.toFixed(2)}%\n\n`;
+            resultMessage += `الموليبدينوم (Mo): ${Mo.toFixed(2)}% - ${IsMoOk ? "مطابق ✓" : "غير مطابق ✗"}\n`;
+            resultMessage += `الحد الأقصى المسموح به: ≤ ${MoMax.toFixed(2)}%\n\n`;
 
             // Overall Result
             resultMessage += `--------------------------------------------------\n`;
-            resultMessage += `?? ??????? ??????: ${IsAllRequiredOk && IsAllOptionalOk ? "??? ?" : "?? ?"}\n`;
+            resultMessage += `هل التركيب مطابق؟: ${IsAllRequiredOk && IsAllOptionalOk ? "نعم ✅" : "لا ❌"}\n`;
             resultMessage += `--------------------------------------------------\n`;
-            resultMessage += `??????? ??????:\n`;
-            resultMessage += `??? ???????: ${data.projectName}\n`;
-            resultMessage += `??? ??????: ${data.labName}\n`;
-            resultMessage += `???????: ${data.testDate}\n`;
-            resultMessage += `?????: ${data.preparedBy}\n`;
-            resultMessage += `????? ????????: ${data.approvedBy}\n`;
-            resultMessage += `?????: ${data.description}`;
+            resultMessage += `معلومات إضافية:\n`;
+            resultMessage += `اسم المشروع: ${data.projectName}\n`;
+            resultMessage += `اسم المعمل: ${data.labName}\n`;
+            resultMessage += `التاريخ: ${data.testDate}\n`;
+            resultMessage += `المعد: ${data.preparedBy}\n`;
+            resultMessage += `معتمد الاختبار: ${data.approvedBy}\n`;
+            resultMessage += `الوصف: ${data.description}`;
 
             return resultMessage;
         }
@@ -1437,13 +1437,13 @@
         function initializeFAQ() {
             faqData[""] = ""; // Empty entry as per VB.NET
             faqData["What are the dimensional tolerances for tower/mast sections?"] =
-                "Length deviations: �2 mm/m (up to 10m), �0.2% total length (>10m)\n" +
+                "Length deviations: ±2 mm/m (up to 10m), ±0.2% total length (>10m)\n" +
                 "Straightness: Max 3 mm deviation over entire length\n" +
-                "Circularity: ?0.5% nominal diameter (tubular sections)";
+                "Circularity: ≤0.5% nominal diameter (tubular sections)";
             faqData["What are the requirements for bolt hole positions?"] =
-                "Hole spacing: �1 mm\n" +
-                "Hole diameter: +0.5 mm / -0 mm (for bolts ?M24)\n" +
-                "Edge distance: �2 mm (min 1.2 x bolt diameter)";
+                "Hole spacing: ±1 mm\n" +
+                "Hole diameter: +0.5 mm / -0 mm (for bolts ≤M24)\n" +
+                "Edge distance: ±2 mm (min 1.2 x bolt diameter)";
             faqData["What are the EXC classifications?"] =
                 "EXC1: Basic requirements for non-critical structures\n" +
                 "EXC2: Standard requirements\n" +
@@ -1451,25 +1451,25 @@
                 "EXC4: Highest requirements (special applications)";
             faqData["1. Length of components"] =
                 "Parameter: Cut length measured on the centreline (or on the corner for an angle)\n" +
-                "Class 1: ? = �1 mm\n" +
-                "Class 2: ? = �2 mm";
+                "Class 1: Δ = ±1 mm\n" +
+                "Class 2: Δ = ±2 mm";
             faqData["2. Length or spacing"] =
                 "Parameter: If minimum dimensions are specified\n" +
-                "Class 1: -? = 0mm, +? = 1 mm\n" +
-                "Class 2: -? = 0mm, +? = 1 mm";
+                "Class 1: -Δ = 0mm, +Δ = 1 mm\n" +
+                "Class 2: -Δ = 0mm, +Δ = 1 mm";
             faqData["3. Back marks for angles"] =
                 "Parameter: Distance from heel of angle to centre of hole\n" +
-                "Class 1: ? = �0,5 mm\n" +
-                "Class 2: ? = �1 mm";
+                "Class 1: Δ = ±0,5 mm\n" +
+                "Class 2: Δ = ±1 mm";
             faqData["4. Squareness of cut edges"] =
-                "Parameter: Deviation A of a cut edge from 90�\n" +
-                "Class 1: ? = �0,05t\n" +
-                "Class 2: ? = �0,05t";
+                "Parameter: Deviation A of a cut edge from 90°\n" +
+                "Class 1: Δ = ±0,05t\n" +
+                "Class 2: Δ = ±0,05t";
             faqData["5. Squareness of ends"] =
                 "Parameters:\n" +
                 "- Squareness to longitudinal axis\n" +
-                "- Ends intended for full contact bearing: ? = �D/300\n" +
-                "- Ends not intended for full contact bearing: ? = �D/1000\n" +
+                "- Ends intended for full contact bearing: Δ = ±D/300\n" +
+                "- Ends not intended for full contact bearing: Δ = ±D/1000\n" +
                 "(Applies to both Class 1 and Class 2)";
             faqData["6. Surfaces for full contact in bearing"] =
                 "Parameter: Flatness\n" +
@@ -1477,16 +1477,16 @@
                 "Class 2: 1 in 1500";
             faqData["7. Position of holes for fasteners"] =
                 "Parameter: Deviation A of centreline of individual hole\n" +
-                "Class 1: ? = �1 mm\n" +
-                "Class 2: ? = �2 mm";
+                "Class 1: Δ = ±1 mm\n" +
+                "Class 2: Δ = ±2 mm";
             faqData["8. Position of hole group"] =
                 "Parameter: Deviation A of hole group from intended position\n" +
-                "Class 1: ? = �1 mm\n" +
-                "Class 2: ? = �2 mm";
+                "Class 1: Δ = ±1 mm\n" +
+                "Class 2: Δ = ±2 mm";
             faqData["9. Spacing of hole groups"] =
                 "Parameter: Deviation A in spacing c between centres\n" +
-                "Class 1: ? = �0,5 mm\n" +
-                "Class 2: ? = �1,5 mm";
+                "Class 1: Δ = ±0,5 mm\n" +
+                "Class 2: Δ = ±1,5 mm";
         }
 
         /**
@@ -1497,7 +1497,7 @@
             // Add a default empty option as per VB.NET behavior
             const defaultOption = document.createElement('option');
             defaultOption.value = "";
-            defaultOption.textContent = "???? ??????...";
+            defaultOption.textContent = "اختر سؤالاً...";
             faqQuestionSelect.appendChild(defaultOption);
 
             for (const question in faqData) {
@@ -1521,61 +1521,61 @@
          */
         function initializeFAQColumns() {
             faqColumnsData[""] = "";
-            faqColumnsData["?? ?? ????????? ???????? ?????? ??????? ??????????"] =
-                "- ??? ?? ???? ??????? ??? ???????? ??????? ?? EN 1090-2\n" +
-                "- ?????????: ?????? ???? 3 ?? ??? 10 ????? ?? ????? ????????\n" +
-                "- ????? ??????? ??????? ?????????: �0.5% ?? ????? ??????";
-            faqColumnsData["?? ?? ?????? ??? ??????? ??????????"] =
-                "- ????? ??? 10 ?????: �2 ?? ??? ???\n" +
-                "- ????? ??? 10 ?????: �0.2% ?? ????? ?????\n" +
-                "- ???????? ?????: ?? ???? ?? 1/1000 ?? ????? ????????";
-            faqColumnsData["?? ?? ??????? ????? ?????? ?? ????????"] =
-                "- ??????? ??? ??????: �1 ??\n" +
-                "- ??? ?????: +0.5 ?? / -0 ?? (???????? ??? M24)\n" +
-                "- ??????? ?? ??????: ?? ??? ?? 1.2 � ??? ??????? ?? ???? �2 ??";
-            faqColumnsData["?? ?? ??????? EXC ??????? ?????????"] =
-                "EXC1: ??????? ?????? ??????? ??? ??????\n" +
-                "EXC2: ??????? ?????? ??????? ???????\n" +
-                "EXC3: ??????? ????? ?????? ????????\n" +
-                "EXC4: ??????? ????? ?????? ???? (??? ???????)";
-            faqColumnsData["1. ??? ????????"] =
-                "?????: ???? ????? ??? ?? ????? (?? ??????? ?? ???? ???????)\n" +
-                "????? 1: ? = �1 ??\n" +
-                "????? 2: ? = �2 ??";
-            faqColumnsData["2. ??????? ?? ????? ??? ??????"] =
-                "?????: ??? ???? ??????? ?????? ?????\n" +
-                "????? 1: -? = 0 ??? +? = 1 ??\n" +
-                "????? 2: -? = 0 ??? +? = 1 ??";
-            faqColumnsData["3. ??????? ?? ????? ??????? ??? ???? ?????"] =
-                "?????: ??????? ?? ??????? ???????? ??? ???? ?????\n" +
-                "????? 1: ? = �0.5 ??\n" +
-                "????? 2: ? = �1 ??";
-            faqColumnsData["4. ??????? ?????? ????????"] =
-                "?????: ?????? ?????? ???????? ?? ??????? 90�\n" +
-                "????? 1: ? = �0.05 � ?????\n" +
-                "????? 2: ? = �0.05 � ?????";
-            faqColumnsData["5. ??????? ???????"] =
-                "?????:\n" +
-                "- ??????? ????? ??????? ??? ?????? ??????\n" +
-                "- ??????? ??????? ??????? ??????: ? = �D/300\n" +
-                "- ??????? ??? ??????? ??????? ??????: ? = �D/1000\n" +
-                "(????? ??? ??????? 1 ? 2)";
-            faqColumnsData["6. ?????? ??????? ??????? ??????"] =
-                "?????: ?????? ?????\n" +
-                "????? 1: 1 ?? 1500\n" +
-                "????? 2: 1 ?? 1500";
-            faqColumnsData["7. ???? ???? ???????"] =
-                "?????: ?????? ?? ????? ????? ??????\n" +
-                "????? 1: ? = �1 ??\n" +
-                "????? 2: ? = �2 ??";
-            faqColumnsData["8. ???? ?????? ??????"] =
-                "?????: ?????? ?????? ?????? ?? ?????? ??????\n" +
-                "????? 1: ? = �1 ??\n" +
-                "????? 2: ? = �2 ??";
-            faqColumnsData["9. ??????? ??? ??????? ??????"] =
-                "?????: ?????? ??????? c ??? ???????\n" +
-                "????? 1: ? = �0.5 ??\n" +
-                "????? 2: ? = �1.5 ??";
+            faqColumnsData["ما هي المتطلبات الهندسية لتصنيع الأعمدة الفولاذية؟"] =
+                "- يجب أن تكون الأبعاد ضمن التحملات المحددة في EN 1090-2\n" +
+                "- الاستقامة: انحراف أقصى 3 مم لكل 10 أمتار من الطول الإجمالي\n" +
+                "- القطر الخارجي للأعمدة الأنبوبية: ±0.5% من القطر الاسمي";
+            faqColumnsData["ما هي تحملات طول الأعمدة الفولاذية؟"] =
+                "- للطول حتى 10 أمتار: ±2 مم لكل متر\n" +
+                "- للطول فوق 10 أمتار: ±0.2% من الطول الكلي\n" +
+                "- الانحناء الكلي: لا يزيد عن 1/1000 من الطول الإجمالي";
+            faqColumnsData["ما هي متطلبات مواضع الثقوب في الأعمدة؟"] =
+                "- المسافة بين الثقوب: ±1 مم\n" +
+                "- قطر الثقب: +0.5 مم / -0 مم (للبولتات حتى M24)\n" +
+                "- المسافة من الحافة: لا تقل عن 1.2 × قطر البرغي، مع تحمل ±2 مم";
+            faqColumnsData["ما هي تصنيفات EXC للأعمدة والصواري؟"] =
+                "EXC1: متطلبات أساسية للمنشآت غير الحرجة\n" +
+                "EXC2: متطلبات قياسية للمنشآت المدنية\n" +
+                "EXC3: متطلبات صارمة للجسور والأبراج\n" +
+                "EXC4: متطلبات عالية لمنشآت خاصة (مثل النووية)";
+            faqColumnsData["1. طول المكونات"] =
+                "الوصف: قياس الطول على خط الوسط (أو الزاوية في حالة الزوايا)\n" +
+                "الفئة 1: Δ = ±1 مم\n" +
+                "الفئة 2: Δ = ±2 مم";
+            faqColumnsData["2. المسافة أو الطول بين النقاط"] =
+                "الوصف: إذا كانت الأبعاد الدنيا محددة\n" +
+                "الفئة 1: -Δ = 0 مم، +Δ = 1 مم\n" +
+                "الفئة 2: -Δ = 0 مم، +Δ = 1 مم";
+            faqColumnsData["3. المسافة من زاوية العارضة إلى مركز الثقب"] =
+                "الوصف: المسافة من الزاوية الداخلية إلى مركز الثقب\n" +
+                "الفئة 1: Δ = ±0.5 مم\n" +
+                "الفئة 2: Δ = ±1 مم";
+            faqColumnsData["4. استقامة الحواف المقطوعة"] =
+                "الوصف: انحراف الحافة المقطوعة عن الزاوية 90°\n" +
+                "الفئة 1: Δ = ±0.05 × السمك\n" +
+                "الفئة 2: Δ = ±0.05 × السمك";
+            faqColumnsData["5. استقامة الأطراف"] =
+                "الوصف:\n" +
+                "- استقامة الطرف بالنسبة إلى المحور الطولي\n" +
+                "- الأطراف المخصصة للتلامس الكامل: Δ = ±D/300\n" +
+                "- الأطراف غير المخصصة للتلامس الكامل: Δ = ±D/1000\n" +
+                "(ينطبق على الفئتين 1 و 2)";
+            faqColumnsData["6. الأسطح المخصصة للتلامس الكامل"] =
+                "الوصف: استواء السطح\n" +
+                "الفئة 1: 1 في 1500\n" +
+                "الفئة 2: 1 في 1500";
+            faqColumnsData["7. موقع ثقوب التثبيت"] =
+                "الوصف: انحراف خط الوسط للثقب الفردي\n" +
+                "الفئة 1: Δ = ±1 مم\n" +
+                "الفئة 2: Δ = ±2 مم";
+            faqColumnsData["8. موقع مجموعة الثقوب"] =
+                "الوصف: انحراف مجموعة الثقوب عن الموقع المخطط\n" +
+                "الفئة 1: Δ = ±1 مم\n" +
+                "الفئة 2: Δ = ±2 مم";
+            faqColumnsData["9. المسافة بين مجموعات الثقوب"] =
+                "الوصف: انحراف المسافة c بين المراكز\n" +
+                "الفئة 1: Δ = ±0.5 مم\n" +
+                "الفئة 2: Δ = ±1.5 مم";
         }
 
         /**
@@ -1585,7 +1585,7 @@
             faqColumnsQuestionSelect.innerHTML = ''; // Clear existing options
             const defaultOption = document.createElement('option');
             defaultOption.value = "";
-            defaultOption.textContent = "???? ??????...";
+            defaultOption.textContent = "اختر سؤالاً...";
             faqColumnsQuestionSelect.appendChild(defaultOption);
 
             for (const question in faqColumnsData) {
@@ -1608,53 +1608,53 @@
          */
         function initializeFAQGalvanization() {
             faqGalvanizationData[""] = "";
-            faqGalvanizationData["?? ?? ???????? ???????? ??????? ??? ?????? (Hot-Dip Galvanizing)?"] =
-                "? ISO 1461:2009\n" +
-                "??? ???????? ??????? ?????? ????????? ?????? ??????? ???? ????? ?????? ?????? ??? ?????? ?????? ??????.\n\n" +
-                "?? ?????? ????????:\n" +
-                "????? ??????: \"Hot dip galvanized coatings on iron and steel articles � Specifications and test methods\"\n" +
-                "?????: ????? ??????? ??? ?????? ????? ???? ????? ?????? ?? ????? ??????? ??? ??????? ???????? ??? ??? ????? ?????????.";
-            faqGalvanizationData["?? ?? ??????? ??? ???? ????? ?? ??????? ??? ???????"] =
-                "??? ?????? (Coating Thickness):\n" +
-                "- ????? ??? ??? ?????? ???????.\n" +
-                "- ?????:\n" +
-                "    � ??? ?? 3 ??: ???? ?????? 85 ??????\n" +
-                "    � 3�6 ??: 85�100 ??????\n" +
-                "    � ???? ?? 6 ??: ??? 120 ??????";
-            faqGalvanizationData["?? ?? ??????? ????? ???? ????? ?? ?????? ?????????"] =
-                "??????? (Adhesion):\n" +
-                "- ??? ?? ???? ?????? ???????? ?? ?????? ????????.\n" +
-                "- ??? ??????? ???????? ??? ?? ??? ???? ??? ?? ????? ?????.";
-            faqGalvanizationData["?? ?? ??????? ???? ??? ????? ??? ????????"] =
-                "?????? ?????? (Appearance):\n" +
-                "- ??? ?? ???? ??? ????? ??????.\n" +
-                "- ???? ?? ?????? ??? ???????? ?? ?????? ?? ????????.";
-            faqGalvanizationData["??? ??? ?????? ?????? ???? ????? ???????"] =
-                "?????? ??????:\n" +
-                "- ?????? ???????? ?????? ???? ?????? (Salt Spray Test) ?????? ?????? ?????? ?????.";
-            faqGalvanizationData["?? ?? ??? ????? ????????? ?? ISO 1461?"] =
-                "?? ??? ?????:\n" +
-                "- ???? ????? ???????? ????? ????????? ?? ?????????????\n" +
-                "- ?????? ??????? ???????? ????? ?????\n" +
-                "- ????? ?????? ????? ?? ??????\n" +
-                "- ?????? ?????? (Salt Spray Test)";
-            faqGalvanizationData["?? ???? ?????? ??????? ????? ????????"] =
-                "???? EN ISO 1461:2009\n" +
-                "- ?? ??? ????? ISO 1461 ???? ?? ???????? ?????? ?????? ????????? ??????? (CEN).";
-            faqGalvanizationData["?? ????? ISO 1461 ?? EN 1090?"] =
-                "?? ????? ISO 1461 ?? EN 1090:\n" +
-                "- ???? EN 1090-2 ??? ISO 1461 ?????? ????? ????? ??????? ??? ?????? ?? ??????? ???????? ???:\n" +
-                "    � ??????? ?????????\n" +
-                "    � ???????\n" +
-                "    � ??????? ???????";
-            faqGalvanizationData["????? ??????? ?????? ??????? ISO 1461?"] =
-                "?? ???????:\n" +
-                "- ???? ????? ????? ?? ?????? ?????? ?? ?????? ??????? ????????.\n" +
-                "- ?????? ???? ???? ??:\n" +
-                "    � ????? ????????\n" +
-                "    � ??????\n" +
-                "    � ??????? ?????????\n" +
-                "    � ?????? ?????? ??????";
+            faqGalvanizationData["ما هي المواصفة القياسية للجلفنة على الساخن (Hot-Dip Galvanizing)؟"] =
+                "✅ ISO 1461:2009\n" +
+                "وهي المواصفة الدولية الأكثر استخدامًا لتحديد متطلبات طلاء الزنك بالغمس الساخن على منتجات الحديد والصلب.\n\n" +
+                "🔍 تفاصيل المواصفة:\n" +
+                "الاسم الكامل: \"Hot dip galvanized coatings on iron and steel articles – Specifications and test methods\"\n" +
+                "الهدف: تحديد متطلبات سمك ومتانة وملمس طلاء الزنك الناتج عن عملية الجلفنة على الساخن، بالإضافة إلى طرق الفحص والاختبار.";
+            faqGalvanizationData["ما هي متطلبات سمك طلاء الزنك في الجلفنة على الساخن؟"] =
+                "سمك الطبقة (Coating Thickness):\n" +
+                "- يعتمد على سمك المادة الأصلية.\n" +
+                "- أمثلة:\n" +
+                "    • أقل من 3 مم: الحد الأدنى 85 ميكرون\n" +
+                "    • 3–6 مم: 85–100 ميكرون\n" +
+                "    • أكثر من 6 مم: حتى 120 ميكرون";
+            faqGalvanizationData["ما هي متطلبات تماسك طلاء الزنك مع المادة الأساسية؟"] =
+                "التماسك (Adhesion):\n" +
+                "- يجب أن يكون الطلاء متماسكًا مع المادة الأساسية.\n" +
+                "- يتم اختباره باستخدام خدش أو ضرب خفيف دون أن يتقشر الزنك.";
+            faqGalvanizationData["ما هي متطلبات مظهر سطح الزنك بعد الجلفنة؟"] =
+                "الملمس والشكل (Appearance):\n" +
+                "- يجب أن يكون سطح الزنك ناعمًا.\n" +
+                "- خالي من العيوب مثل الفقاعات أو الشقوق أو التكتلات.";
+            faqGalvanizationData["كيف يتم اختبار مقاومة طلاء الزنك للتآكل؟"] =
+                "مقاومة للتآكل:\n" +
+                "- يُختبر باستخدام اختبار الرش الملحى (Salt Spray Test) لتحديد مقاومة الطلاء للصدأ.";
+            faqGalvanizationData["ما هي طرق الفحص المستخدمة في ISO 1461؟"] =
+                "🧪 طرق الفحص:\n" +
+                "- قياس السمك باستخدام أجهزة مغناطيسية أو كهرومغناطيسية\n" +
+                "- اختبار التماسك باستخدام مطرقة خفيفة\n" +
+                "- الفحص البصري للكشف عن العيوب\n" +
+                "- اختبار التآكل (Salt Spray Test)";
+            faqGalvanizationData["هل توجد مواصفة أوروبية لجودة الجلفنة؟"] =
+                "🇪🇺 EN ISO 1461:2009\n" +
+                "- هي نفس محتوى ISO 1461 ولكن تم اعتمادها بواسطة اللجنة الأوروبية للتقييس (CEN).";
+            faqGalvanizationData["ما علاقة ISO 1461 بـ EN 1090؟"] =
+                "📌 علاقة ISO 1461 بـ EN 1090:\n" +
+                "- تشير EN 1090-2 إلى ISO 1461 كمعيار مرجعي لجودة الجلفنة على الساخن في المنشآت المعدنية مثل:\n" +
+                "    • الأعمدة الفولاذية\n" +
+                "    • الصواري\n" +
+                "    • الهياكل الداعمة";
+            faqGalvanizationData["لماذا تُستخدم مواصفة الجلفنة ISO 1461؟"] =
+                "📚 الفوائد:\n" +
+                "- ضمان حماية فعالة ضد التآكل والصدأ في الظروف البيئية المختلفة.\n" +
+                "- تستخدم بشكل واسع في:\n" +
+                "    • أبراج الكهرباء\n" +
+                "    • الجسور\n" +
+                "    • الهياكل الإنشائية\n" +
+                "    • أنابيب المياه والصرف";
         }
 
         /**
@@ -1664,7 +1664,7 @@
             faqGalvanizationQuestionSelect.innerHTML = ''; // Clear existing options
             const defaultOption = document.createElement('option');
             defaultOption.value = "";
-            defaultOption.textContent = "???? ??????...";
+            defaultOption.textContent = "اختر سؤالاً...";
             faqGalvanizationQuestionSelect.appendChild(defaultOption);
 
             for (const question in faqGalvanizationData) {
@@ -1879,24 +1879,24 @@
          */
         function checkBolt(values, spec, errors, selectedDIN) {
             if (values[2] !== spec.ThreadPitch) {
-                errors.push(`? Thread Pitch: ${values[2]} (Expected: ${spec.ThreadPitch})`);
+                errors.push(`✗ Thread Pitch: ${values[2]} (Expected: ${spec.ThreadPitch})`);
             }
             if (values[3] < spec.MinHead || values[3] > spec.MaxHead) {
-                errors.push(`? Head Size: ${values[3]} (Range: ${spec.MinHead}-${spec.MaxHead})`);
+                errors.push(`✗ Head Size: ${values[3]} (Range: ${spec.MinHead}-${spec.MaxHead})`);
             }
             const lengthTolerance = 1.25;
             if (Math.abs(values[4] - values[1]) > lengthTolerance) {
-                errors.push(`? Actual Length: ${values[4]} (Nominal: ${values[1]}, Tolerance: �${lengthTolerance})`);
+                errors.push(`✗ Actual Length: ${values[4]} (Nominal: ${values[1]}, Tolerance: ±${lengthTolerance})`);
             }
             if (selectedDIN === "DIN 7990") {
                 const threadedTolerance = 1.5;
                 if (Math.abs(values[5] - spec.ThreadedLength) > threadedTolerance) {
-                    errors.push(`? Threaded Length: ${values[5]} (Expected: ${spec.ThreadedLength} �${threadedTolerance})`);
+                    errors.push(`✗ Threaded Length: ${values[5]} (Expected: ${spec.ThreadedLength} ±${threadedTolerance})`);
                 }
             } else if (selectedDIN === "DIN 933") {
                 const threadedTolerance = 1.5; // Tolerance for threaded length being close to actual length
                 if (Math.abs(values[5] - values[4]) > threadedTolerance) {
-                    errors.push(`? Threaded Length: ${values[5]} (Should equal actual length ${values[4]} �${threadedTolerance})`);
+                    errors.push(`✗ Threaded Length: ${values[5]} (Should equal actual length ${values[4]} ±${threadedTolerance})`);
                 }
             }
         }
@@ -1909,11 +1909,11 @@
          */
         function checkNut(values, spec, errors) {
             if (values[1] < spec.MinSize || values[1] > spec.MaxSize) {
-                errors.push(`? Actual Size: ${values[1]} (Range: ${spec.MinSize.toFixed(2)}-${spec.MaxSize.toFixed(2)})`);
+                errors.push(`✗ Actual Size: ${values[1]} (Range: ${spec.MinSize.toFixed(2)}-${spec.MaxSize.toFixed(2)})`);
             }
             const thicknessTolerance = 0.2;
             if (Math.abs(values[2] - spec.Thickness) > thicknessTolerance) {
-                errors.push(`? Actual Thickness: ${values[2]} (Expected: ${spec.Thickness.toFixed(2)} �${thicknessTolerance})`);
+                errors.push(`✗ Actual Thickness: ${values[2]} (Expected: ${spec.Thickness.toFixed(2)} ±${thicknessTolerance})`);
             }
         }
 
@@ -1925,13 +1925,13 @@
          */
         function checkWasher(values, spec, errors) {
             if (values[1] < spec.MinOuter || values[1] > spec.MaxOuter) {
-                errors.push(`? Outer Diameter: ${values[1]} (Range: ${spec.MinOuter.toFixed(2)}-${spec.MaxOuter.toFixed(2)})`);
+                errors.push(`✗ Outer Diameter: ${values[1]} (Range: ${spec.MinOuter.toFixed(2)}-${spec.MaxOuter.toFixed(2)})`);
             }
             if (values[2] !== spec.InnerDiameter) {
-                errors.push(`? Inner Diameter: ${values[2]} (Expected: ${spec.InnerDiameter})`);
+                errors.push(`✗ Inner Diameter: ${values[2]} (Expected: ${spec.InnerDiameter})`);
             }
             if (values[3] !== spec.Thickness) {
-                errors.push(`? Thickness: ${values[3]} (Expected: ${spec.Thickness})`);
+                errors.push(`✗ Thickness: ${values[3]} (Expected: ${spec.Thickness})`);
             }
         }
 
@@ -1951,7 +1951,7 @@
             report += `- Head Size: ${values[3]} mm\n`;
             report += `- Actual Length: ${values[4]} mm\n`;
             report += `- Threaded Length: ${values[5]} mm\n`;
-            report += errors.length === 0 ? "? Conforms to specifications" : `? Does not conform:\n${errors.join('\n')}`;
+            report += errors.length === 0 ? "✓ Conforms to specifications" : `✗ Does not conform:\n${errors.join('\n')}`;
             return report;
         }
 
@@ -1969,7 +1969,7 @@
             report += `- Diameter: ${values[0]} mm\n`;
             report += `- Actual Size: ${values[1]} mm\n`;
             report += `- Actual Thickness: ${values[2]} mm\n`;
-            report += errors.length === 0 ? "? Conforms to specifications" : `? Does not conform:\n${errors.join('\n')}`;
+            report += errors.length === 0 ? "✓ Conforms to specifications" : `✗ Does not conform:\n${errors.join('\n')}`;
             return report;
         }
 
@@ -1988,7 +1988,7 @@
             report += `- Outer Diameter: ${values[1]} mm\n`;
             report += `- Inner Diameter: ${values[2]} mm\n`;
             report += `- Thickness: ${values[3]} mm\n`;
-            report += errors.length === 0 ? "? Conforms to specifications" : `? Does not conform:\n${errors.join('\n')}`;
+            report += errors.length === 0 ? "✓ Conforms to specifications" : `✗ Does not conform:\n${errors.join('\n')}`;
             return report;
         }
 
@@ -2058,7 +2058,7 @@
             const spec = DimensionalSpecs[selectedType];
 
             if (!spec) {
-                showMsgBox("?????? ?????? ??? ???? ????.", "??? ?? ???????", "Warning");
+                showMsgBox("الرجاء اختيار نوع قطاع صالح.", "خطأ في الإدخال", "Warning");
                 return;
             }
 
@@ -2074,7 +2074,7 @@
 
                 // Check if input is required and empty/invalid
                 if (!spec.optionalInputs.includes(i) && (isNaN(val) || inputElement.value.trim() === '')) {
-                    errorMessages.push(`????? "${labelText}" ?????? ?????? ??? ???? ??? ?????.`);
+                    errorMessages.push(`الحقل "${labelText}" إلزامي ويحتوي على قيمة غير صالحة.`);
                     isValid = false;
                 } else if (spec.optionalInputs.includes(i) && inputElement.value.trim() === '') {
                     values.push(0); // If optional and empty, treat as 0
@@ -2087,32 +2087,32 @@
             if (!dimProjectName.value.trim() || !dimLabName.value.trim() ||
                 !dimTestDate.value.trim() || !dimPreparedBy.value.trim() ||
                 !dimApprovedBy.value.trim() || !dimDescription.value.trim()) {
-                errorMessages.push("???? ????? ???? ???????? ???????? (??? ???????? ??? ??????? ???????? ?????? ????? ????????? ?????).");
+                errorMessages.push("يرجى إدخال جميع البيانات الأساسية (اسم المشروع، اسم المعمل، التاريخ، المعد، معتمد الاختبار، الوصف).");
                 isValid = false;
             }
 
 
             if (!isValid) {
-                showMsgBox(errorMessages.join('\n'), "??? ?? ???????", "Warning");
+                showMsgBox(errorMessages.join('\n'), "خطأ في الإدخال", "Warning");
                 return;
             }
 
-            let report = `????? ???? ??????? - ${selectedType} (${spec.standard})\n\n`;
-            report += `???????? ???????:\n`;
+            let report = `تقرير جودة الأبعاد - ${selectedType} (${spec.standard})\n\n`;
+            report += `البيانات المدخلة:\n`;
             for (let i = 0; i < spec.numInputs; i++) {
                 if (dimInputGroups[i].style.display === 'block' || dimInputGroups[i].style.display === '') {
-                    report += `- ${dimLabels[i].textContent} ${dimInputs[i].value} ??\n`;
+                    report += `- ${dimLabels[i].textContent} ${dimInputs[i].value} مم\n`;
                 }
             }
-            report += `\n??????? ??????:\n`;
-            report += `- ??? ???????: ${dimProjectName.value}\n`;
-            report += `- ??? ??????: ${dimLabName.value}\n`;
-            report += `- ???????: ${dimTestDate.value}\n`;
-            report += `- ?????: ${dimPreparedBy.value}\n`;
-            report += `- ????? ????????: ${dimApprovedBy.value}\n`;
-            report += `- ?????: ${dimDescription.value}\n\n`;
+            report += `\nمعلومات إضافية:\n`;
+            report += `- اسم المشروع: ${dimProjectName.value}\n`;
+            report += `- اسم المعمل: ${dimLabName.value}\n`;
+            report += `- التاريخ: ${dimTestDate.value}\n`;
+            report += `- المعد: ${dimPreparedBy.value}\n`;
+            report += `- معتمد الاختبار: ${dimApprovedBy.value}\n`;
+            report += `- الوصف: ${dimDescription.value}\n\n`;
 
-            report += `????? ?????? ?? ?????????:\n`;
+            report += `نتائج التحقق من المواصفات:\n`;
             const dimensionErrors = [];
 
             // Apply specific checks based on section type
@@ -2130,17 +2130,17 @@
                     // Leg Length
                     let legTolerance = Math.max(nominalLegLength * spec.tolerances.legLength.percent, spec.tolerances.legLength.abs);
                     if (Math.abs(actualLegLength - nominalLegLength) > legTolerance) {
-                        dimensionErrors.push(`? ??? ?????: ${actualLegLength} (??????: ${nominalLegLength}? ??????? ???????: �${legTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ طول الرجل: ${actualLegLength} (الاسمي: ${nominalLegLength}، التفاوت المسموح: ±${legTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ??? ?????: ${actualLegLength} (?????)\n`;
+                        report += `✓ طول الرجل: ${actualLegLength} (مطابق)\n`;
                     }
 
                     // Thickness
                     let thicknessTolerance = Math.max(nominalThickness * spec.tolerances.thickness.percent, spec.tolerances.thickness.abs);
                     if (Math.abs(actualThickness - nominalThickness) > thicknessTolerance) {
-                        dimensionErrors.push(`? ?????: ${actualThickness} (??????: ${nominalThickness}? ??????? ???????: �${thicknessTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ السمك: ${actualThickness} (الاسمي: ${nominalThickness}، التفاوت المسموح: ±${thicknessTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ?????: ${actualThickness} (?????)\n`;
+                        report += `✓ السمك: ${actualThickness} (مطابق)\n`;
                     }
 
                     // Length
@@ -2149,25 +2149,25 @@
                     let finalLengthTolerance = Math.max(lengthTolerance, lengthTolerancePerMeter);
 
                     if (Math.abs(actualLength - nominalLength) > finalLengthTolerance) {
-                        dimensionErrors.push(`? ?????: ${actualLength} (??????: ${nominalLength}? ??????? ???????: �${finalLengthTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ الطول: ${actualLength} (الاسمي: ${nominalLength}، التفاوت المسموح: ±${finalLengthTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ?????: ${actualLength} (?????)\n`;
+                        report += `✓ الطول: ${actualLength} (مطابق)\n`;
                     }
 
                     // Camber (Straightness)
                     let maxCamber = nominalLength * spec.tolerances.camber.percent;
                     if (actualCamber > maxCamber) {
-                        dimensionErrors.push(`? ????????: ${actualCamber} (???? ?????? ???????: ${maxCamber.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ الانحناء: ${actualCamber} (الحد الأقصى المسموح: ${maxCamber.toFixed(2)} مم)`);
                     } else {
-                        report += `? ????????: ${actualCamber} (?????)\n`;
+                        report += `✓ الانحناء: ${actualCamber} (مطابق)\n`;
                     }
 
                     // Squareness (assuming 0.05t as ratio, where t is nominal thickness)
                     let maxSquareness = nominalThickness * spec.tolerances.squareness.maxRatio;
                     if (actualSquareness > maxSquareness) { // Assuming actualSquareness is a linear deviation
-                        dimensionErrors.push(`? ???????: ${actualSquareness} (???? ?????? ???????: ${maxSquareness.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ التعامد: ${actualSquareness} (الحد الأقصى المسموح: ${maxSquareness.toFixed(2)} مم)`);
                     } else {
-                        report += `? ???????: ${actualSquareness} (?????)\n`;
+                        report += `✓ التعامد: ${actualSquareness} (مطابق)\n`;
                     }
                     break;
 
@@ -2183,33 +2183,33 @@
                     // Length
                     let plateLengthTolerance = Math.max(nominalPlateLength * spec.tolerances.lengthWidth.percent, spec.tolerances.lengthWidth.abs);
                     if (Math.abs(actualPlateLength - nominalPlateLength) > plateLengthTolerance) {
-                        dimensionErrors.push(`? ??? ?????: ${actualPlateLength} (??????: ${nominalPlateLength}? ??????? ???????: �${plateLengthTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ طول اللوح: ${actualPlateLength} (الاسمي: ${nominalPlateLength}، التفاوت المسموح: ±${plateLengthTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ??? ?????: ${actualPlateLength} (?????)\n`;
+                        report += `✓ طول اللوح: ${actualPlateLength} (مطابق)\n`;
                     }
 
                     // Width
                     let plateWidthTolerance = Math.max(nominalPlateWidth * spec.tolerances.lengthWidth.percent, spec.tolerances.lengthWidth.abs);
                     if (Math.abs(actualPlateWidth - nominalPlateWidth) > plateWidthTolerance) {
-                        dimensionErrors.push(`? ??? ?????: ${actualPlateWidth} (??????: ${nominalPlateWidth}? ??????? ???????: �${plateWidthTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ عرض اللوح: ${actualPlateWidth} (الاسمي: ${nominalPlateWidth}، التفاوت المسموح: ±${plateWidthTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ??? ?????: ${actualPlateWidth} (?????)\n`;
+                        report += `✓ عرض اللوح: ${actualPlateWidth} (مطابق)\n`;
                     }
 
                     // Thickness
                     let plateThicknessTolerance = Math.max(nominalPlateThickness * spec.tolerances.thickness.percent, spec.tolerances.thickness.abs);
                     if (Math.abs(actualPlateThickness - nominalPlateThickness) > plateThicknessTolerance) {
-                        dimensionErrors.push(`? ??? ?????: ${actualPlateThickness} (??????: ${nominalPlateThickness}? ??????? ???????: �${plateThicknessTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ سمك اللوح: ${actualPlateThickness} (الاسمي: ${nominalPlateThickness}، التفاوت المسموح: ±${plateThicknessTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ??? ?????: ${actualPlateThickness} (?????)\n`;
+                        report += `✓ سمك اللوح: ${actualPlateThickness} (مطابق)\n`;
                     }
 
                     // Camber
                     let maxPlateCamber = nominalPlateLength * spec.tolerances.camber.percent;
                     if (actualPlateCamber > maxPlateCamber) {
-                        dimensionErrors.push(`? ?????? ?????: ${actualPlateCamber} (???? ?????? ???????: ${maxPlateCamber.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ انحناء اللوح: ${actualPlateCamber} (الحد الأقصى المسموح: ${maxPlateCamber.toFixed(2)} مم)`);
                     } else {
-                        report += `? ?????? ?????: ${actualPlateCamber} (?????)\n`;
+                        report += `✓ انحناء اللوح: ${actualPlateCamber} (مطابق)\n`;
                     }
                     break;
 
@@ -2225,17 +2225,17 @@
                     // Diameter
                     let pipeDiameterTolerance = nominalPipeDiameter * spec.tolerances.diameter.percent;
                     if (Math.abs(actualPipeDiameter - nominalPipeDiameter) > pipeDiameterTolerance) {
-                        dimensionErrors.push(`? ??? ????????: ${actualPipeDiameter} (??????: ${nominalPipeDiameter}? ??????? ???????: �${pipeDiameterTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ قطر الماسورة: ${actualPipeDiameter} (الاسمي: ${nominalPipeDiameter}، التفاوت المسموح: ±${pipeDiameterTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ??? ????????: ${actualPipeDiameter} (?????)\n`;
+                        report += `✓ قطر الماسورة: ${actualPipeDiameter} (مطابق)\n`;
                     }
 
                     // Thickness
                     let pipeThicknessTolerance = Math.max(nominalPipeThickness * spec.tolerances.thickness.percent, spec.tolerances.thickness.abs);
                     if (Math.abs(actualPipeThickness - nominalPipeThickness) > pipeThicknessTolerance) {
-                        dimensionErrors.push(`? ??? ????????: ${actualPipeThickness} (??????: ${nominalPipeThickness}? ??????? ???????: �${pipeThicknessTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ سمك الماسورة: ${actualPipeThickness} (الاسمي: ${nominalPipeThickness}، التفاوت المسموح: ±${pipeThicknessTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ??? ????????: ${actualPipeThickness} (?????)\n`;
+                        report += `✓ سمك الماسورة: ${actualPipeThickness} (مطابق)\n`;
                     }
 
                     // Length
@@ -2244,17 +2244,17 @@
                     let finalPipeLengthTolerance = Math.max(pipeLengthTolerance, pipeLengthTolerancePerMeter);
 
                     if (Math.abs(actualPipeLength - nominalPipeLength) > finalPipeLengthTolerance) {
-                        dimensionErrors.push(`? ??? ????????: ${actualPipeLength} (??????: ${nominalPipeLength}? ??????? ???????: �${finalPipeLengthTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ طول الماسورة: ${actualPipeLength} (الاسمي: ${nominalPipeLength}، التفاوت المسموح: ±${finalPipeLengthTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ??? ????????: ${actualPipeLength} (?????)\n`;
+                        report += `✓ طول الماسورة: ${actualPipeLength} (مطابق)\n`;
                     }
 
                     // Camber
                     let maxPipeCamber = nominalPipeLength * spec.tolerances.camber.percent;
                     if (actualPipeCamber > maxPipeCamber) {
-                        dimensionErrors.push(`? ?????? ????????: ${actualPipeCamber} (???? ?????? ???????: ${maxPipeCamber.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ انحناء الماسورة: ${actualPipeCamber} (الحد الأقصى المسموح: ${maxPipeCamber.toFixed(2)} مم)`);
                     } else {
-                        report += `? ?????? ????????: ${actualPipeCamber} (?????)\n`;
+                        report += `✓ انحناء الماسورة: ${actualPipeCamber} (مطابق)\n`;
                     }
                     break;
 
@@ -2267,9 +2267,9 @@
                     // Diameter
                     let rodDiameterTolerance = Math.max(nominalRodDiameter * spec.tolerances.diameter.percent, spec.tolerances.diameter.abs);
                     if (Math.abs(actualRodDiameter - nominalRodDiameter) > rodDiameterTolerance) {
-                        dimensionErrors.push(`? ??? ??????: ${actualRodDiameter} (??????: ${nominalRodDiameter}? ??????? ???????: �${rodDiameterTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ قطر القضيب: ${actualRodDiameter} (الاسمي: ${nominalRodDiameter}، التفاوت المسموح: ±${rodDiameterTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ??? ??????: ${actualRodDiameter} (?????)\n`;
+                        report += `✓ قطر القضيب: ${actualRodDiameter} (مطابق)\n`;
                     }
 
                     // Length
@@ -2278,9 +2278,9 @@
                     let finalRodLengthTolerance = Math.max(rodLengthTolerance, rodLengthTolerancePerMeter);
 
                     if (Math.abs(actualRodLength - nominalRodLength) > finalRodLengthTolerance) {
-                        dimensionErrors.push(`? ??? ??????: ${actualRodLength} (??????: ${nominalRodLength}? ??????? ???????: �${finalRodLengthTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ طول القضيب: ${actualRodLength} (الاسمي: ${nominalRodLength}، التفاوت المسموح: ±${finalRodLengthTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ??? ??????: ${actualRodLength} (?????)\n`;
+                        report += `✓ طول القضيب: ${actualRodLength} (مطابق)\n`;
                     }
                     break;
 
@@ -2299,67 +2299,67 @@
                     // Height
                     let beamHeightTolerance = Math.max(nominalBeamHeight * spec.tolerances.heightWidth.percent, spec.tolerances.heightWidth.abs);
                     if (Math.abs(actualBeamHeight - nominalBeamHeight) > beamHeightTolerance) {
-                        dimensionErrors.push(`? ?????? ??????: ${actualBeamHeight} (??????: ${nominalBeamHeight}? ??????? ???????: �${beamHeightTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ ارتفاع الكمرة: ${actualBeamHeight} (الاسمي: ${nominalBeamHeight}، التفاوت المسموح: ±${beamHeightTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ?????? ??????: ${actualBeamHeight} (?????)\n`;
+                        report += `✓ ارتفاع الكمرة: ${actualBeamHeight} (مطابق)\n`;
                     }
 
                     // Width
                     let beamWidthTolerance = Math.max(nominalBeamWidth * spec.tolerances.heightWidth.percent, spec.tolerances.heightWidth.abs);
                     if (Math.abs(actualBeamWidth - nominalBeamWidth) > beamWidthTolerance) {
-                        dimensionErrors.push(`? ??? ??????: ${actualBeamWidth} (??????: ${nominalBeamWidth}? ??????? ???????: �${beamWidthTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ عرض الكمرة: ${actualBeamWidth} (الاسمي: ${nominalBeamWidth}، التفاوت المسموح: ±${beamWidthTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ??? ??????: ${actualBeamWidth} (?????)\n`;
+                        report += `✓ عرض الكمرة: ${actualBeamWidth} (مطابق)\n`;
                     }
 
                     // Flange Thickness
                     let flangeThicknessTolerance = Math.max(nominalFlangeThickness * spec.tolerances.flangeWebThickness.percent, spec.tolerances.flangeWebThickness.abs);
                     if (Math.abs(actualFlangeThickness - nominalFlangeThickness) > flangeThicknessTolerance) {
-                        dimensionErrors.push(`? ??? ????????: ${actualFlangeThickness} (??????: ${nominalFlangeThickness}? ??????? ???????: �${flangeThicknessTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ سمك الفلانشة: ${actualFlangeThickness} (الاسمي: ${nominalFlangeThickness}، التفاوت المسموح: ±${flangeThicknessTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ??? ????????: ${actualFlangeThickness} (?????)\n`;
+                        report += `✓ سمك الفلانشة: ${actualFlangeThickness} (مطابق)\n`;
                     }
 
                     // Web Thickness
                     let webThicknessTolerance = Math.max(nominalWebThickness * spec.tolerances.flangeWebThickness.percent, spec.tolerances.flangeWebThickness.abs);
                     if (Math.abs(actualWebThickness - nominalWebThickness) > webThicknessTolerance) {
-                        dimensionErrors.push(`? ??? ?????: ${actualWebThickness} (??????: ${nominalWebThickness}? ??????? ???????: �${webThicknessTolerance.toFixed(2)} ??)`);
+                        dimensionErrors.push(`✗ سمك الويب: ${actualWebThickness} (الاسمي: ${nominalWebThickness}، التفاوت المسموح: ±${webThicknessTolerance.toFixed(2)} مم)`);
                     } else {
-                        report += `? ??? ?????: ${actualWebThickness} (?????)\n`;
+                        report += `✓ سمك الويب: ${actualWebThickness} (مطابق)\n`;
                     }
 
                     // Squareness Deviation (Optional)
                     if (actualSquarenessDeviation !== 0) { // Only check if value is provided
                         let squarenessTolerance = spec.tolerances.squareness.abs;
                         if (actualSquarenessDeviation > squarenessTolerance) {
-                            dimensionErrors.push(`? ??? ???????: ${actualSquarenessDeviation} (???? ?????? ???????: ${squarenessTolerance} ??)`);
+                            dimensionErrors.push(`✗ عدم التعامد: ${actualSquarenessDeviation} (الحد الأقصى المسموح: ${squarenessTolerance} مم)`);
                         } else {
-                            report += `? ??? ???????: ${actualSquarenessDeviation} (?????)\n`;
+                            report += `✓ عدم التعامد: ${actualSquarenessDeviation} (مطابق)\n`;
                         }
                     } else {
-                        report += `? ??? ???????: ?? ??? ????? ???? (??? ??????)\n`;
+                        report += `✓ عدم التعامد: لم يتم إدخال قيمة (غير إلزامي)\n`;
                     }
 
                     // Eccentricity (Optional)
                     if (actualEccentricity !== 0) { // Only check if value is provided
                         let eccentricityTolerance = spec.tolerances.eccentricity.abs;
                         if (actualEccentricity > eccentricityTolerance) {
-                            dimensionErrors.push(`? ?????? ?? ??????: ${actualEccentricity} (???? ?????? ???????: ${eccentricityTolerance} ??)`);
+                            dimensionErrors.push(`✗ الحيود عن المركز: ${actualEccentricity} (الحد الأقصى المسموح: ${eccentricityTolerance} مم)`);
                         } else {
-                            report += `? ?????? ?? ??????: ${actualEccentricity} (?????)\n`;
+                            report += `✓ الحيود عن المركز: ${actualEccentricity} (مطابق)\n`;
                         }
                     } else {
-                        report += `? ?????? ?? ??????: ?? ??? ????? ???? (??? ??????)\n`;
+                        report += `✓ الحيود عن المركز: لم يتم إدخال قيمة (غير إلزامي)\n`;
                     }
                     break;
             }
 
             if (dimensionErrors.length > 0) {
-                report += `\n? ?? ?????? ?? ?????????:\n${dimensionErrors.join('\n')}\n`;
-                showMsgBox(report, "????? ??????", "Error");
+                report += `\n✗ لا يتوافق مع المواصفات:\n${dimensionErrors.join('\n')}\n`;
+                showMsgBox(report, "نتيجة التحقق", "Error");
             } else {
-                report += `\n? ?????? ?????? ?? ?????????.\n`;
-                showMsgBox(report, "????? ??????", "Information");
+                report += `\n✓ يتوافق تمامًا مع المواصفات.\n`;
+                showMsgBox(report, "نتيجة التحقق", "Information");
             }
 
             // Save report to file (client-side download)
@@ -2374,7 +2374,7 @@
                 link.click();
                 document.body.removeChild(link);
             } else {
-                showMsgBox("?????? ?? ???? ????? ??????? ??????. ???? ??? ??????? ??????.", "?????", "Warning");
+                showMsgBox("متصفحك لا يدعم تنزيل الملفات مباشرة. يرجى نسخ التقرير يدويًا.", "تنبيه", "Warning");
             }
         }
 
@@ -2383,7 +2383,7 @@
 
         // Form1_Load equivalent: Show message box when the page loads
         document.addEventListener('DOMContentLoaded', () => {
-            showMsgBox("????? ???? ?? ??? ???? ????? ??????? ????? ?? ??????", "??? ???? ??????? ??????? ??? ???? ???? ", 'Information', '????');
+            showMsgBox("اللهم ارحم من قام بهذا العمل ووالديه وبارك في اولاده", "بسم الله والصلاة والسلام على رسول الله ", 'Information', 'امين');
 
             // Close message box when OK button is clicked
             msgBoxCloseButton.addEventListener('click', hideMsgBox);
@@ -2452,7 +2452,7 @@
                 if (!formData) return;
                 const result = calculateComparisonResult(formData);
                 if (result) {
-                    showMsgBox(result, "????? ???????", "Information");
+                    showMsgBox(result, "نتيجة التقييم", "Information");
                 }
             });
             printReportBtn.addEventListener('click', () => {
@@ -2460,7 +2460,7 @@
                 if (!formData) return;
                 const resultMessage = calculateComparisonResult(formData);
                 if (!resultMessage) {
-                    showMsgBox("???? ????? ??????? ??????? ???? ????? ?? ????????.", "??? ?? ???????", "Error");
+                    showMsgBox("تعذر إنشاء التقرير للطباعة بسبب مشكلة في البيانات.", "خطأ في الطباعة", "Error");
                     return;
                 }
                 const printableContent = `
@@ -2469,7 +2469,7 @@
                     <head>
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>????? ???????? ??????????</title>
+                        <title>تقرير الاختبار الميكانيكي</title>
                         <style>
                             body { font-family: 'Arial', sans-serif; margin: 20mm; direction: rtl; text-align: right; }
                             h1, h2 { text-align: center; margin-bottom: 15px; }
@@ -2494,33 +2494,33 @@
                         </style>
                     </head>
                     <body>
-                        <h1>????? ???????? ?????????? ?????</h1>
+                        <h1>تقرير الاختبار الميكانيكي للصلب</h1>
 
-                        <h2>??????? ????????</h2>
-                        <p><strong>???????:</strong> ${formData.testDate}</p>
-                        <p><strong>??? ??????:</strong> ${formData.labName}</p>
-                        <p><strong>??? ???????:</strong> ${formData.projectName}</p>
-                        <p><strong>?????:</strong> ${formData.preparedBy}</p>
-                        <p><strong>????? ????????:</strong> ${formData.approvedBy}</p>
-                        <p><strong>?????:</strong> ${formData.description}</p>
+                        <h2>معلومات الاختبار</h2>
+                        <p><strong>التاريخ:</strong> ${formData.testDate}</p>
+                        <p><strong>اسم المعمل:</strong> ${formData.labName}</p>
+                        <p><strong>اسم المشروع:</strong> ${formData.projectName}</p>
+                        <p><strong>المعد:</strong> ${formData.preparedBy}</p>
+                        <p><strong>معتمد الاختبار:</strong> ${formData.approvedBy}</p>
+                        <p><strong>الوصف:</strong> ${formData.description}</p>
 
-                        <h2>?????? ?????</h2>
-                        <p><strong>???????:</strong> ${formData.standard}</p>
-                        <p><strong>??? ?????:</strong> ${formData.steelType}</p>
-                        <p><strong>?????:</strong> ${formData.thickness} ??</p>
-                        <p><strong>??????:</strong> ${formData.yieldVal} MPa</p>
-                        <p><strong>????:</strong> ${formData.tensile} MPa</p>
-                        <p><strong>?????????:</strong> ${formData.elongation} %</p>
+                        <h2>بيانات الصلب</h2>
+                        <p><strong>المعيار:</strong> ${formData.standard}</p>
+                        <p><strong>نوع الصلب:</strong> ${formData.steelType}</p>
+                        <p><strong>السمك:</strong> ${formData.thickness} مم</p>
+                        <p><strong>الخضوع:</strong> ${formData.yieldVal} MPa</p>
+                        <p><strong>الشد:</strong> ${formData.tensile} MPa</p>
+                        <p><strong>الاستطالة:</strong> ${formData.elongation} %</p>
 
-                        <h2>????? ????????</h2>
+                        <h2>نتيجة الاختبار</h2>
                         <div class="result-box">
                             <pre>${resultMessage}</pre>
                         </div>
 
-                        <p class="section-divider">?????? ????? - ??? ???? ???? ?? ??????? ????</p>
+                        <p class="section-divider">اختبار طباعة - هذا النص يؤكد أن الطباعة تعمل</p>
 
                         <button onclick="window.print()" class="print-button" style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                            ?????
+                            طباعة
                         </button>
                     </body>
                     </html>
@@ -2535,39 +2535,39 @@
                 if (!formData) return;
                 const resultMessage = calculateComparisonResult(formData);
                 if (!resultMessage) {
-                    showMsgBox("???? ????? ?????? ??????? ???? ????? ?? ????????.", "??? ?? ???????", "Error");
+                    showMsgBox("تعذر إنشاء بيانات التصدير بسبب مشكلة في البيانات.", "خطأ في التصدير", "Error");
                     return;
                 }
-                let csvContent = "??????,??????\n";
-                csvContent += `???????,${formData.testDate}\n`;
-                csvContent += `??? ??????,${formData.labName}\n`;
-                csvContent += `??? ???????,${formData.projectName}\n`;
-                csvContent += `?????,${formData.preparedBy}\n`;
-                csvContent += `????? ????????,${formData.approvedBy}\n`;
-                csvContent += `?????,${formData.description.replace(/\n/g, ' ')}\n`;
-                csvContent += `???????,${formData.standard}\n`;
-                csvContent += `??? ?????,${formData.steelType}\n`;
-                csvContent += `?????,${formData.thickness} ??\n`;
-                csvContent += `??????,${formData.yieldVal} MPa\n`;
-                csvContent += `????,${formData.tensile} MPa\n`;
-                csvContent += `?????????,${formData.elongation} %\n`;
-                const overallResultMatch = resultMessage.match(/?? ????? ??????: (??? ?|?? ?)/);
+                let csvContent = "البيان,القيمة\n";
+                csvContent += `التاريخ,${formData.testDate}\n`;
+                csvContent += `اسم المعمل,${formData.labName}\n`;
+                csvContent += `اسم المشروع,${formData.projectName}\n`;
+                csvContent += `المعد,${formData.preparedBy}\n`;
+                csvContent += `معتمد الاختبار,${formData.approvedBy}\n`;
+                csvContent += `الوصف,${formData.description.replace(/\n/g, ' ')}\n`;
+                csvContent += `المعيار,${formData.standard}\n`;
+                csvContent += `نوع الصلب,${formData.steelType}\n`;
+                csvContent += `السمك,${formData.thickness} مم\n`;
+                csvContent += `الخضوع,${formData.yieldVal} MPa\n`;
+                csvContent += `الشد,${formData.tensile} MPa\n`;
+                csvContent += `الاستطالة,${formData.elongation} %\n`;
+                const overallResultMatch = resultMessage.match(/هل الصلب مطابق؟: (نعم ✅|لا ❌)/);
                 if (overallResultMatch) {
-                    csvContent += `?? ????? ??????,${overallResultMatch[1]}\n`;
+                    csvContent += `هل الصلب مطابق؟,${overallResultMatch[1]}\n`;
                 }
                 const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
                 const link = document.createElement('a');
                 if (link.download !== undefined) {
                     const url = URL.createObjectURL(blob);
                     link.setAttribute('href', url);
-                    link.setAttribute('download', `?????_????????_??????????_${formData.testDate}.csv`);
+                    link.setAttribute('download', `تقرير_الاختبار_الميكانيكي_${formData.testDate}.csv`);
                     link.style.visibility = 'hidden';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
-                    showMsgBox("?? ????? ???????? ????? ??? ??? CSV.", "?????", "Information");
+                    showMsgBox("تم تصدير البيانات بنجاح إلى ملف CSV.", "تصدير", "Information");
                 } else {
-                    showMsgBox("?????? ?? ???? ????? ??????? ??????. ???? ??? ???????? ??????.", "?????", "Warning");
+                    showMsgBox("متصفحك لا يدعم تنزيل الملفات مباشرة. يرجى نسخ البيانات يدويًا.", "تنبيه", "Warning");
                 }
             });
             clearAllBtn.addEventListener('click', clearMechanicalTestTextBoxes);
@@ -2586,7 +2586,7 @@
                 if (!formData) return;
                 const result = calculateChemicalAnalysisResult(formData);
                 if (result) {
-                    showMsgBox(result, "????? ??????? ?????????", "Information");
+                    showMsgBox(result, "نتيجة التحليل الكيميائي", "Information");
                 }
             });
             printChemReportBtn.addEventListener('click', () => {
@@ -2594,7 +2594,7 @@
                 if (!formData) return;
                 const resultMessage = calculateChemicalAnalysisResult(formData);
                 if (!resultMessage) {
-                    showMsgBox("???? ????? ??????? ??????? ???? ????? ?? ????????.", "??? ?? ???????", "Error");
+                    showMsgBox("تعذر إنشاء التقرير للطباعة بسبب مشكلة في البيانات.", "خطأ في الطباعة", "Error");
                     return;
                 }
 
@@ -2604,7 +2604,7 @@
                     <head>
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>????? ????? ??????? ????????? ?????</title>
+                        <title>تقرير تحليل التركيب الكيميائي للصلب</title>
                         <style>
                             body { font-family: 'Arial', sans-serif; margin: 20mm; direction: rtl; text-align: right; }
                             h1, h2 { text-align: center; margin-bottom: 15px; }
@@ -2629,37 +2629,37 @@
                         </style>
                     </head>
                     <body>
-                        <h1>????? ????? ??????? ????????? ?????</h1>
+                        <h1>تقرير تحليل التركيب الكيميائي للصلب</h1>
 
-                        <h2>??????? ????????</h2>
-                        <p><strong>???????:</strong> ${formData.testDate}</p>
-                        <p><strong>??? ??????:</strong> ${formData.labName}</p>
-                        <p><strong>??? ???????:</strong> ${formData.projectName}</p>
-                        <p><strong>?????:</strong> ${formData.preparedBy}</p>
-                        <p><strong>????? ????????:</strong> ${formData.approvedBy}</p>
-                        <p><strong>?????:</strong> ${formData.description}</p>
+                        <h2>معلومات الاختبار</h2>
+                        <p><strong>التاريخ:</strong> ${formData.testDate}</p>
+                        <p><strong>اسم المعمل:</strong> ${formData.labName}</p>
+                        <p><strong>اسم المشروع:</strong> ${formData.projectName}</p>
+                        <p><strong>المعد:</strong> ${formData.preparedBy}</p>
+                        <p><strong>معتمد الاختبار:</strong> ${formData.approvedBy}</p>
+                        <p><strong>الوصف:</strong> ${formData.description}</p>
 
-                        <h2>?????? ??????? ?????????</h2>
-                        <p><strong>???????:</strong> ${formData.standard}</p>
-                        <p><strong>??? ?????:</strong> ${formData.steelType}</p>
-                        <p><strong>??????? (C):</strong> ${formData.C.toFixed(2)} %</p>
-                        <p><strong>???????? (Mn):</strong> ${formData.Mn.toFixed(2)} %</p>
-                        <p><strong>???????? (Si):</strong> ${formData.Si.toFixed(2)} %</p>
-                        <p><strong>???????? (P):</strong> ${formData.P.toFixed(2)} %</p>
-                        <p><strong>??????? (S):</strong> ${formData.S.toFixed(2)} %</p>
-                        <p><strong>?????? (Cr):</strong> ${formData.Cr.toFixed(2)} %</p>
-                        <p><strong>?????? (Ni):</strong> ${formData.Ni.toFixed(2)} %</p>
-                        <p><strong>???????????? (Mo):</strong> ${formData.Mo.toFixed(2)} %</p>
+                        <h2>بيانات التركيب الكيميائي</h2>
+                        <p><strong>المعيار:</strong> ${formData.standard}</p>
+                        <p><strong>نوع الصلب:</strong> ${formData.steelType}</p>
+                        <p><strong>الكربون (C):</strong> ${formData.C.toFixed(2)} %</p>
+                        <p><strong>المنغنيز (Mn):</strong> ${formData.Mn.toFixed(2)} %</p>
+                        <p><strong>السيلكون (Si):</strong> ${formData.Si.toFixed(2)} %</p>
+                        <p><strong>الفوسفور (P):</strong> ${formData.P.toFixed(2)} %</p>
+                        <p><strong>الكبريت (S):</strong> ${formData.S.toFixed(2)} %</p>
+                        <p><strong>الكروم (Cr):</strong> ${formData.Cr.toFixed(2)} %</p>
+                        <p><strong>النيكل (Ni):</strong> ${formData.Ni.toFixed(2)} %</p>
+                        <p><strong>الموليبدينوم (Mo):</strong> ${formData.Mo.toFixed(2)} %</p>
 
-                        <h2>????? ???????</h2>
+                        <h2>نتيجة التحليل</h2>
                         <div class="result-box">
                             <pre>${resultMessage}</pre>
                         </div>
 
-                        <p class="section-divider">?????? ????? - ??? ???? ???? ?? ??????? ????</p>
+                        <p class="section-divider">اختبار طباعة - هذا النص يؤكد أن الطباعة تعمل</p>
 
                         <button onclick="window.print()" class="print-button" style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
-                            ?????
+                            طباعة
                         </button>
                     </body>
                     </html>
@@ -2674,31 +2674,31 @@
                 if (!formData) return;
                 const resultMessage = calculateChemicalAnalysisResult(formData);
                 if (!resultMessage) {
-                    showMsgBox("???? ????? ?????? ??????? ???? ????? ?? ????????.", "??? ?? ???????", "Error");
+                    showMsgBox("تعذر إنشاء بيانات التصدير بسبب مشكلة في البيانات.", "خطأ في التصدير", "Error");
                     return;
                 }
 
-                let csvContent = "??????,??????\n";
-                csvContent += `???????,${formData.testDate}\n`;
-                csvContent += `??? ??????,${formData.labName}\n`;
-                csvContent += `??? ???????,${formData.projectName}\n`;
-                csvContent += `?????,${formData.preparedBy}\n`;
-                csvContent += `????? ????????,${formData.approvedBy}\n`;
-                csvContent += `?????,${formData.description.replace(/\n/g, ' ')}\n`;
-                csvContent += `???????,${formData.standard}\n`;
-                csvContent += `??? ?????,${formData.steelType}\n`;
-                csvContent += `??????? (C),${formData.C.toFixed(2)} %\n`;
-                csvContent += `???????? (Mn),${formData.Mn.toFixed(2)} %\n`;
-                csvContent += `???????? (Si),${formData.Si.toFixed(2)} %\n`;
-                        csvContent += `???????? (P),${formData.P.toFixed(2)} %\n`;
-                csvContent += `??????? (S),${formData.S.toFixed(2)} %\n`;
-                csvContent += `?????? (Cr),${formData.Cr.toFixed(2)} %\n`;
-                csvContent += `?????? (Ni),${formData.Ni.toFixed(2)} %\n`;
-                csvContent += `???????????? (Mo),${formData.Mo.toFixed(2)} %\n`;
+                let csvContent = "البيان,القيمة\n";
+                csvContent += `التاريخ,${formData.testDate}\n`;
+                csvContent += `اسم المعمل,${formData.labName}\n`;
+                csvContent += `اسم المشروع,${formData.projectName}\n`;
+                csvContent += `المعد,${formData.preparedBy}\n`;
+                csvContent += `معتمد الاختبار,${formData.approvedBy}\n`;
+                csvContent += `الوصف,${formData.description.replace(/\n/g, ' ')}\n`;
+                csvContent += `المعيار,${formData.standard}\n`;
+                csvContent += `نوع الصلب,${formData.steelType}\n`;
+                csvContent += `الكربون (C),${formData.C.toFixed(2)} %\n`;
+                csvContent += `المنغنيز (Mn),${formData.Mn.toFixed(2)} %\n`;
+                csvContent += `السيلكون (Si),${formData.Si.toFixed(2)} %\n`;
+                        csvContent += `الفوسفور (P),${formData.P.toFixed(2)} %\n`;
+                csvContent += `الكبريت (S),${formData.S.toFixed(2)} %\n`;
+                csvContent += `الكروم (Cr),${formData.Cr.toFixed(2)} %\n`;
+                csvContent += `النيكل (Ni),${formData.Ni.toFixed(2)} %\n`;
+                csvContent += `الموليبدينوم (Mo),${formData.Mo.toFixed(2)} %\n`;
 
-                const overallResultMatch = resultMessage.match(/?? ??????? ??????: (??? ?|?? ?)/);
+                const overallResultMatch = resultMessage.match(/هل التركيب مطابق؟: (نعم ✅|لا ❌)/);
                 if (overallResultMatch) {
-                    csvContent += `?? ??????? ??????,${overallResultMatch[1]}\n`;
+                    csvContent += `هل التركيب مطابق؟,${overallResultMatch[1]}\n`;
                 }
 
                 const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
@@ -2706,14 +2706,14 @@
                 if (link.download !== undefined) {
                     const url = URL.createObjectURL(blob);
                     link.setAttribute('href', url);
-                    link.setAttribute('download', `?????_???????_?????????_${formData.testDate}.csv`);
+                    link.setAttribute('download', `تقرير_التحليل_الكيميائي_${formData.testDate}.csv`);
                     link.style.visibility = 'hidden';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
-                    showMsgBox("?? ????? ???????? ????? ??? ??? CSV.", "?????", "Information");
+                    showMsgBox("تم تصدير البيانات بنجاح إلى ملف CSV.", "تصدير", "Information");
                 } else {
-                    showMsgBox("?????? ?? ???? ????? ??????? ??????. ???? ??? ???????? ??????.", "?????", "Warning");
+                    showMsgBox("متصفحك لا يدعم تنزيل الملفات مباشرة. يرجى نسخ البيانات يدويًا.", "تنبيه", "Warning");
                 }
             });
             clearChemInputsBtn.addEventListener('click', clearQuantitativeAnalysisInputs);
@@ -2779,7 +2779,7 @@
                 const selectedDIN = dinStandardSelect.value;
 
                 if (!selectedType || !selectedDIN) {
-                    showMsgBox("?????? ?????? ????? ???????? ?????.", "??? ?? ???????", "Warning");
+                    showMsgBox("الرجاء اختيار النوع والمعيار أولاً.", "خطأ في الإدخال", "Warning");
                     return;
                 }
 
@@ -2792,7 +2792,7 @@
                     if (dinInputGroups[i].style.display === 'block' || dinInputGroups[i].style.display === '') { // Check if visible
                         const val = parseFloat(dinTextBoxes[i].value);
                         if (isNaN(val)) {
-                            errorMessages.push(`????? ${dinLabels[i].textContent.replace(':', '')} ????? ??? ???? ??? ?????.`);
+                            errorMessages.push(`الحقل ${dinLabels[i].textContent.replace(':', '')} يحتوي على قيمة غير صالحة.`);
                             isValid = false;
                         }
                         values.push(val);
@@ -2802,7 +2802,7 @@
                 }
 
                 if (!isValid) {
-                    showMsgBox(errorMessages.join('\n'), "??? ?? ???????", "Warning");
+                    showMsgBox(errorMessages.join('\n'), "خطأ في الإدخال", "Warning");
                     return;
                 }
 
@@ -2831,7 +2831,7 @@
                             report = generateWasherReport(selectedDIN, values, washerSpec, errors);
                             break;
                     }
-                    showMsgBox(report, "???????", errors.length === 0 ? "Information" : "Error");
+                    showMsgBox(report, "النتيجة", errors.length === 0 ? "Information" : "Error");
 
                     // Save report to file (client-client download)
                     const blob = new Blob([report], { type: 'text/plain;charset=utf-8;' });
@@ -2844,13 +2844,13 @@
                         document.body.appendChild(link);
                         link.click();
                         document.body.removeChild(link);
-                        // showMsgBox("?? ??? ??????? ?????.", "??? ???????", "Information"); // Optional: if you want a second message
+                        // showMsgBox("تم حفظ التقرير بنجاح.", "حفظ التقرير", "Information"); // Optional: if you want a second message
                     } else {
-                        showMsgBox("?????? ?? ???? ????? ??????? ??????. ???? ??? ??????? ??????.", "?????", "Warning");
+                        showMsgBox("متصفحك لا يدعم تنزيل الملفات مباشرة. يرجى نسخ التقرير يدويًا.", "تنبيه", "Warning");
                     }
 
                 } catch (ex) {
-                    showMsgBox(`???: ${ex.message}`, "???", "Error");
+                    showMsgBox(`خطأ: ${ex.message}`, "خطأ", "Error");
                 }
             });
 
